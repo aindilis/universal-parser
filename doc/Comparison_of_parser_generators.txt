@@ -1,0 +1,600 @@
+Comparison of parser generators
+
+From Wikipedia, the free encyclopedia
+Jump to: navigation, search
+
+       This article may be confusing or unclear to readers. Please help us
+[40px] clarify the article; suggestions may be found on the talk page. (March
+       2014)
+
+This is a list of notable lexer generators and parser generators for various
+language classes.
+
+Contents
+
+  • 1 Regular languages
+  • 2 Deterministic context-free languages
+  • 3 Parsing expression grammars, deterministic boolean grammars
+  • 4 General context-free, conjunctive or boolean languages
+  • 5 Context-sensitive
+  • 6 See also
+  • 7 References
+  • 8 Notes
+  • 9 External links
+
+Regular languages[edit]
+
+See also: List of lexer generators
+
+ Name     Lexer        Output languages     Grammar,  Development    License
+        algorithm                             code     platform
+Alex    DFA        Haskell                  mixed    all           BSD
+AustenX DFA        Java                     separate all           BSD
+C# Flex DFA        C#                       mixed    .NET CLR      GNU GPL
+C# Lex  DFA        C#                       mixed    .NET CLR       ?
+CookCC  DFA        Java                     mixed    Java Virtual  BSD
+                                                     Machine
+DFAlex  DFA        no code generation       Java     Java          Apache
+                   required                                        License 2.0
+Dolphin DFA        C++                      separate all           Proprietary
+flex    DFA table  C, C++                   mixed    all           BSD
+        driven
+gelex   DFA        Eiffel                   mixed    Eiffel        MIT
+golex   DFA        Go                       mixed    Go            BSD-style
+gplex   DFA        C#                       mixed    .NET CLR      BSD-like
+JFlex   DFA        Java                     mixed    Java Virtual  GNU GPL
+                                                     Machine
+JLex    DFA        Java                     mixed    Java Virtual  BSD-like
+                                                     Machine
+lex     DFA        C                        mixed    POSIX         Proprietary,
+                                                                   CDDL
+lexertl DFA        C++                               all           GNU LGPL
+Quex    DFA direct C, C++                   mixed    all           GNU LGPL
+        code
+Ragel   DFA        C, C++, D, Go, Java,     mixed    all           GNU GPL
+                   Objective-C, Ruby
+re2c    DFA direct C                        mixed    all           Public
+        code                                                       domain
+
+Deterministic context-free languages[edit]
+
+                   Parsing       Input        Output      Grammar,           Development
+     Name         algorithm     grammar      languages      code     Lexer    platform    IDE     License
+                               notation
+                                          C#, Java,                          Java
+ANTLR4          ALL(*)^[1]    EBNF        Python,         mixed    generated Virtual     Yes    BSD
+                                          JavaScript                         Machine
+                                          ActionScript,
+                                          Ada95, C, C++,
+                                          C#, Java,                          Java
+ANTLR3          LL(*)         EBNF        JavaScript,     mixed    generated Virtual     Yes    BSD
+                                          Objective-C,                       Machine
+                                          Perl, Python,
+                                          Ruby
+                Recursive                 C, C++,
+APG             descent,      ABNF        JavaScript,     separate none      all         No     GNU GPL
+                Backtracking              Java
+                                                                             any
+                                                                             platform
+AXE             Recursive     AXE/C++     C++11           mixed    none      with        No     Boost
+                descent                                                      standard
+                                                                             C++11
+                                                                             compiler
+                                                                             Java
+Beaver          LALR(1)       EBNF        Java            mixed    external  Virtual     No     BSD
+                                                                             Machine
+                LALR(1), LR
+Bison           (1), IELR(1),  ?          C, C++          mixed    external  all         No     GNU GPL
+                GLR
+Bison++^[note   LALR(1)        ?          C++             mixed    external  POSIX       No     GNU GPL
+1]
+Bisonc++        LALR(1)        ?          C++             mixed    external  POSIX       No     GNU GPL
+BtYacc          Backtracking   ?          C++             mixed    external  all         No     Public
+                Bottom-up                                                                       domain
+byacc           LALR(1)       YACC        C               mixed    external  all         No     Public
+                                                                                                domain
+BYACC/J         LALR(1)        ?          C, Java         mixed    external  all         No     Public
+                                                                                                domain
+CL-Yacc         LALR(1)       Lisp        Common Lisp     mixed    external  all         No     MIT
+                                          C, C++, C#, F#,
+                                          Java, Ada,                         Java
+                                          Pascal,                            Virtual
+Coco/R          LL(1)         EBNF        Modula-2,       mixed    generated Machine,    No     GNU GPL
+                                          Oberon, Ruby,                      .NET
+                                          Unicon, Visual                     Framework
+                                          Basic .NET
+                              Java                                           Java
+CookCC          LALR(1)       annotations Java            mixed    generated Virtual     No     BSD
+                                                                             Machine
+CppCC           LL(k)          ?          C++             mixed    generated POSIX       No     GNU GPL
+CSP             LR(1)          ?          C++             separate generated POSIX       No     Apache
+                                                                                                License 2.0
+                                                                             Java
+CUP             LALR(1)        ?          Java            mixed    external  Virtual     No     GNU GPL
+                                                                             Machine
+Dragon          LR(1), LALR    ?          C++, Java       separate generated all         No     GNU GPL
+                (1)
+eli             LALR(1)        ?          C               mixed    generated POSIX       No     GNU GPL,
+                                                                                                GNU LGPL
+Essence         LR(???)        ?          Scheme 48       mixed    external  all         No     BSD
+                                          N/A (state
+Eto.Parse       LL(k)         BNF, EBNF   machine is      separate internal  .NET        No     MIT
+                              or C#       runtime                            Framework
+                                          generated)
+                                                                   external
+eyapp           LALR(1)        ?          Perl            mixed    or        all         No     Perl
+                                                                   generated
+Frown           LALR(k)        ?          Haskell 98      mixed    external  all         No     GNU GPL
+geyacc          LALR(1)        ?          Eiffel          mixed    external  all         No     MIT
+                                          x86 assembly
+                                          language, ANSI
+                                          C, C#, D, Java,
+                                          Pascal, Object                     Microsoft          Modified
+GOLD            LALR(1)       BNF         Pascal, Python, separate generated Windows     Yes    Zlib
+                                          Visual Basic 6,
+                                          Visual Basic
+                                          .NET, Visual
+                                          C++
+GPPG            LALR(1)       YACC        C#              separate external  Microsoft   Yes    BSD
+                                                                             Windows
+                                                                             Java
+Grammatica      LL(k)         BNF dialect C#, Java        separate generated Virtual     No     GNU LGPL
+                                                                             Machine
+                              EBNF or                                        Java
+HiLexed         LL(*)         Java        Java            separate internal  Virtual     No     GNU LGPL
+                                                                             Machine
+                                                                             .NET
+Hime Parser     LR(1), LALR                                                  Framework,
+Generator       (1), LR(0)    BNF dialect C#, Java        separate generated Java        No     GNU LGPL
+                                                                             Virtual
+                                                                             Machine
+Hyacc           LR(1), LALR   YACC        C               mixed    external  all         No     GNU GPL
+                (1), LR(0)
+                                          N/A (state
+Irony           LALR(1)       C#          machine is      separate internal  .NET        Yes    MIT
+                                          runtime                            Framework
+                                          generated)
+iyacc           LALR(1)       YACC        Icon            mixed    external  all         No     GNU GPL
+                                                                             Java
+jacc            LALR(1)        ?          Java            mixed    external  Virtual     No     BSD
+                                                                             Machine
+                                          Java, C++,                         Java
+JavaCC          LL(k)         EBNF        JavaScript (via mixed    generated Virtual     Yes    BSD
+                                          GWT compiler)^                     Machine
+                                          [2]
+                                                                             Java
+jay             LALR(1)       YACC        C#, Java        mixed    none      Virtual     No     BSD
+                                                                             Machine
+                LL(1), LALR                                                  Java
+JFLAP           (1)            ?          Java             ?        ?        Virtual     Yes     ?
+                                                                             Machine
+JetPAG          LL(k)          ?          C++             mixed    generated all         No     GNU GPL
+                                          JavaScript,
+JS/CC           LALR(1)       EBNF        JScript,        mixed    internal  all         Yes    Artistic
+                                          ECMAScript
+                LL(1),                                             generated
+KDevelop-PG-Qt  Backtracking,  ?          C++             mixed    or        all, KDE    No     GNU LGPL
+                Shunting yard                                      external
+Kelbt           Backtracking   ?          C++             mixed    generated POSIX       No     GNU GPL
+                LALR(1)
+kmyacc          LALR(1)        ?          C, Java, Perl,  mixed    external  all         No     GNU GPL
+                                          JavaScript
+                                          C, C++, C#,                        Java
+Lapg            LALR(1)        ?          Java,           mixed    generated Virtual     No     GNU GPL
+                                          JavaScript                         Machine
+Lemon           LALR(1)        ?          C               mixed    external  all         No     Public
+                                                                                                domain
+                Recursive                 Python (no                                            MPL/GNU
+LEPL            descent       Python      generation,     separate none      all         No     LGPL
+                                          library)
+Lime            LALR(1)        ?          PHP             mixed    external  all         No     GNU GPL
+                LR(?), LL(?),                                                Java               Public
+LISA            LALR(?), SLR   ?          Java            mixed    generated Virtual     Yes    domain
+                (?)                                                          Machine
+LLgen           LL(1)          ?          C               mixed    external  POSIX       No     BSD
+LLnextgen       LL(1)          ?          C               mixed    external  all         No     GNU GPL
+                LL(k) +                                                      .NET
+LLLPG           syntactic and ANTLR-like  C#              mixed    generated Framework,  Visual GNU LGPL
+                semantic                                           (?)       Mono        Studio
+                predicates
+                Backtracking                                                 Java
+LPG             LALR(k)        ?          Java            mixed    generated Virtual     No     EPL
+                                                                             Machine
+Menhir          LR(1)          ?          OCaml           mixed    generated all         No     QPL
+ML-Yacc         LALR(1)        ?          ML              mixed    external  all         No      ?
+                                                                             Java
+Monkey          LR(1)          ?          Java            separate generated Virtual     No     GNU GPL
+                                                                             Machine
+                LALR(k), LR                                        external  POSIX,
+Msta            (k)           YACC, EBNF  C, C++          mixed    or        Cygwin      No     GNU GPL
+                                                                   generated
+MTP (More Than                                                               Java
+Parsing)        LL(1)          ?          Java            separate generated Virtual     No     GNU GPL
+                                                                             Machine
+                                                                             any
+                                                                             platform
+MyParser        LL(*)         Markdown    C++11           separate internal  with        No     MIT License
+                                                                             standard
+                                                                             C++11
+                                                                             compiler
+NLT             GLR           C#/BNF-like C#              mixed    mixed     .NET        No     MIT
+                                                                             Framework
+ocamlyacc       LALR(1)        ?          OCaml           mixed    external  all         No     QPL
+olex            LL(1)          ?          C++             mixed    generated all         No     GNU GPL
+Parsec          LL,            ?          Haskell         mixed    none      all         No     BSD
+                Backtracking
+Parse::Yapp     LALR(1)        ?          Perl            mixed    external  all         No     GNU GPL
+                                                                             Java
+Parser Objects  LL(k)          ?          Java            mixed     ?        Virtual     No     zlib
+                                                                             Machine
+PCCTS           LL             ?          C, C++           ?        ?        all         No      ?
+PLY             LALR(1)       BNF         Python          mixed    generated all         No     MIT License
+PlyPlus         LALR(1)       EBNF        Python          separate generated all         No     MIT License
+PRECC           LL(k)          ?          C               separate generated DOS, POSIX  No     GNU GPL
+QLALR           LALR(1)        ?          C++             mixed    external  all         No     GNU GPL
+                Recursive                 C (no
+RPATK           descent,      BNF         generation,     separate none      all         No     GNU GPL
+                Backtracking              library)
+                                          C, C++, C#,
+SableCC         LALR(1)        ?          Java, OCaml,    separate generated all         No     GNU LGPL
+                                          Python
+                LL(k) LR(k)               C, C++, C#,
+SLK             LALR(k)       EBNF        Java,           separate external  all         No     Proprietary
+                                          JavaScript
+SP (Simple      Recursive     Python      Python          separate generated all         No     GNU LGPL
+Parser)         descent
+Spirit          Recursive      ?          C++             mixed    internal  all         No     Boost
+                descent
+Sprache         LL,           C#          interpreted     mixed    internal  .NET        No     MIT
+                Backtracking                                                 Framework
+Styx            LALR(1)        ?          C, C++          separate generated all         No     GNU LGPL
+Sweet Parser    LALR(1)        ?          C++             separate generated Microsoft   No     zlib
+                                                                             Windows
+Tap             LL(1)          ?          C++             mixed    generated all         No     GNU GPL
+TextTransformer LL(k)          ?          C++             mixed    generated Microsoft   Yes    Proprietary
+                                                                             Windows
+TinyPG          LL(1)          ?          C#, Visual       ?        ?        Microsoft   Yes    CPOL 1.0
+                                          Basic                              Windows
+Toy Parser      Recursive      ?          Python          mixed    generated all         No     GNU LGPL
+Generator       descent
+TP Yacc         LALR(1)        ?          Turbo Pascal    mixed    external  all         Yes    GNU GPL
+                                          C,                                                    Artistic
+UniCC           LALR(1)       EBNF        target-language mixed    generated POSIX       No     2.0
+                                          independent
+                LR(?), some
+Whale           conjunctive    ?          C++             mixed    external  all         No     Proprietary
+                stuff, see
+                Whale Calf
+wisent          LALR(1)        ?          C++, Java       mixed    external  all         No     GNU GPL
+Yacc AT&T/Sun   LALR(1)       YACC        C               mixed    external  POSIX       No     CPL & CDDL
+                LR(1), LALR                                        generated
+Yacc++          (1)           YACC        C++, C#         mixed    or        all         No     Proprietary
+                                                                   external
+Yapps           LL(1)          ?          Python          mixed    generated all         No     MIT
+yecc            LALR(1)        ?          Erlang          separate generated all         No     Erlang
+Visual BNF      LR(1), LALR    ?          C#              separate generated .NET        Yes    Proprietary
+                (1)                                                          Framework
+YooParse        LR(1), LALR    ?          C++             mixed    external  all         No     MIT
+                (1)
+                              BNF in C++                                     C++11
+Parse           LR(1)         types        ?               ?       none      compliant   No     MIT
+                                                                             compiler
+                   Parsing       Input        Output      Grammar,           Development
+    Product       algorithm     grammar      languages      code     Lexer    platform    IDE     License
+                               notation
+
+Parsing expression grammars, deterministic boolean grammars[edit]
+
+    Name     Parsing algorithm     Output    Grammar,  Development   License
+                                 languages     code     platform
+             PEG parser         Python (no
+Arpeggio     interpreter,       generation,  mixed     all         MIT
+             Packrat            interpreted)
+AustenX      Packrat (modified) Java         separate  all         BSD
+Aurochs      Packrat            C, OCaml,    mixed     all         GNU GPL
+                                Java
+CL-peg       Packrat            Common Lisp  mixed     all         MIT
+Drat!        Packrat            D            mixed     all         GNU GPL
+Frisby       Packrat            Haskell      mixed     all         BSD
+grammar::peg Packrat            Tcl          mixed     all         BSD
+Grako        Packrat + Cut +    Python / C++ separate  all         BSD
+             Left Recursion     (beta)
+IronMeta     Packrat            C#           mixed     Microsoft   BSD
+                                                       Windows
+             Packrat
+Katahdin     (modified),        C#           mixed     all         Public
+             mutating                                              domain
+             interpreter
+             2-phase
+             scannerless
+Laja         top-down           Java         separate  all         GNU GPL
+             backtracking +
+             runtime support
+             Packrat (modified                                     GNU GPL,
+             to support                                            commercial
+lars::parser left-recursion and C++          identical all         license
+             resolve grammar                                       available on
+             ambiguity)                                            request
+LPeg         Parsing Machine    Lua          mixed     all         MIT
+                                                       Java        Apache
+Mouse        Recursive descent  Java         separate  Virtual     License 2.0
+                                                       Machine
+                                                       POSIX,
+Narwhal      Packrat            C            mixed     Microsoft   BSD
+                                                       Windows
+Nemerle.Peg  Recursive descent  Nemerle      separate  all         BSD
+             + Pratt
+neotoma      Packrat            Erlang       separate  all         MIT
+NPEG         Recursive descent  C#           mixed     all         MIT
+             Packrat (modified, JavaScript,
+OMeta        partial            Squeak,      mixed     all         MIT
+             memoization)       Python
+PackCC       Packrat (modified) C            mixed     all         MIT
+Packrat      Packrat            Scheme       mixed     all         MIT
+Pappy        Packrat            Haskell      mixed     all         Proprietary
+                                                       Java        Apache
+parboiled    Recursive descent  Java, Scala  mixed     Virtual     License 2.0
+                                                       Machine
+                                                       Java        Apache
+Lambda PEG   Recursive descent  Java         mixed     Virtual     License 2.0
+                                                       Machine
+parsepp      Recursive descent  C++          mixed     all         Public
+                                                                   domain
+Parsnip      Packrat            C++          mixed     Microsoft   GNU GPL
+                                                       Windows
+peg          Recursive descent  C            mixed     all         MIT
+PEG.js       Packrat (partial   JavaScript   mixed     all         MIT
+             memoization)
+peg-parser   PEG parser         Dylan        separate  all
+             interpreter
+             Recursive descent                         Microsoft
+Pegasus      / Packrat          C#           mixed     Windows     MIT
+             (selectively)
+pegc         Recursive descent  C            mixed     all         Public
+                                                                   domain
+PetitParser  Packrat            Smalltalk,   mixed     all         MIT
+                                Java, Dart
+PEGTL        Recursive descent  C++11        mixed     all         MIT
+             Hybrid recursive   Parrot                 Parrot
+PGE          descent / operator bytecode     mixed     virtual     Artistic 2.0
+             precedence^[3]                            machine
+PyPy rlib    Packrat            Python       mixed     all         MIT
+             PEG parser
+pyPEG        interpreter,       Python       mixed     all         GNU GPL
+             Packrat
+                                                       Java
+Rats!        Packrat            Java         mixed     Virtual     GNU LGPL
+                                                       Machine
+Spirit2      Recursive descent  C++          mixed     all         Boost
+             PEG parser         Python (no
+textX        interpreter,       generation,  separate  all         MIT
+             Packrat            interpreted)
+Treetop      Recursive descent  Ruby         mixed     all         MIT
+                                                                   MIT or
+Yard         Recursive descent  C++          mixed     all         Public
+                                                                   domain
+                                C, Java,
+Waxeye       Packrat            JavaScript,  separate  all         MIT
+                                Python, Ruby
+                                , Scheme
+PHP PEG       ? (PEG Parser?)   PHP          mixed     all         BSD
+
+General context-free, conjunctive or boolean languages[edit]
+
+                                     Input     Output    Grammar,              Development
+     Name       Parsing algorithm   grammar   languages    code       Lexer     platform   IDE    License
+                                   notation
+ACCENT          Earley             YACC      C           mixed     external    all         No  GNU GPL
+                                   variant
+APaGeD          GLR, LALR(1), LL    ?        D           mixed     generated   all         No  Artistic
+                (k)
+                LALR(1), LR(1),              C, C++,     mixed
+Bison           IELR(1), GLR       YACC      Java, XML   (except   external    all         No  GNU GPL
+                                                         XML)
+DMS Software                                                                   Microsoft
+Reengineering   GLR                 ?        Parlanse    mixed     generated   Windows     No  Proprietary
+Toolkit
+DParser         Scannerless GLR     ?        C           mixed     scannerless POSIX       No  BSD
+Dypgen          runtime-extensible  ?        OCaml       mixed     generated   all         No  CeCILL-B
+                GLR
+                                                                   external,
+E3              Earley              ?        OCaml       mixed     or          all         No   ?
+                                                                   scannerless
+Elkhound        GLR                 ?        C++, OCaml  mixed     external    all         No  BSD
+                                             N/A (state
+eu.h8me.Parsing GLR                 ?        machine is  separate  external    .NET        No  BSD
+                                             runtime                           Framework
+                                             generated)
+                                             C, Lex,
+                                             Haskell,
+GDK             LALR(1), GLR        ?        HTML, Java, mixed     generated   POSIX       No  MIT
+                                             Object
+                                             Pascal,
+                                             Yacc
+Happy           LALR, GLR           ?        Haskell     mixed     external    all         No  BSD
+                                                                               .NET
+Hime Parser                                                                    Framework,
+Generator       GLR                 ?        C#, Java    separate  generated   Java        No  GNU LGPL
+                                                                               Virtual
+                                                                               Machine
+IronText        LALR(1), GLR       C#        C#          mixed     generated   .NET        No  Apache
+Library                                                            or external Framework       License 2.0
+Jison           LALR(1), LR(0),    YACC      JavaScript, mixed     generated   all         No  MIT
+                SLR(1)                       C#, PHP
+Laja            Scannerless, two   Laja      Java        separate  scannerless all         No  GNU GPL
+                phase
+                                   Annotated
+ModelCC         Earley             class     Java        generated generated   all         No  BSD
+                                   model
+                                                                   external,
+P1              Combinators        BNF-like  OCaml       mixed     or          all         No   ?
+                                                                   scannerless
+                                                                   external,
+P3              Earley/combinators BNF-like  OCaml       mixed     or          all         No   ?
+                                                                   scannerless
+                Earley/                                            external,
+P4              combinators,       BNF-like  OCaml       mixed     or          all         No   ?
+                infinitary CFGs                                    scannerless
+Scannerless     Scannerless GLR (            Haskell,                          Java
+Boolean Parser  Boolean grammars)   ?        Java        separate  scannerless Virtual     No  BSD
+                                                                               Machine
+SDF/SGLR        Scannerless GLR    SDF       C, Java     separate  scannerless all         Yes BSD
+SmaCC           GLR(1), LALR(1),    ?        Smalltalk   mixed     internal    all         Yes MIT
+                LR(1)
+SPARK           Earley              ?        Python      mixed     external    all         No  MIT
+                                                                                               "No licensing
+Tom             GLR                 ?        C           generated none        all         No  or copyright
+                                                                                               restrictions"
+                                             C++, C#,
+UltraGram       LALR, LR, GLR       ?        Java,       separate  generated   Microsoft   Yes Proprietary
+                                             Visual                            Windows
+                                             Basic .NET
+Wormhole        Pruning, LR, GLR,   ?        C, Python   mixed     scannerless Microsoft   No  MIT
+                Scannerless GLR                                                Windows
+                General tabular,
+                SLL(k), Linear
+                normal form (
+Whale Calf      Conjunctive         ?        C++         separate  external    all         No  Proprietary
+                grammars), LR,
+                Binary normal form
+                (Boolean grammars)
+
+Context-sensitive[edit]
+
+            Parsing       Input grammar      Boolean    Development
+ Name      algortihm         notation        grammar      platform     License
+                                          capabilities
+                                          Conjunctive,
+LuZ     delta chain      modular          not           all          proprietary
+                                          complimentary
+        recursive        simple bnf                     beta, and
+bnf2xml descent (is a    grammar (input   ?             not a        GNU GPLv2
+        text filter      matching),                     full-fledged
+        output is xml)   output is xml                  EBNF parser
+
+See also[edit]
+
+  • Compiler-compiler
+  • List of lexer generators
+
+References[edit]
+
+ 1. ^ "Adaptive LL(*) Parsing: The Power of Dynamic Analysis" (PDF). Terence
+    Parr. Retrieved 2016-04-03. 
+ 2. ^ "Building parsers for the web with JavaCC & GWT (Part one)". Chris
+    Ainsley. Retrieved 2014-05-04. 
+ 3. ^ "Parrot: Grammar Engine". The Parrot Foundation. 2011.  "PGE rules
+    provide the full power of recursive descent parsing and operator precedence
+    parsing."
+
+Notes[edit]
+
+ 1. ^ Bison 1.19 fork
+
+External links[edit]
+
+  • The Catalog of Compiler Construction Tools
+  • Open Source Parser Generators in Java
+
+*
+Retrieved from "https://en.wikipedia.org/w/index.php?title=
+Comparison_of_parser_generators&oldid=723172017"
+Categories:
+
+  • Parser generators
+  • Parsing algorithms
+  • Software comparisons
+
+Hidden categories:
+
+  • Wikipedia articles needing clarification from March 2014
+  • All Wikipedia articles needing clarification
+
+Navigation menu
+
+Personal tools
+
+  • Not logged in
+  • Talk
+  • Contributions
+  • Create account
+  • Log in
+
+Namespaces
+
+  • Article
+  • Talk
+
+Variants 
+
+Views
+
+  • Read
+  • Edit
+  • View history
+
+More 
+
+Search
+
+[                    ][Search][Go]
+ 
+
+Navigation
+
+  • Main page
+  • Contents
+  • Featured content
+  • Current events
+  • Random article
+  • Donate to Wikipedia
+  • Wikipedia store
+
+Interaction
+
+  • Help
+  • About Wikipedia
+  • Community portal
+  • Recent changes
+  • Contact page
+
+Tools
+
+  • What links here
+  • Related changes
+  • Upload file
+  • Special pages
+  • Permanent link
+  • Page information
+  • Wikidata item
+  • Cite this page
+
+Print/export
+
+  • Create a book
+  • Download as PDF
+  • Printable version
+
+Languages
+
+  •  
+
+Add links
+
+  • This page was last modified on 1 June 2016, at 13:18.
+  • Text is available under the Creative Commons Attribution-ShareAlike License
+     ; additional terms may apply. By using this site, you agree to the Terms
+    of Use and Privacy Policy. Wikipedia® is a registered trademark of the
+    Wikimedia Foundation, Inc., a non-profit organization.
+
+  • Privacy policy
+  • About Wikipedia
+  • Disclaimers
+  • Contact Wikipedia
+  • Developers
+  • Cookie statement
+  • Mobile view
+
+  • Wikimedia Foundation
+  • Powered by MediaWiki
+

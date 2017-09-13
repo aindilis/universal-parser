@@ -1,0 +1,1832 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr"><head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript">(function() { (function(){function c(a){this.t={};this.tick=function(a,c,b){var d=void 0!=b?b:(new Date).getTime();this.t[a]=[d,c];if(void 0==b)try{window.console.timeStamp("CSI/"+a)}catch(e){}};this.tick("start",null,a)}var a;window.performance&&(a=window.performance.timing);var h=a?new c(a.responseStart):new c;window.jstiming={Timer:c,load:h};if(a){var b=a.navigationStart,e=a.responseStart;0<b&&e>=b&&(window.jstiming.srt=e-b)}if(a){var d=window.jstiming.load;0<b&&e>=b&&(d.tick("_wtsrt",void 0,b),d.tick("wtsrt_",
+"_wtsrt",e),d.tick("tbsd_","wtsrt_"))}try{a=null,window.chrome&&window.chrome.csi&&(a=Math.floor(window.chrome.csi().pageT),d&&0<b&&(d.tick("_tbnd",void 0,window.chrome.csi().startE),d.tick("tbnd_","_tbnd",b))),null==a&&window.gtbExternal&&(a=window.gtbExternal.pageT()),null==a&&window.external&&(a=window.external.pageT,d&&0<b&&(d.tick("_tbnd",void 0,window.external.startE),d.tick("tbnd_","_tbnd",b))),a&&(window.jstiming.pt=a)}catch(k){}})();window.tickAboveFold=function(c){var a=0;if(c.offsetParent){do a+=c.offsetTop;while(c=c.offsetParent)}c=a;750>=c&&window.jstiming.load.tick("aft")};var f=!1;function g(){f||(f=!0,window.jstiming.load.tick("firstScrollTime"))}window.addEventListener?window.addEventListener("scroll",g,!1):window.attachEvent("onscroll",g);
+ })();</script>
+<meta content="blogger" name="generator">
+<link href="http://muaddibspace.blogspot.com/favicon.ico" rel="icon" type="image/x-icon">
+<link href="http://muaddibspace.blogspot.com/2008/03/executable-bnf-parser-in-prolog.html" rel="canonical">
+<link rel="alternate" type="application/atom+xml" title="Muad`Dib - Atom" href="http://muaddibspace.blogspot.com/feeds/posts/default">
+<link rel="alternate" type="application/rss+xml" title="Muad`Dib - RSS" href="http://muaddibspace.blogspot.com/feeds/posts/default?alt=rss">
+<link rel="service.post" type="application/atom+xml" title="Muad`Dib - Atom" href="https://www.blogger.com/feeds/2844521419334459144/posts/default">
+
+<link rel="alternate" type="application/atom+xml" title="Muad`Dib - Atom" href="http://muaddibspace.blogspot.com/feeds/4768166255128766141/comments/default">
+<meta content="http://muaddibspace.blogspot.com/2008/03/executable-bnf-parser-in-prolog.html" property="og:url">
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>Muad`Dib: Executable BNF parser in Prolog</title>
+<link type="text/css" rel="stylesheet" href="Muad%60Dib:%20Executable%20BNF%20parser%20in%20Prolog_files/3645911276-widget_css_bundle.css">
+<link type="text/css" rel="stylesheet" href="Muad%60Dib:%20Executable%20BNF%20parser%20in%20Prolog_files/authorization.css">
+<style id="page-skin-1" type="text/css"><!--
+/*
+-----------------------------------------------------
+Blogger Template Style Sheet
+Name:     Scribe
+Designer: Todd Dominey
+URL:      domineydesign.com / whatdoiknow.org
+Date:     27 Feb 2004
+Updated by: Blogger Team
+------------------------------------------------------ */
+/*
+Variable definitions
+====================
+<Variable name="textColor" description="Text Color" type="color"
+default="#29303b">
+<Variable name="postTitleColor" description="Post Title Color" type="color"
+default="#1b0431">
+<Variable name="linkColor" description="Link Color" type="color"
+default="#473624">
+<Variable name="visitedLinkColor" description="Visited Link Color" type="color"
+default="#956839">
+<Variable name="pageHeaderColor" description="Blog Title Color" type="color"
+default="#612e00">
+<Variable name="blogDescriptionColor" description="Blog Description Color"
+type="color" default="#29303B">
+<Variable name="sidebarHeaderColor" description="Sidebar Title Color"
+type="color"
+default="#211104">
+<Variable name="bodyFont" description="Text Font"
+type="font"
+default="normal normal 100% Georgia, Times New Roman,Sans-Serif;">
+<Variable name="headerFont" description="Sidebar Title Font"
+type="font"
+default="normal normal 150% Georgia, Times New Roman,sans-serif">
+<Variable name="pageTitleFont" description="Blog Title Font"
+type="font"
+default="normal normal 225% Georgia, Times New Roman,sans-serif">
+<Variable name="blogDescriptionFont" description="Blog Description Font"
+type="font"
+default="italic normal 100% Georgia, Times New Roman, sans-serif">
+<Variable name="startSide" description="Start side in blog language"
+type="automatic" default="left">
+<Variable name="endSide" description="End side in blog language"
+type="automatic" default="right">
+*/
+/* Defaults
+----------------------------------------------- */
+body {
+margin:0;
+padding:0;
+font-size: small;
+text-align:center;
+color:#29303b;
+line-height:0.5em;
+background:#483521 url("http://www2.blogblog.com/scribe/bg.gif") repeat;
+}
+blockquote {
+font-style:italic;
+padding:0 32px;
+line-height:1.6;
+margin-top:0;
+margin-right:0;
+margin-bottom:.6em;
+margin-left:0;
+}
+p {
+margin:0;
+padding:0;
+}
+abbr, acronym {
+cursor:help;
+font-style:normal;
+}
+code {
+font-size: 100%;
+white-space:normal;
+color:#666;
+}
+hr {display:none;}
+img {border:0;}
+/* Link styles */
+a:link {
+color:#473624;
+text-decoration:underline;
+}
+a:visited {
+color: #956839;
+text-decoration:underline;
+}
+a:hover {
+color: #956839;
+text-decoration:underline;
+}
+a:active {
+color: #956839;
+}
+.scheme-function-name {
+/* font-lock-function-name-face */
+color: #0000ff;
+}
+.scheme-keyword {
+/* font-lock-keyword-face */
+color: #a020f0;
+}
+.scheme-type {
+/* font-lock-type-face */
+color: #228b22;
+}
+.scheme-variable-name {
+/* font-lock-variable-name-face */
+color: #ff1493;
+}
+.coq-comment {
+/* font-lock-comment-face */
+color: #b22222;
+}
+.coq-comment-delimiter {
+/* font-lock-comment-delimiter-face */
+color: #b22222;
+}
+.coq-coq-solve-tactics {
+/* coq-solve-tactics-face */
+color: #ff0000;
+}
+.coq-function-name {
+/* font-lock-function-name-face */
+color: #0000ff;
+}
+.coq-keyword {
+/* font-lock-keyword-face */
+color: #a020f0;
+}
+.coq-proof-tactics-name {
+/* proof-tactics-name-face */
+color: #00008b;
+}
+.coq-type {
+/* font-lock-type-face */
+color: #228b22;
+}
+.coq-variable-name {
+/* font-lock-variable-name-face */
+color: #ff1493;
+}
+span.tycon { color: blue; font-family: sans-serif }
+span.data { color: #CC0000; font-family: sans-serif }
+span.var { color: purple; font-family: serif; font-style: italic }
+span.key { font-family: serif; text-decoration: underline }
+span.star { font-size: x-small }
+.ciao-face-builtin-directive {
+/* ciao-face-builtin-directive */
+color: #0000ff;
+font-weight: bold;
+}
+.ciao-face-clauseheadname {
+/* ciao-face-clauseheadname */
+color: #0000ff;
+}
+.ciao-face-cut {
+/* ciao-face-cut */
+color: #4169e1;
+}
+.ciao-face-module-directive {
+/* ciao-face-module-directive */
+color: #000080;
+font-weight: bold;
+}
+.ciao-face-prompt {
+/* ciao-face-prompt */
+color: #ff7f50;
+font-weight: bold;
+}
+.ciao-face-variable {
+/* ciao-face-variable */
+color: #ff1493;
+}
+.java-comment {
+/* font-lock-comment-face */
+color: #b22222;
+}
+.java-comment-delimiter {
+/* font-lock-comment-delimiter-face */
+color: #b22222;
+}
+.java-constant {
+/* font-lock-constant-face */
+color: #5f9ea0;
+}
+.java-function-name {
+/* font-lock-function-name-face */
+color: #0000ff;
+}
+.java-keyword {
+/* font-lock-keyword-face */
+color: #a020f0;
+}
+.java-negation-char {
+}
+.java-string {
+/* font-lock-string-face */
+color: #bc8f8f;
+}
+.java-type {
+/* font-lock-type-face */
+color: #228b22;
+}
+.java-variable-name {
+/* font-lock-variable-name-face */
+color: #b8860b;
+}
+.agda2-highlight-bound-variable {
+}
+.agda2-highlight-comment {
+/* agda2-highlight-comment-face */
+color: #b22222;
+}
+.agda2-highlight-constructor {
+/* agda2-highlight-constructor-face */
+color: #008b00;
+}
+.agda2-highlight-datatype {
+/* agda2-highlight-datatype-face */
+color: #006400;
+}
+.agda2-highlight-function {
+/* agda2-highlight-function-face */
+color: #0000ee;
+}
+.agda2-highlight-keyword {
+/* agda2-highlight-keyword-face */
+color: #cd6600;
+}
+.agda2-highlight-module {
+/* agda2-highlight-module-face */
+color: #a020f0;
+}
+.agda2-highlight-number {
+/* agda2-highlight-number-face */
+color: #a020f0;
+}
+.agda2-highlight-operator {
+}
+.agda2-highlight-primitive-type {
+/* agda2-highlight-primitive-type-face */
+color: #0000cd;
+}
+.agda2-highlight-symbol {
+/* agda2-highlight-symbol-face */
+color: #404040;
+}
+.prologcomment {
+/* font-lock-comment-face */
+color: #b22222;
+}
+.prologcomment-delimiter {
+/* font-lock-comment-delimiter-face */
+color: #b22222;
+}
+.prologfunction-name {
+/* font-lock-function-name-face */
+color: #0000ff;
+}
+.prologkeyword {
+/* font-lock-keyword-face */
+color: #a020f0;
+}
+.prologvariable-name {
+/* font-lock-variable-name-face */
+color: #b8860b;
+}
+.prolog2comment {
+/* font-lock-comment-face */
+color: #b22222;
+}
+.prolog2comment-delimiter {
+/* font-lock-comment-delimiter-face */
+color: #b22222;
+}
+.prolog2function-name {
+/* font-lock-function-name-face */
+color: #0000ff;
+}
+.prolog2keyword {
+/* font-lock-keyword-face */
+color: #a020f0;
+}
+.prolog2variable-name {
+/* font-lock-variable-name-face */
+color: #ff1493;
+}
+.cfunction-name {
+/* font-lock-function-name-face */
+color: #0000ff;
+}
+.ckeyword {
+/* font-lock-keyword-face */
+color: #a020f0;
+}
+.cpreprocessor {
+/* font-lock-preprocessor-face */
+color: #da70d6;
+}
+.cstring {
+/* font-lock-string-face */
+color: #bc8f8f;
+}
+.ctype {
+/* font-lock-type-face */
+color: #228b22;
+}
+.cvariable-name {
+/* font-lock-variable-name-face */
+color: #b8860b;
+}
+.haskellcomment {
+/* font-lock-comment-face */
+color: #b22222;
+}
+.haskellcomment-delimiter {
+/* font-lock-comment-delimiter-face */
+color: #b22222;
+}
+.haskellfunction-name {
+/* font-lock-function-name-face */
+color: #0000ff;
+}
+.haskellkeyword {
+/* font-lock-keyword-face */
+color: #a020f0;
+}
+.haskellstring {
+/* font-lock-string-face */
+color: #bc8f8f;
+}
+.haskelltype {
+/* font-lock-type-face */
+color: #228b22;
+}
+.haskellvariable-name {
+/* font-lock-variable-name-face */
+color: #b8860b;
+}
+span.hpaste-chr, span.hpaste-conop, span.hpaste-num, span.hpaste-str, span.hpaste-varop { color: teal }
+span.hpaste-keyglyph, span.hpaste-keyword, span.hpaste-layout { color: #5736aB }
+span.hpaste-comment { color: #888 }
+.lispcomment {
+/* font-lock-comment-face */
+color: #b22222;
+}
+.lispcomment-delimiter {
+/* font-lock-comment-delimiter-face */
+color: #b22222;
+}
+.lispfunction-name {
+/* font-lock-function-name-face */
+color: #0000ff;
+}
+.lispkeyword {
+/* font-lock-keyword-face */
+color: #a020f0;
+}
+/* Layout
+----------------------------------------------- */
+#outer-wrapper {
+background-color:#473624;
+border-left:1px solid #332A24;
+border-right:1px solid #332A24;
+width:900px;
+margin:0px auto;
+padding:8px;
+text-align:center;
+font: normal normal 100% Georgia, Times New Roman,Sans-Serif;;
+}
+#main-top {
+width:900px;
+height:49px;
+background:#FFF3DB url("http://www2.blogblog.com/scribe/bg_paper_top.jpg") repeat-x top left;
+margin:0px;
+padding:0px;
+display:block;
+}
+#main-bot {
+width:900px;
+height:81px;
+background:#FFF3DB url("http://www.blogblog.com/scribe/bg_paper_bot.jpg") repeat-x top left;
+margin:0;
+padding:0;
+display:block;
+}
+#wrap2 {
+width:900px;
+background:#FFF3DB url("http://www1.blogblog.com/scribe/bg_paper_mid.jpg") repeat;
+margin-top: -14px;
+margin-right: 0px;
+margin-bottom: 0px;
+margin-left: 0px;
+text-align:left;
+display:block;
+}
+#wrap3 {
+padding:0 50px;
+}
+.Header {
+}
+h1 {
+margin:0;
+padding-top:0;
+padding-right:0;
+padding-bottom:6px;
+padding-left:0;
+font: normal normal 225% Georgia, Times New Roman,sans-serif;
+color: #612e00;
+}
+h1 a:link {
+text-decoration:none;
+color: #612e00;
+}
+h1 a:visited {
+text-decoration:none;
+}
+h1 a:hover {
+border:0;
+text-decoration:none;
+}
+.Header .description {
+margin:0;
+padding:0;
+line-height:1.5em;
+color: #29303B;
+font: italic normal 100% Georgia, Times New Roman, sans-serif;
+}
+#sidebar-wrapper {
+clear:left;
+}
+#main {
+width:630px;
+float:right;
+padding:8px 0;
+margin:0;
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;     /* fix for long non-text content breaking IE sidebar float */
+}
+#sidebar {
+width:150px;
+float:left;
+padding:8px 0;
+margin:0;
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;     /* fix for long non-text content breaking IE sidebar float */
+}
+#footer {
+clear:both;
+background:url("http://www.blogblog.com/scribe/divider.gif") no-repeat top left;
+padding-top:10px;
+_padding-top:6px; /* IE Windows target */
+}
+#footer p {
+line-height:1.5em;
+font-size:75%;
+}
+/* Typography :: Main entry
+----------------------------------------------- */
+h2.date-header {
+font-weight:normal;
+text-transform:uppercase;
+letter-spacing:.1em;
+font-size:90%;
+margin:0;
+padding:0;
+}
+.post {
+margin-top:8px;
+margin-right:0;
+margin-bottom:24px;
+margin-left:0;
+}
+.post h3 {
+font-weight:normal;
+font-size:140%;
+color:#1b0431;
+margin:0;
+padding:0;
+}
+.post h3 a {
+color: #1b0431;
+}
+.post-body p {
+line-height:1.5em;
+margin-top:0;
+margin-right:0;
+margin-bottom:.6em;
+margin-left:0;
+}
+.post-footer {
+font-family: Verdana, sans-serif;
+font-size:74%;
+border-top:1px solid #BFB186;
+padding-top:6px;
+}
+.post-footer a {
+margin-right: 6px;
+}
+.post ul {
+margin:0;
+padding:0;
+}
+.post li {
+line-height:1.5em;
+list-style:none;
+background:url("http://www.blogblog.com/scribe/list_icon.gif") no-repeat left .3em;
+vertical-align:top;
+padding-top: 0;
+padding-right: 0;
+padding-bottom: .6em;
+padding-left: 17px;
+margin:0;
+}
+.feed-links {
+clear: both;
+line-height: 2.5em;
+}
+#blog-pager-newer-link {
+float: left;
+}
+#blog-pager-older-link {
+float: right;
+}
+#blog-pager {
+text-align: center;
+}
+/* Typography :: Sidebar
+----------------------------------------------- */
+.sidebar h2 {
+margin:0;
+padding:0;
+color:#211104;
+font: normal normal 150% Georgia, Times New Roman,sans-serif;
+}
+.sidebar h2 img {
+margin-bottom:-4px;
+}
+.sidebar .widget {
+font-size:86%;
+margin-top:6px;
+margin-right:0;
+margin-bottom:12px;
+margin-left:0;
+padding:0;
+line-height: 1.4em;
+}
+.sidebar ul li {
+list-style: none;
+margin:0;
+}
+.sidebar ul {
+margin-left: 0;
+padding-left: 0;
+}
+/* Comments
+----------------------------------------------- */
+#comments {}
+#comments h4 {
+font-weight:normal;
+font-size:120%;
+color:#29303B;
+margin:0;
+padding:0;
+}
+#comments-block {
+line-height:1.5em;
+}
+.comment-author {
+background:url("http://www.blogblog.com/scribe/list_icon.gif") no-repeat 2px .35em;
+margin:.5em 0 0;
+padding-top:0;
+padding-right:0;
+padding-bottom:0;
+padding-left:20px;
+font-weight:bold;
+}
+.comment-body {
+margin:0;
+padding-top:0;
+padding-right:0;
+padding-bottom:0;
+padding-left:20px;
+}
+.comment-body p {
+font-size:100%;
+margin-top:0;
+margin-right:0;
+margin-bottom:.2em;
+margin-left:0;
+}
+.comment-footer {
+color:#29303B;
+font-size:74%;
+margin:0 0 10px;
+padding-top:0;
+padding-right:0;
+padding-bottom:.75em;
+padding-left:20px;
+}
+.comment-footer a:link {
+color:#473624;
+text-decoration:underline;
+}
+.comment-footer a:visited {
+color:#716E6C;
+text-decoration:underline;
+}
+.comment-footer a:hover {
+color:#956839;
+text-decoration:underline;
+}
+.comment-footer a:active {
+color:#956839;
+text-decoration:none;
+}
+.deleted-comment {
+font-style:italic;
+color:gray;
+}
+/* Profile
+----------------------------------------------- */
+#main .profile-data {
+display:inline;
+}
+.profile-datablock, .profile-textblock {
+margin-top:0;
+margin-right:0;
+margin-bottom:4px;
+margin-left:0;
+}
+.profile-data {
+margin:0;
+padding-top:0;
+padding-right:8px;
+padding-bottom:0;
+padding-left:0;
+text-transform:uppercase;
+letter-spacing:.1em;
+font-size:90%;
+color:#211104;
+}
+.profile-img {
+float: left;
+margin-top: 0;
+margin-right: 5px;
+margin-bottom: 5px;
+margin-left: 0;
+border:1px solid #A2907D;
+padding:2px;
+}
+#header .widget, #main .widget {
+margin-bottom:12px;
+padding-bottom:12px;
+}
+#header {
+background:url("http://www.blogblog.com/scribe/divider.gif") no-repeat bottom left;
+}
+/** Page structure tweaks for layout editor wireframe */
+body#layout #outer-wrapper {
+margin-top: 0;
+padding-top: 0;
+}
+body#layout #wrap2,
+body#layout #wrap3 {
+margin-top: 0;
+}
+body#layout #main-top {
+display:none;
+}
+
+--></style>
+<script type="text/javascript">var a="&m=1",d="(^|&)m=",e="?",f="?m=1";function g(){var b=window.location.href,c=b.split(e);switch(c.length){case 1:return b+f;case 2:return 0<=c[1].search(d)?null:b+a;default:return null}}var h=navigator.userAgent;if(-1!=h.indexOf("Mobile")&&-1!=h.indexOf("WebKit")&&-1==h.indexOf("iPad")||-1!=h.indexOf("Opera Mini")||-1!=h.indexOf("IEMobile")){var k=g();k&&window.location.replace(k)};
+</script><script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script></head>
+<body>
+<div class="navbar section" id="navbar"><div class="widget Navbar" data-version="1" id="Navbar1"><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"></div>
+<script type="text/javascript" src="Muad%60Dib:%20Executable%20BNF%20parser%20in%20Prolog_files/plusone.js"></script>
+<script type="text/javascript">
+        gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+          if (gapi.iframes && gapi.iframes.getContext) {
+            gapi.iframes.getContext().openChild({
+                url: 'https://www.blogger.com/navbar.g?targetBlogID\0752844521419334459144\46blogName\75Muad%60Dib\46publishMode\75PUBLISH_MODE_BLOGSPOT\46navbarType\75BLUE\46layoutType\75LAYOUTS\46searchRoot\75http://muaddibspace.blogspot.com/search\46blogLocale\75en_GB\46v\0752\46homepageUrl\75http://muaddibspace.blogspot.com/\46targetPostID\0754768166255128766141\46blogPostOrPageUrl\75http://muaddibspace.blogspot.com/2008/03/executable-bnf-parser-in-prolog.html\46vt\75-4787857797605952747',
+                where: document.getElementById("navbar-iframe-container"),
+                id: "navbar-iframe"
+            });
+          }
+        });
+      </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div id="outer-wrapper">
+<div id="main-top"></div>
+<!-- placeholder for image -->
+<div id="wrap2"><div id="wrap3">
+<div class="header section" id="header"><div class="widget Header" data-version="1" id="Header1">
+<div id="header-inner">
+<div class="titlewrapper">
+<h1 class="title">
+<a href="http://muaddibspace.blogspot.com/">Muad`Dib</a>
+</h1>
+</div>
+<div class="descriptionwrapper">
+<p class="description"><span>
+</span></p>
+</div>
+</div>
+</div></div>
+<div id="crosscol-wrapper" style="text-align:center">
+<div class="crosscol section" id="crosscol"></div>
+</div>
+<div id="sidebar-wrapper">
+<div class="sidebar section" id="sidebar"><div class="widget BlogArchive" data-version="1" id="BlogArchive1">
+<h2>Blog Archive</h2>
+<div class="widget-content">
+<div id="ArchiveList">
+<div id="BlogArchive1_ArchiveList">
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/search?updated-min=2010-01-01T00:00:00-08:00&amp;updated-max=2011-01-01T00:00:00-08:00&amp;max-results=4">
+2010
+</a>
+<span class="post-count" dir="ltr">(4)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2010_03_01_archive.html">
+March
+</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2010_02_01_archive.html">
+February
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/search?updated-min=2009-01-01T00:00:00-08:00&amp;updated-max=2010-01-01T00:00:00-08:00&amp;max-results=16">
+2009
+</a>
+<span class="post-count" dir="ltr">(16)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2009_12_01_archive.html">
+December
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2009_11_01_archive.html">
+November
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2009_10_01_archive.html">
+October
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2009_08_01_archive.html">
+August
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2009_04_01_archive.html">
+April
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2009_03_01_archive.html">
+March
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2009_02_01_archive.html">
+February
+</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2009_01_01_archive.html">
+January
+</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">
+
+        ▼&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/search?updated-min=2008-01-01T00:00:00-08:00&amp;updated-max=2009-01-01T00:00:00-08:00&amp;max-results=45">
+2008
+</a>
+<span class="post-count" dir="ltr">(45)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2008_12_01_archive.html">
+December
+</a>
+<span class="post-count" dir="ltr">(5)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2008_11_01_archive.html">
+November
+</a>
+<span class="post-count" dir="ltr">(6)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2008_10_01_archive.html">
+October
+</a>
+<span class="post-count" dir="ltr">(6)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2008_09_01_archive.html">
+September
+</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2008_08_01_archive.html">
+August
+</a>
+<span class="post-count" dir="ltr">(5)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2008_07_01_archive.html">
+July
+</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2008_06_01_archive.html">
+June
+</a>
+<span class="post-count" dir="ltr">(5)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2008_05_01_archive.html">
+May
+</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2008_04_01_archive.html">
+April
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">
+
+        ▼&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2008_03_01_archive.html">
+March
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+<ul class="posts">
+<li><a href="http://muaddibspace.blogspot.com/2008/03/executable-bnf-parser-in-prolog.html">Executable BNF parser in Prolog</a></li>
+<li><a href="http://muaddibspace.blogspot.com/2008/03/embedded-algol-like-language-in-prolog.html">An Embedded ALGOL-like language in Prolog</a></li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2008_02_01_archive.html">
+February
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://muaddibspace.blogspot.com/2008_01_01_archive.html">
+January
+</a>
+<span class="post-count" dir="ltr">(5)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=2844521419334459144&amp;widgetType=BlogArchive&amp;widgetId=BlogArchive1&amp;action=editWidget&amp;sectionId=sidebar" onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' target="configBlogArchive1" title="Edit">
+<img alt="" src="Muad%60Dib:%20Executable%20BNF%20parser%20in%20Prolog_files/icon18_wrench_allbkg.png" height="18" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget Profile" data-version="1" id="Profile1">
+<h2>About Me</h2>
+<div class="widget-content">
+<dl class="profile-datablock">
+<dt class="profile-data">
+<a class="profile-name-link g-profile" href="https://www.blogger.com/profile/01896828471974774438" rel="author" style="background-image: url(//www.blogger.com/img/logo-16.png);">
+Muad`Dib
+</a>
+</dt>
+</dl>
+<a class="profile-link" href="https://www.blogger.com/profile/01896828471974774438" rel="author">View my complete profile</a>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=2844521419334459144&amp;widgetType=Profile&amp;widgetId=Profile1&amp;action=editWidget&amp;sectionId=sidebar" onclick='return _WidgetManager._PopupConfig(document.getElementById("Profile1"));' target="configProfile1" title="Edit">
+<img alt="" src="Muad%60Dib:%20Executable%20BNF%20parser%20in%20Prolog_files/icon18_wrench_allbkg.png" height="18" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+</div>
+<div class="main section" id="main"><div class="widget Blog" data-version="1" id="Blog1">
+<div class="blog-posts hfeed">
+
+          <div class="date-outer">
+        
+<h2 class="date-header"><span>Friday, 21 March 2008</span></h2>
+
+          <div class="date-posts">
+        
+<div class="post-outer">
+<div class="post hentry uncustomized-post-template" itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+<meta content="2844521419334459144" itemprop="blogId">
+<meta content="4768166255128766141" itemprop="postId">
+<a name="4768166255128766141"></a>
+<h3 class="post-title entry-title" itemprop="name">
+Executable BNF parser in Prolog
+</h3>
+<div class="post-header">
+<div class="post-header-line-1"></div>
+</div>
+<div class="post-body entry-content" id="post-body-4768166255128766141" itemprop="description articleBody">
+<pre><br><span class="prolog2comment-delimiter">% </span><span class="prolog2comment">&lt;digit&gt; ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9<br></span><span class="prolog2comment-delimiter">% </span><span class="prolog2comment">&lt;sign&gt; ::= + | -<br></span><span class="prolog2comment-delimiter">% </span><span class="prolog2comment">&lt;number&gt; ::= [ &lt;sign&gt; ] &lt;digit&gt; { &lt;digit&gt; }<br></span><br><br>:- op(1120, xfx, ::=).<br>:- op(11, fx, &lt;), op(13, xf, &gt;).<br><br><br>&lt;digit&gt;  ::= 0 <span class="prolog2keyword">;</span> 1 <span class="prolog2keyword">;</span> 2 <span class="prolog2keyword">;</span> 3 <span class="prolog2keyword">;</span> 4 <span class="prolog2keyword">;</span> 5 <span class="prolog2keyword">;</span> 6 <span class="prolog2keyword">;</span> 7 <span class="prolog2keyword">;</span> 8 <span class="prolog2keyword">;</span> 9 .<br>&lt;sign&gt;   ::= (+) <span class="prolog2keyword">;</span> (-)                             .<br>&lt;number&gt; ::= <span class="prolog2keyword">[</span> &lt;sign&gt; <span class="prolog2keyword">]</span>, &lt;digit&gt;, <span class="prolog2keyword">{</span> &lt;digit&gt; <span class="prolog2keyword">}</span>      .<br><br>&lt;expr&gt;   ::= &lt;factor&gt;, <span class="prolog2keyword">{</span> ((+) <span class="prolog2keyword">;</span> (-)), &lt;factor&gt; <span class="prolog2keyword">}</span>   .<br>&lt;factor&gt; ::= &lt;term&gt;,   <span class="prolog2keyword">{</span> ((*) <span class="prolog2keyword">;</span> (/)), &lt;term&gt; <span class="prolog2keyword">}</span>     .<br>&lt;term&gt;   ::= <span class="prolog2string"><span class="prolog2string">'('</span></span>, &lt;expr&gt;, <span class="prolog2string"><span class="prolog2string">')'</span></span> <span class="prolog2keyword">;</span> &lt;number&gt;           .<br><br><br><span class="prolog2function-name">parse</span>(<span class="prolog2variable-name">Rule</span>)    --&gt; <span class="prolog2keyword">{</span> <span class="prolog2variable-name">Rule</span> ::= <span class="prolog2variable-name">Body</span> <span class="prolog2keyword">}</span>, parse(<span class="prolog2variable-name">Body</span>).<br><span class="prolog2function-name">parse</span>(<span class="prolog2variable-name">Atom</span>)    --&gt; <span class="prolog2keyword">{</span> atomic(<span class="prolog2variable-name">Atom</span>), atom_codes(<span class="prolog2variable-name">Atom</span>, <span class="prolog2variable-name">Codes</span>) <span class="prolog2keyword">}</span>, <span class="prolog2variable-name">Codes</span>.<br><br><span class="prolog2function-name">parse</span>((<span class="prolog2variable-name">X</span> , <span class="prolog2variable-name">Y</span>)) --&gt; parse(<span class="prolog2variable-name">X</span>), parse(<span class="prolog2variable-name">Y</span>).<br><br><span class="prolog2function-name">parse</span>((<span class="prolog2variable-name">X</span> <span class="prolog2keyword">;</span> <span class="prolog2variable-name">_</span>)) --&gt; parse(<span class="prolog2variable-name">X</span>).<br><span class="prolog2function-name">parse</span>((<span class="prolog2variable-name">_</span><span class="prolog2keyword">;</span><span class="prolog2variable-name">Y</span><span class="prolog2keyword">;</span><span class="prolog2variable-name">Z</span>)) --&gt; parse(<span class="prolog2variable-name">Y</span> <span class="prolog2keyword">;</span> <span class="prolog2variable-name">Z</span>).<br><span class="prolog2function-name">parse</span>((<span class="prolog2variable-name">_</span> <span class="prolog2keyword">;</span> <span class="prolog2variable-name">Z</span>)) --&gt; <span class="prolog2keyword">{</span> <span class="prolog2variable-name">Z</span> \= (<span class="prolog2variable-name">_</span> <span class="prolog2keyword">;</span> <span class="prolog2variable-name">_</span>) <span class="prolog2keyword">}</span>, parse(<span class="prolog2variable-name">Z</span>).<br><br><span class="prolog2function-name">parse</span>(<span class="prolog2keyword">[</span><span class="prolog2variable-name">X</span><span class="prolog2keyword">]</span>)     --&gt; parse(<span class="prolog2variable-name">X</span>).<br><span class="prolog2function-name">parse</span>(<span class="prolog2keyword">[</span><span class="prolog2variable-name">_</span><span class="prolog2keyword">]</span>)     --&gt; <span class="prolog2keyword">{}</span>.<br><br><span class="prolog2function-name">parse</span>(<span class="prolog2keyword">{</span><span class="prolog2variable-name">X</span><span class="prolog2keyword">}</span>)     --&gt; parse(<span class="prolog2variable-name">X</span>), parse(<span class="prolog2keyword">{</span><span class="prolog2variable-name">X</span><span class="prolog2keyword">}</span>).<br><span class="prolog2function-name">parse</span>(<span class="prolog2keyword">{</span><span class="prolog2variable-name">_</span><span class="prolog2keyword">}</span>)     --&gt; <span class="prolog2keyword">[]</span>.<br><br><br><span class="prolog2comment-delimiter">% </span><span class="prolog2comment">phrase(parse(&lt;expr&gt;), </span><span class="prolog2string"><span class="prolog2comment">"-5*(73+7)"</span></span><span class="prolog2comment">).<br></span><br></pre><br><br>Compare with a C implementation -- <a href="http://cvs.savannah.gnu.org/viewvc/bnf/bnf/src/grio.c?view=markup">http://cvs.savannah.gnu.org/viewvc/bnf/bnf/src/grio.c?view=markup</a>
+<div style="clear: both;"></div>
+</div>
+<div class="post-footer">
+<div class="post-footer-line post-footer-line-1">
+<span class="post-author vcard">
+Posted by
+<span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+<meta content="https://www.blogger.com/profile/01896828471974774438" itemprop="url">
+<a class="g-profile" href="https://www.blogger.com/profile/01896828471974774438" rel="author" title="author profile">
+<span itemprop="name">Muad`Dib</span>
+</a>
+</span>
+</span>
+<span class="post-timestamp">
+at
+<meta content="http://muaddibspace.blogspot.com/2008/03/executable-bnf-parser-in-prolog.html" itemprop="url">
+<a class="timestamp-link" href="http://muaddibspace.blogspot.com/2008/03/executable-bnf-parser-in-prolog.html" rel="bookmark" title="permanent link"><abbr class="published" itemprop="datePublished" title="2008-03-21T07:20:00-07:00">07:20</abbr></a>
+</span>
+<span class="reaction-buttons">
+</span>
+<span class="post-comment-link">
+</span>
+<span class="post-backlinks post-comment-link">
+</span>
+<span class="post-icons">
+<span class="item-control blog-admin pid-893591214">
+<a href="https://www.blogger.com/post-edit.g?blogID=2844521419334459144&amp;postID=4768166255128766141&amp;from=pencil" title="Edit Post">
+<img alt="" class="icon-action" src="Muad%60Dib:%20Executable%20BNF%20parser%20in%20Prolog_files/icon18_edit_allbkg.gif" height="18" width="18">
+</a>
+</span>
+</span>
+<div class="post-share-buttons goog-inline-block">
+</div>
+</div>
+<div class="post-footer-line post-footer-line-2">
+<span class="post-labels">
+Labels:
+<a href="http://muaddibspace.blogspot.com/search/label/BNF" rel="tag">BNF</a>,
+<a href="http://muaddibspace.blogspot.com/search/label/DCG" rel="tag">DCG</a>,
+<a href="http://muaddibspace.blogspot.com/search/label/EBNF" rel="tag">EBNF</a>,
+<a href="http://muaddibspace.blogspot.com/search/label/Prolog" rel="tag">Prolog</a>
+</span>
+</div>
+<div class="post-footer-line post-footer-line-3">
+<span class="post-location">
+</span>
+</div>
+</div>
+</div>
+<div class="comments" id="comments">
+<a name="comments"></a>
+<h4>1 comment:</h4>
+<div id="Blog1_comments-block-wrapper">
+<dl class="avatar-comment-indent" id="comments-block">
+<dt class="comment-author " id="c7461523812250936703">
+<a name="c7461523812250936703"></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="https://www.blogger.com/profile/13359107644117916904" rel="nofollow" onclick="" class="avatar-hovercard" id="av-0-13359107644117916904"><img src="Muad%60Dib:%20Executable%20BNF%20parser%20in%20Prolog_files/b16-rounded.gif" alt="" title="Vanesa" height="16" width="16">
+
+</a></span></div>
+<a href="https://www.blogger.com/profile/13359107644117916904" rel="nofollow">Vanesa</a>
+said...
+</dt>
+<dd class="comment-body" id="Blog1_cmt-7461523812250936703">
+<p>
+Thanks...
+</p>
+</dd>
+<dd class="comment-footer">
+<span class="comment-timestamp">
+<a href="http://muaddibspace.blogspot.com/2008/03/executable-bnf-parser-in-prolog.html?showComment=1283127819623#c7461523812250936703" title="comment permalink">
+29 August 2010 at 17:23
+</a>
+<span class="item-control blog-admin pid-1582067964">
+<a class="comment-delete" href="https://www.blogger.com/delete-comment.g?blogID=2844521419334459144&amp;postID=7461523812250936703" title="Delete Comment">
+<img src="Muad%60Dib:%20Executable%20BNF%20parser%20in%20Prolog_files/icon_delete13.gif">
+</a>
+</span>
+</span>
+</dd>
+</dl>
+</div>
+<p class="comment-footer">
+<a href="https://www.blogger.com/comment.g?blogID=2844521419334459144&amp;postID=4768166255128766141" onclick="">Post a Comment</a>
+</p>
+<div id="backlinks-container">
+<div id="Blog1_backlinks-container">
+</div>
+</div>
+</div>
+</div>
+
+        </div></div>
+      
+</div>
+<div class="blog-pager" id="blog-pager">
+<span id="blog-pager-newer-link">
+<a class="blog-pager-newer-link" href="http://muaddibspace.blogspot.com/2008/04/scheme-pattern-matching-with-syntax.html" id="Blog1_blog-pager-newer-link" title="Newer Post">Newer Post</a>
+</span>
+<span id="blog-pager-older-link">
+<a class="blog-pager-older-link" href="http://muaddibspace.blogspot.com/2008/03/embedded-algol-like-language-in-prolog.html" id="Blog1_blog-pager-older-link" title="Older Post">Older Post</a>
+</span>
+<a class="home-link" href="http://muaddibspace.blogspot.com/">Home</a>
+</div>
+<div class="clear"></div>
+<div class="post-feeds">
+<div class="feed-links">
+Subscribe to:
+<a class="feed-link" href="http://muaddibspace.blogspot.com/feeds/4768166255128766141/comments/default" target="_blank" type="application/atom+xml">Post Comments (Atom)</a>
+</div>
+</div>
+<script type="text/javascript">window.___gcfg = {'lang': 'en_GB'};</script>
+</div></div>
+<div id="footer-wrapper">
+<div class="footer section" id="footer"><div class="widget Gadget" data-version="1" id="Gadget1">
+There was an error in this gadget
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=2844521419334459144&amp;widgetType=Gadget&amp;widgetId=Gadget1&amp;action=editWidget&amp;sectionId=footer" onclick='return _WidgetManager._PopupConfig(document.getElementById("Gadget1"));' target="configGadget1" title="Edit">
+<img alt="" src="Muad%60Dib:%20Executable%20BNF%20parser%20in%20Prolog_files/icon18_wrench_allbkg.png" height="18" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget Label" data-version="1" id="Label1">
+<h2>Labels</h2>
+<div class="widget-content list-label-widget-content">
+<ul>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Coq">Coq</a>
+<span dir="ltr">(11)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Prolog">Prolog</a>
+<span dir="ltr">(11)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Haskell">Haskell</a>
+<span dir="ltr">(4)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Agda%202">Agda 2</a>
+<span dir="ltr">(3)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Lambda%20Calculus">Lambda Calculus</a>
+<span dir="ltr">(3)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Pattern%20Matching">Pattern Matching</a>
+<span dir="ltr">(3)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Scheme">Scheme</a>
+<span dir="ltr">(3)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/puzzle">puzzle</a>
+<span dir="ltr">(3)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/stack">stack</a>
+<span dir="ltr">(3)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Dependent%20Types">Dependent Types</a>
+<span dir="ltr">(2)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Fin">Fin</a>
+<span dir="ltr">(2)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/GADT">GADT</a>
+<span dir="ltr">(2)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/HOAS">HOAS</a>
+<span dir="ltr">(2)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/NbE">NbE</a>
+<span dir="ltr">(2)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/NoConfusion">NoConfusion</a>
+<span dir="ltr">(2)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Universes">Universes</a>
+<span dir="ltr">(2)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/beta">beta</a>
+<span dir="ltr">(2)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/constraint%20logic%20programming">constraint logic programming</a>
+<span dir="ltr">(2)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/decidable%20equality">decidable equality</a>
+<span dir="ltr">(2)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/eta">eta</a>
+<span dir="ltr">(2)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/ALGOL">ALGOL</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Ackermann">Ackermann</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/BNF">BNF</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Beta%20Function">Beta Function</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/C">C</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/CHR">CHR</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/CIC">CIC</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/CPS">CPS</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Cantor">Cantor</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Cardinality">Cardinality</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Chunks">Chunks</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Countable">Countable</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Curry-Howard">Curry-Howard</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/DCG">DCG</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Data.Dynamic">Data.Dynamic</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Delimeted%20Continuations">Delimeted Continuations</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Deprogramming">Deprogramming</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Diagonalization">Diagonalization</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/EBNF">EBNF</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/EDSL">EDSL</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Embedded">Embedded</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Extraction">Extraction</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/GADT%20nonsense">GADT nonsense</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Generate%20and%20Test">Generate and Test</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Group">Group</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/G%C3%B6del">Gödel</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Hoare%20Logic">Hoare Logic</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Huffman">Huffman</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Inducitive%20Families">Inducitive Families</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Induction">Induction</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Induction-Recursion">Induction-Recursion</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Infinity">Infinity</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Lisp">Lisp</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Magic%20Square">Magic Square</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Monads">Monads</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/PTS">PTS</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Parser%20combinators">Parser combinators</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Parsing">Parsing</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Permutation">Permutation</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Programming">Programming</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Quest%20for%20Chunks">Quest for Chunks</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/RLE">RLE</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/SET">SET</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/SK">SK</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/STLC">STLC</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Semigroup">Semigroup</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Shift%2FReset">Shift/Reset</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Specification">Specification</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Strictly%20Positive%20Family">Strictly Positive Family</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Subexpression%20elimination">Subexpression elimination</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Type%20Theory">Type Theory</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Type%20inference">Type inference</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Variadic">Variadic</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/Well%20Founded%20Relation">Well Founded Relation</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/XOR">XOR</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/algebra">algebra</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/badger">badger</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/compiler">compiler</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/constraint%20programming">constraint programming</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/correctness">correctness</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/correctness%20proof">correctness proof</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/counting">counting</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/declarative">declarative</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/dependent%20destruct">dependent destruct</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/dependently%20typed%20programming">dependently typed programming</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/differentation">differentation</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/foldl">foldl</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/foldr">foldr</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/heap">heap</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/inhabitants">inhabitants</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/interpreter">interpreter</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/irritated">irritated</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/java">java</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/lazy%20evaluation">lazy evaluation</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/lazy%20evalution">lazy evalution</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/let-syntax">let-syntax</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/lights%20out">lights out</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/ltac">ltac</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/metatheory">metatheory</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/model%20theory">model theory</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/mutation">mutation</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/pigeonhole%20principle">pigeonhole principle</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/prime">prime</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/prime%20seive">prime seive</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/pure%20type%20systems">pure type systems</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/recursion">recursion</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/run%20length%20encoding">run length encoding</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/semantics">semantics</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/show%20instance">show instance</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/single%20constructor%20inductives">single constructor inductives</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/solving">solving</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/syntax%20coloring">syntax coloring</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/syntax-rules">syntax-rules</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/tail%20call%20optimization">tail call optimization</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/tauto">tauto</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/type%20checker">type checker</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/type%20checking">type checking</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/zeta">zeta</a>
+<span dir="ltr">(1)</span>
+</li>
+<li>
+<a dir="ltr" href="http://muaddibspace.blogspot.com/search/label/zipper">zipper</a>
+<span dir="ltr">(1)</span>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=2844521419334459144&amp;widgetType=Label&amp;widgetId=Label1&amp;action=editWidget&amp;sectionId=footer" onclick='return _WidgetManager._PopupConfig(document.getElementById("Label1"));' target="configLabel1" title="Edit">
+<img alt="" src="Muad%60Dib:%20Executable%20BNF%20parser%20in%20Prolog_files/icon18_wrench_allbkg.png" height="18" width="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+</div>
+</div></div>
+<div id="main-bot"></div>
+<!-- placeholder for image -->
+</div>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="Muad%60Dib:%20Executable%20BNF%20parser%20in%20Prolog_files/2129857996-widgets.js"></script>
+<script type="text/javascript" src="Muad%60Dib:%20Executable%20BNF%20parser%20in%20Prolog_files/plusone.js"></script>
+<script type="text/javascript">
+if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV1";window['blogger_blog_id'] = '2844521419334459144';BLOG_attachCsiOnload('item_'); }_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d2844521419334459144','//muaddibspace.blogspot.com/2008/03/executable-bnf-parser-in-prolog.html','2844521419334459144');
+_WidgetManager._SetDataContext([{'name': 'options', 'data': {}}, {'name': 'blog', 'data': {'blogId': '2844521419334459144', 'bloggerUrl': 'https://www.blogger.com', 'title': 'Muad`Dib', 'pageType': 'item', 'postId': '4768166255128766141', 'url': 'http://muaddibspace.blogspot.com/2008/03/executable-bnf-parser-in-prolog.html', 'canonicalUrl': 'http://muaddibspace.blogspot.com/2008/03/executable-bnf-parser-in-prolog.html', 'homepageUrl': 'http://muaddibspace.blogspot.com/', 'canonicalHomepageUrl': 'http://muaddibspace.blogspot.com/', 'blogspotFaviconUrl': 'http://muaddibspace.blogspot.com/favicon.ico', 'enabledCommentProfileImages': true, 'adultContent': false, 'analyticsAccountNumber': '', 'useUniversalAnalytics': false, 'pageName': 'Executable BNF parser in Prolog', 'pageTitle': 'Muad`Dib: Executable BNF parser in Prolog', 'encoding': 'UTF-8', 'locale': 'en_GB', 'localeUnderscoreDelimited': 'en_gb', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Muad`Dib - Atom\42 href\75\42http://muaddibspace.blogspot.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42Muad`Dib - RSS\42 href\75\42http://muaddibspace.blogspot.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42Muad`Dib - Atom\42 href\75\42https://www.blogger.com/feeds/2844521419334459144/posts/default\42 /\76\n\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Muad`Dib - Atom\42 href\75\42http://muaddibspace.blogspot.com/feeds/4768166255128766141/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { (function(){function c(a){this.t\75{};this.tick\75function(a,c,b){var d\75void 0!\75b?b:(new Date).getTime();this.t[a]\75[d,c];if(void 0\75\75b)try{window.console.timeStamp(\42CSI/\42+a)}catch(e){}};this.tick(\42start\42,null,a)}var a;window.performance\46\46(a\75window.performance.timing);var h\75a?new c(a.responseStart):new c;window.jstiming\75{Timer:c,load:h};if(a){var b\75a.navigationStart,e\75a.responseStart;0\74b\46\46e\76\75b\46\46(window.jstiming.srt\75e-b)}if(a){var d\75window.jstiming.load;0\74b\46\46e\76\75b\46\46(d.tick(\42_wtsrt\42,void 0,b),d.tick(\42wtsrt_\42,\n\42_wtsrt\42,e),d.tick(\42tbsd_\42,\42wtsrt_\42))}try{a\75null,window.chrome\46\46window.chrome.csi\46\46(a\75Math.floor(window.chrome.csi().pageT),d\46\0460\74b\46\46(d.tick(\42_tbnd\42,void 0,window.chrome.csi().startE),d.tick(\42tbnd_\42,\42_tbnd\42,b))),null\75\75a\46\46window.gtbExternal\46\46(a\75window.gtbExternal.pageT()),null\75\75a\46\46window.external\46\46(a\75window.external.pageT,d\46\0460\74b\46\46(d.tick(\42_tbnd\42,void 0,window.external.startE),d.tick(\42tbnd_\42,\42_tbnd\42,b))),a\46\46(window.jstiming.pt\75a)}catch(k){}})();window.tickAboveFold\75function(c){var a\0750;if(c.offsetParent){do a+\75c.offsetTop;while(c\75c.offsetParent)}c\75a;750\76\75c\46\46window.jstiming.load.tick(\42aft\42)};var f\75!1;function g(){f||(f\75!0,window.jstiming.load.tick(\42firstScrollTime\42))}window.addEventListener?window.addEventListener(\42scroll\42,g,!1):window.attachEvent(\42onscroll\42,g);\n })();\74/script\076', 'mobileHeadScript': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/fc5ad96b65ff2120', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'sf': 'n', 'tf': ''}}, {'name': 'features', 'data': {'widgetVisibility': true}}, {'name': 'messages', 'data': {'adsGoHere': 'Ads go here', 'archive': 'Archive', 'authorSaid': '%1 said...', 'authorSaidWithLink': '\74a href\75\42%2\42 rel\75\42nofollow\42\76%1\74/a\76 said...', 'blogArchive': 'Blog Archive', 'by': 'By', 'byAuthor': 'By %1', 'byAuthorLink': 'By \74a href\75\42%2\42\76%1\74/a\076', 'configurationRequired': 'Configuration required', 'deleteBacklink': 'Delete Backlink', 'deleteComment': 'Delete Comment', 'edit': 'Edit', 'emailAddress': 'Email Address', 'getEmailNotifications': 'Get email notifications', 'hidden': 'Hidden', 'keepReading': 'Keep reading', 'labels': 'Labels', 'loadMorePosts': 'Load more posts', 'loading': 'Loading...', 'myBlogList': 'My Blog List', 'myFavoriteSites': 'My favourite sites', 'newer': 'Newer', 'newerPosts': 'Newer Posts', 'newest': 'Newest', 'noResultsFound': 'No results found', 'noTitle': 'No title', 'numberOfComments': '{numComments,plural, \0750{No comments}\0751{1 comment}other{# comments}}', 'older': 'Older', 'olderPosts': 'Older Posts', 'oldest': 'Oldest', 'onlyTeamMembersCanComment': 'Note: only a member of this blog may post a comment.', 'popularPosts': 'Popular Posts', 'popularPostsFromThisBlog': 'Popular posts from this blog', 'postAComment': 'Post a Comment', 'postedBy': 'Posted by', 'postedByAuthor': 'Posted by %1', 'postedByAuthorLink': 'Posted by \74a href\75\42%2\42\76%1\74/a\076', 'readMore': 'Read more', 'reportAbuse': 'Report Abuse', 'search': 'Search', 'searchBlog': 'Search blog', 'share': 'Share', 'showAll': 'Show All', 'showLess': 'Show less', 'showMore': 'Show more', 'someOfMyFavoriteSites': 'Some of my favourite sites', 'subscribe': 'Subscribe', 'subscribeTo': 'Subscribe to:', 'subscribeToThisBlog': 'Subscribe to this blog', 'theresNothingHere': 'There\47s nothing here.', 'viewAll': 'View all', 'visible': 'Visible', 'visitProfile': 'Visit profile', 'widgetNotAvailableInPreview': 'This content is not available in blog preview.', 'widgetNotAvailableOnHttps': 'This content isn\47t available over encrypted connections yet.'}}, {'name': 'skin', 'data': {'vars': {'pageHeaderColor': '#612e00', 'sidebarHeaderColor': '#211104', 'endSide': 'right', 'blogDescriptionFont': 'italic normal 100% Georgia, Times New Roman, sans-serif', 'headerFont': 'normal normal 150% Georgia, Times New Roman,sans-serif', 'pageTitleFont': 'normal normal 225% Georgia, Times New Roman,sans-serif', 'visitedLinkColor': '#956839', 'bodyFont': 'normal normal 100% Georgia, Times New Roman,Sans-Serif;', 'blogDescriptionColor': '#29303B', 'linkColor': '#473624', 'startSide': 'left', 'textColor': '#29303b', 'postTitleColor': '#1b0431'}, 'override': ''}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\75classic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\75flipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\75magazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\75mosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\75sidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\75snapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\75timeslide'}, 'title': 'Executable BNF parser in Prolog', 'description': ' % \46lt;digit\46gt; ::\75 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 % \46lt;sign\46gt; ::\75 + | - % \46lt;number\46gt; ::\75 [ \46lt;sign\46gt; ] \46lt;digit\46gt; { \46l...'}}]);
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': 'Loading...'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile1', 'sidebar', null, document.getElementById('Profile1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/403601619-lbx__en_gb.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/306752634-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_GadgetView', new _WidgetInfo('Gadget1', 'footer', null, document.getElementById('Gadget1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'footer', null, document.getElementById('Label1'), {}, 'displayModeFull'));
+</script>
+
+</body></html>

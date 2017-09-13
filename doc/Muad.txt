@@ -1,0 +1,231 @@
+Muad`Dib
+
+Blog Archive
+
+  • ►  2010 (4)
+      □ ►  March (3)
+      □ ►  February (1)
+
+  • ►  2009 (16)
+      □ ►  December (1)
+      □ ►  November (1)
+      □ ►  October (2)
+      □ ►  August (1)
+      □ ►  April (1)
+      □ ►  March (2)
+      □ ►  February (4)
+      □ ►  January (4)
+
+  • ▼  2008 (45)
+      □ ►  December (5)
+      □ ►  November (6)
+      □ ►  October (6)
+      □ ►  September (3)
+      □ ►  August (5)
+      □ ►  July (3)
+      □ ►  June (5)
+      □ ►  May (3)
+      □ ►  April (1)
+      □ ▼  March (2)
+          ☆ Executable BNF parser in Prolog
+          ☆ An Embedded ALGOL-like language in Prolog
+      □ ►  February (1)
+      □ ►  January (5)
+
+●
+
+About Me
+
+Muad`Dib
+
+View my complete profile
+●
+
+Friday, 21 March 2008
+
+Executable BNF parser in Prolog
+
+
+% <digit> ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+% <sign> ::= + | -
+% <number> ::= [ <sign> ] <digit> { <digit> }
+
+
+:- op(1120, xfx, ::=).
+:- op(11, fx, <), op(13, xf, >).
+
+
+<digit>  ::= 0 ; 1 ; 2 ; 3 ; 4 ; 5 ; 6 ; 7 ; 8 ; 9 .
+<sign>   ::= (+) ; (-)                             .
+<number> ::= [ <sign> ], <digit>, { <digit> }      .
+
+<expr>   ::= <factor>, { ((+) ; (-)), <factor> }   .
+<factor> ::= <term>,   { ((*) ; (/)), <term> }     .
+<term>   ::= '(', <expr>, ')' ; <number>           .
+
+
+parse(Rule)    --> { Rule ::= Body }, parse(Body).
+parse(Atom)    --> { atomic(Atom), atom_codes(Atom, Codes) }, Codes.
+
+parse((X , Y)) --> parse(X), parse(Y).
+
+parse((X ; _)) --> parse(X).
+parse((_;Y;Z)) --> parse(Y ; Z).
+parse((_ ; Z)) --> { Z \= (_ ; _) }, parse(Z).
+
+parse([X])     --> parse(X).
+parse([_])     --> {}.
+
+parse({X})     --> parse(X), parse({X}).
+parse({_})     --> [].
+
+
+% phrase(parse(<expr>), "-5*(73+7)").
+
+
+
+
+Compare with a C implementation -- http://cvs.savannah.gnu.org/viewvc/bnf/bnf/
+src/grio.c?view=markup
+Posted by Muad`Dib at 07:20 ●
+Labels: BNF, DCG, EBNF, Prolog
+
+1 comment:
+
+●
+    Vanesa said...
+   
+    Thanks...
+
+    29 August 2010 at 17:23 [icon_delet]
+
+Post a Comment
+
+Newer Post Older Post Home
+Subscribe to: Post Comments (Atom)
+There was an error in this gadget
+●
+
+Labels
+
+  • Coq (11)
+  • Prolog (11)
+  • Haskell (4)
+  • Agda 2 (3)
+  • Lambda Calculus (3)
+  • Pattern Matching (3)
+  • Scheme (3)
+  • puzzle (3)
+  • stack (3)
+  • Dependent Types (2)
+  • Fin (2)
+  • GADT (2)
+  • HOAS (2)
+  • NbE (2)
+  • NoConfusion (2)
+  • Universes (2)
+  • beta (2)
+  • constraint logic programming (2)
+  • decidable equality (2)
+  • eta (2)
+  • ALGOL (1)
+  • Ackermann (1)
+  • BNF (1)
+  • Beta Function (1)
+  • C (1)
+  • CHR (1)
+  • CIC (1)
+  • CPS (1)
+  • Cantor (1)
+  • Cardinality (1)
+  • Chunks (1)
+  • Countable (1)
+  • Curry-Howard (1)
+  • DCG (1)
+  • Data.Dynamic (1)
+  • Delimeted Continuations (1)
+  • Deprogramming (1)
+  • Diagonalization (1)
+  • EBNF (1)
+  • EDSL (1)
+  • Embedded (1)
+  • Extraction (1)
+  • GADT nonsense (1)
+  • Generate and Test (1)
+  • Group (1)
+  • Gödel (1)
+  • Hoare Logic (1)
+  • Huffman (1)
+  • Inducitive Families (1)
+  • Induction (1)
+  • Induction-Recursion (1)
+  • Infinity (1)
+  • Lisp (1)
+  • Magic Square (1)
+  • Monads (1)
+  • PTS (1)
+  • Parser combinators (1)
+  • Parsing (1)
+  • Permutation (1)
+  • Programming (1)
+  • Quest for Chunks (1)
+  • RLE (1)
+  • SET (1)
+  • SK (1)
+  • STLC (1)
+  • Semigroup (1)
+  • Shift/Reset (1)
+  • Specification (1)
+  • Strictly Positive Family (1)
+  • Subexpression elimination (1)
+  • Type Theory (1)
+  • Type inference (1)
+  • Variadic (1)
+  • Well Founded Relation (1)
+  • XOR (1)
+  • algebra (1)
+  • badger (1)
+  • compiler (1)
+  • constraint programming (1)
+  • correctness (1)
+  • correctness proof (1)
+  • counting (1)
+  • declarative (1)
+  • dependent destruct (1)
+  • dependently typed programming (1)
+  • differentation (1)
+  • foldl (1)
+  • foldr (1)
+  • heap (1)
+  • inhabitants (1)
+  • interpreter (1)
+  • irritated (1)
+  • java (1)
+  • lazy evaluation (1)
+  • lazy evalution (1)
+  • let-syntax (1)
+  • lights out (1)
+  • ltac (1)
+  • metatheory (1)
+  • model theory (1)
+  • mutation (1)
+  • pigeonhole principle (1)
+  • prime (1)
+  • prime seive (1)
+  • pure type systems (1)
+  • recursion (1)
+  • run length encoding (1)
+  • semantics (1)
+  • show instance (1)
+  • single constructor inductives (1)
+  • solving (1)
+  • syntax coloring (1)
+  • syntax-rules (1)
+  • tail call optimization (1)
+  • tauto (1)
+  • type checker (1)
+  • type checking (1)
+  • zeta (1)
+  • zipper (1)
+
+●

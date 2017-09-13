@@ -1,0 +1,1329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+<!--     <base href="http://www.inductive-programming.org/" /> -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <title>inductive-programming.org &#8226; The IP Community | Systems</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/css/ip_master.css" rel="stylesheet" type="text/css" />
+    <link href="/css/screen/javascript.css" rel="stylesheet" type="text/css" />
+
+   <style type="text/css">
+      #toc-resources .subsub { display:block; }
+      #submenu li#toc-resources ul.subsub li#toc-systems a { 
+      width: 100%; 
+      padding: 3px 0px 3px 40px; 
+      font-weight: bold; 
+      color: #fff;
+      background-color:#aab;
+      border-bottom: 1px #eee solid;
+}
+
+	      
+    </style>
+<!--[if lte IE 7]>
+    <link href="/css/patches/patch_ip.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<script type="text/javascript" src="javascript/tools.js"></script>
+  </head>
+      <body>
+	<script type="text/javascript" src="javascript/wz_tooltip.js"></script>
+	
+	<div id="page_margins">
+	  <div id="page">	
+<!-- begin: header #header -->
+	    	  <div id="header">
+	    <div class="logo">
+	      <img 
+		alt="Logo Inductive Programming" 
+		src="/images/IP-Logo.png" />
+	    </div>
+	    <div class="fibs">  
+	      <table class="def">
+		<tr>
+		  <td>f(0)</td><td>=</td><td>1</td>
+		</tr>
+		<tr>
+		  <td>f(1)</td><td>=</td><td>1</td>
+		</tr>
+		<tr>
+		  <td>f(x)</td><td>=</td><td>f(x-1)+<br />f(x-2)</td>
+		</tr>
+	      </table>
+	      <div class="folge">
+		1 , 1 , 2 , 3 , 5 , 8 , 1 3 , 2 1 , 3 4 , 5 5 , 8 9 , 1 4 4
+		, 2 3 3 , 3 7 7 , 6 1 0 , 9 8 7 , 1 5 9 7 , 2 5 8 4 , 4 1 8
+		1 , 6 7 6 5 , 1 0 9 4 6 , 1 7 7 1 1 , 2 8 6 5 7 , 4 6 3 6 8
+		, 7 5 0 2 5 , 1 2 1 3 9 3 , 1 9 6 4 1 8 , 3 1 7 8 1 1 , 5 1
+		4 2 2 9 , 8 3 2 0 4 0 , 1 3 4 6 2 6 9 , 2 1 7 8 3 0 9 , 3 5
+		2 4 5 7 8 , 5 7 0 2 8 8 7 , 9 2 2 7 4 6 5 , 1 4 9 3 0 3 5 2
+		, 2 4 1 5 7 8 1 7 , 3 9 0 8 8 1 6 9 , 6 3 2 4 5 9 8 6 , 1 0
+		2 3 3 4 1 5 5 , 1 6 5 5 8 0 1 4 1 , 2 6 7 9 1 4 2 9 6 , 4 3
+		3 4 9 4 4 3 7 , 7 0 1 4 0 8 7 3 3 , 1 1 3 4 9 0 3 1 7 0 , 1
+		8 3 6 3 1 1 9 0 3 , 2 9 7 1 2 1 5 0 7 3 , 4 8 0 7 5 2 6 9 7
+		6 , 7 7 7 8 7 4 2 0 4 9 , 1 2 5 8 6 2 6 9 0 2 5 , 2 0 3 6 5
+		0 1 1 0 7 4 , 3 2 9 5 1 2 8 0 0 9 9 , 5 3 3 1 6 2 9 1 1 7 3
+		, 8 6 2 6 7 5 7 1 2 7 2 , 1 3 9 5 8 3 8 6 2 4 4 5 , 2 2 5 8
+		5 1 4 3 3 7 1 7 , 3 6 5 4 3 5 2 9 6 1 6 2 , 5 9 1 2 8 6 7 2
+		9 8 7 9 , 9 5 6 7 2 2 0 2 6 0 4 1 , 1 5 4 8 0 0 8 7 5 5 9 2
+		0 , 2 5 0 4 7 3 0 7 8 1 9 6 1 , 4 0 5 2 7 3 9 5 3 7 8 8 1 ,
+		6 5 5 7 4 7 0 3 1 9 8 4 2 , 1 0 6 1 0 2 0 9 8 5 7 7 2 3 , 1
+		7 1 6 7 6 8 0 1 7 7 5 6 5 , 2 7 7 7 7 8 9 0 0 3 5 2 8 8 , 4
+		4 9 4 5 5 7 0 2 1 2 8 5 3 , 7 2 7 2 3 4 6 0 2 4 8 1 4 1 , 1
+		1 7 6 6 9 0 3 0 4 6 0 9 9 4 , 1 9 0 3 9 2 4 9 0 7 0 9 1 3 5
+		, 3 0 8 0 6 1 5 2 1 1 7 0 1 2 9 , 4 9 8 4 5 4 0 1 1 8 7 9 2
+		6 4 , 8 0 6 5 1 5 5 3 3 0 4 9 3 9 3 , 1 3 0 4 9 6 9 5 4 4 9
+		2 8 6 5 7 , 2 1 1 1 4 8 5 0 7 7 9 7 8 0 5 0 3 4 1 6 4 5 4 6
+		2 2 9 0 6 7 0 7 , 5 5 2 7 9 3 9 7 0 0 8 8 4 7 5 7 , 8 9 4 4
+		3 9 4 3 2 3 7 9 1 4 6 4 , 1 4 4 7 2 3 3 4 0 2 4 6 7 6 2 2 1
+		2 3 4 1 6 7 2 8 3 4 8 4 6 7 6 8 5 , 3 7 8 8 9 0 6 2 3 7 3 1
+		4 3 9 0 6 6 1 3 0 5 7 9 0 7 2 1 6 1 1 5 9 1 , 9 9 1 9 4 8 5
+		3 0 9 4 7 5 5 4 9 7 , 1 6 0 5 0 0 6 4 3 8 1 6 3 6 7 0 8 8 ,
+		2 5 9 6 9 5 4 9 6 9 1 1 1 2 2 5 8 5 , 4 2 0 1 9 6 1 4 0 7 2
+		7 4 8 9 6 7 3 , 6 7 9 8 9 1 6 3 7 6 3 8 6 1 2 2 5 8 , 1 1 0
+		0 0 8 7 7 7 8 3 6 6 1 0 1 9 3 1 , 1 7 7 9 9 7 9 4 1 6 0 0 4
+		7 1 4 1 8 9 , 2 8 8 0 0 6 7 1 9 4 3 7 0 8 1 6 1 2 0 , 4 6 6
+		0 0 4 6 6 1 0 3 7 5 5 3 0 3 0 9 , 7 5 4 0 1 1 3 8 0 4 7 4 6
+		3 4 6 4 2 9 , 1 2 2 0 0 1 6 0 4 1 5 1 2 1 8 7 6 7 3 8 , 1 9
+		7 4 0 2 7 4 2 1 9 8 6 8 2 2 3 1 6 7 , 3 1 9 4 0 4 3 4 6 3 4
+		9 9 0 0 9 9 9 0 5 , 5 1 6 8 0 7 0 8 8 5 4 8 5 8 3 2 3 0 7 2
+		, 8 3 6 2 1 1 4 3 4 8 9 8 4 8 4 2 2 9 7 7 , 1 3 5 3 0 1 8 5
+		2 3 4 4 7 0 6 7 4 6 0 4 9 , 2 1 8 9 2 2 9 9 5 8 3 4 5 5 5 1
+		6 9 0 2 6 , 3 5 4 2 2 4 8 4 8 1 7 9 2 6 1 9 1 5 0 7 5 , . . 
+		. .
+	      </div>
+	      
+	    </div>
+	    <h1>inductive-programming.org</h1>
+	  </div>
+
+	  <div id="nav"> 
+	    <a id="navigation" name="navigation"></a>
+	    <div id="nav_main" > 
+	      <ul class="right">
+		<li class="right"><a href="mailinglist.html">Mailing List</a></li>
+		<li class="right"><a href="contact.html">Contact</a></li>
+		<li class="right"><a href="impressum.html">Impressum</a></li>
+	      </ul>
+	    </div>
+	  </div>
+	
+<!-- end: header -->	
+	  
+<!-- begin: main content area #main -->
+	    <div id="main">
+<!-- begin: #col1 - first float column -->
+	      	    <div id="col1">
+	      <div id="col1_content" class="clearfix">
+		<h2>Content</h2>
+		<ul id="submenu">	
+		  <li id="toc-index"><a href="index.html">Main</a></li>
+		  <li id="toc-intro"><a href="intro.html">Introduction</a></li>
+		  <li id="toc-people"><a href="people.html">People</a></li>
+		  <li id="toc-resources"><a href="resources.html">Resources</a>
+	            <ul class="subsub">
+	              <li id="toc-systems"><a href="ip-systems.html">Systems</a></li>
+	              <li id="toc-repository"><a href="repository.html">Repository</a></li>
+	              <li id="toc-publications"><a href="publications.html">Publications</a></li>
+				  <li id="toc-tutorials"><a href="tutorials.html">Tutorials</a></li>
+	            </ul>
+                  </li>
+		  <li id="toc-events"><a href="events.html">Events</a></li>
+		  <li id="toc-links"><a href="links.html">Links</a></li>
+		  <li id="toc-news"><a href="news.html">News</a></li>
+		</ul>
+	      </div>
+	    </div>	
+<!-- end: #col1 -->
+		
+<!-- begin: #col2 second float column -->
+	      <div id="col2">
+		<div id="col2_content" class="clearfix">
+		  <div id="ticker">
+		    <h2>News</h2>
+		      <div class="news_box">
+    <a id="news16-03-24" name="news16-03-24"></a>
+    <div class="news_item">
+      <h5>RuleML Blog Report about Dagstuhl Seminar AAIP'16</h5>
+      <p>AAIP'16 in the RuleML Blog<br/><a href="http://via.aayo.ws/YmI4J">http://via.aayo.ws/YmI4J</a>
+      </p>
+    </div>
+    <div class="news_link">
+      <a href="/news.html#news16-03-24">[more]</a>
+    </div>
+    <div class="news_date">24.03.2016</div>
+  </div>  
+  <div class="news_box">
+    <a id="news15-11-01" name="news15-11-01"></a>
+    <div class="news_item">
+      <h5>CACM on Inductive Programming</h5>
+      <p>
+     	The review article &ldquo;Inductive programming meets the real world&rdquo; by 
+     	<a href="http://research.microsoft.com/en-us/um/people/sumitg/" target="extpeople">Gulwani</a>, 
+      <a href="http://www.dsic.upv.es/~jorallo/indexang.htm" target="extpeople">Hern&aacute;ndez-Orallo</a>, 
+     	<a href="http://emanuel.kitzelmann.org/" target="extpeople">Kitzelmann</a>, 
+     	<a href="http://www.doc.ic.ac.uk/~shm/" target="extpeople">Muggleton</a>, 
+     	<a href="http://www.uni-bamberg.de/kogsys/schmid" target="extpeople">Schmid</a>, and 
+	   <a href="http://research.microsoft.com/users/zorn" target="extpeople">Zorn</a> 
+	   has been published in the Communications of the ACM, Vol. 58 No. 11, Pages 90-99. 10.1145/2736282<br>
+see <a href="http://cacm.acm.org/magazines/2015/11/193326-inductive-programming-meets-the-real-world/fulltext">fulltext</a>
+      </p>
+    </div>
+    <div class="news_link">
+      <a href="/news.html#news15-11-01">[more]</a>
+    </div>
+    <div class="news_date">1.11.2015</div>
+  </div>   
+  <div class="news_box">
+    <a id="news15-01-15" name="news15-01-15"></a>
+    <div class="news_item">
+      <h5>Wikipedia Page on Inductive Programming</h5>
+      <p>
+      <a href="http://www.dsic.upv.es/~jorallo/indexang.htm" target="extpeople">Jos&eacute; Hern&aacute;ndez-Orallo</a> and <a href="http://www.uni-bamberg.de/kogsys/schmid" target="extpeople">Ute Schmid</a> created Wikipedia articles for <a href="http://en.wikipedia.org/wiki/Inductive_programming" target="_blank">Inductive Programming</a> and <a href="http://en.wikipedia.org/wiki/Inductive_functional_programming" target="_blank">Inductive Functional Programming</a>.
+      </p>
+    </div>
+    <div class="news_link">
+      <a href="/news.html#news15-01-15">[more]</a>
+    </div>
+    <div class="news_date">15.01.2015</div>
+  </div>
+		      <div class="news_box">
+    <a id="news07-10-14" name="news07-10-14"></a>
+    <div class="news_item">
+      <h5>Dagstuhl Seminar "Approaches and Applications of Inductive Programming"</h5>
+      <p>
+      <a href="http://www.dsic.upv.es/~jorallo/indexang.htm" target="extpeople">Jos&eacute; Hern&aacute;ndez-Orallo</a> (Polytechnic University of Valencia, ES), 
+	  <a href="http://www.doc.ic.ac.uk/~shm/" target="extpeople">Stephen H. Muggleton</a> (Imperial College London, GB), 
+	  <a href="http://www.uni-bamberg.de/kogsys/schmid" target="extpeople">Ute Schmid</a> (Universit&auml;t Bamberg, DE) and 
+	  <a href="http://research.microsoft.com/users/zorn" target="extpeople">Benjamin Zorn</a> (Microsoft Research - Redmond, US) 
+	  organize Dagstuhl Seminar 15442 "Approaches and Applications of Inductive Programming" scheduled for October 25 to 30, 2015.
+      </p>
+      <p>The seminar is a continuation of the <a href="http://www.cogsys.wiai.uni-bamberg.de/aaip/" target="_blank">AAIP workshop series</a>.</p>
+	  <p>Please visit the <a href="http://www.dagstuhl.de/de/programm/kalender/semhp/?semnr=15442 target="_blank">AAIP  15 Homepage</a>.</p>
+    </div>
+    <div class="news_link">
+      <a href="/news.html#news07-10-14">[more]</a>
+    </div>
+    <div class="news_date">07.10.2014</div>
+  </div>
+
+  <div class="news_box">
+    <a id="news31-03-14" name="news31-03-14"></a>
+    <div class="news_item">
+      <h5>Report of Dagstuhl Seminar</h5>
+      <p>
+      We're pleased to inform you that the report of Dagstuhl Seminar 13502 is now published as part of the periodical <a href="http://www.dagstuhl.de/dagrep" target="_blank">Dagstuhl Reports</a>.
+      </p>
+      <p>The report is available online at the <a href="http://drops.dagstuhl.de/opus/volltexte/2014/4507/" target="_blank">DROPS Server</a>.</p>
+    </div>
+    <div class="news_link">
+      <a href="/news.html#news31-03-14">[more]</a>
+    </div>
+    <div class="news_date">31.03.2014</div>
+  </div>
+
+  <div class="news_box">
+    <a id="news15-12-12" name="news15-12-12"></a>
+    <div class="news_item">
+      <h5>Dagstuhl Seminar "Approaches and Applications of Inductive Programming"</h5>
+      <p>
+      <a href="http://www.uni-bamberg.de/kogsys/schmid" target="extpeople">Ute Schmid</a> (University of Bamberg), <a href="http://emanuel.kitzelmann.org/" target="extpeople">Emanuel Kitzelmann</a> (University of Duisburg-Essen), 
+	  <a href="http://research.microsoft.com/en-us/um/people/sumitg/" target="extpeople">Sumit Gulwani</a> (Microsoft Research) and <a href="http://www.hutter1.net/index.htm" target="extpeople">Marcus Hutter</a> (Austrian National University) organize Dagstuhl Seminar 13502 
+	  "Approaches and Applications of Inductive Programming" scheduled for Monday, December 09 to December 11, 2013. The seminar is a continuation of the 
+	  <a href="http://www.cogsys.wiai.uni-bamberg.de/aaip/" target="_blank">AAIP workshop series</a>.
+      </p>
+      <p>Please visit the <a href="http://www.dagstuhl.de/en/program/calendar/semhp/?semnr=13502" target="_blank">AAIP 13 Homepage</a>.
+      </p>
+    </div>
+    <div class="news_link">
+      <a href="/news.html#news15-12-12">[more]</a>
+    </div>
+    <div class="news_date">15.12.2012</div>
+  </div>
+
+  <div class="news_box">
+    <a id="news12-01-11" name="news12-01-11"></a>
+    <div class="news_item">
+      <h5>4th Workshop AAIP 2011</h5>
+      <p>
+      <a href="http://www.cogsys.wiai.uni-bamberg.de/aaip11/" target="_blank">AAIP 2011 Homepage</a>
+      </p>
+      <p>
+      <a href="http://www.uni-bamberg.de/kogsys/schmid" target="extpeople">Ute Schmid</a> and <a href="http://emanuel.kitzelmann.org/" target="extpeople">Emanuel Kitzelmann</a> organize 
+	  the 4th Workshop on Approaches and Applications of Inductive Programming.
+      It will take place on July 19, 2011, in Odense, Denmark. Co-located events 
+      are the 13th International ACM SIGPLAN Symposium on Principles and 
+      Practice of Declarative Programming (PPDP 2011) and the
+      21st International Symposium on Logic-Based Program Synthesis and 
+      Transformation (LOPSTR 2011).
+      </p>
+      <p>Details can be found on the <a href="http://www.cogsys.wiai.uni-bamberg.de/aaip11/" target="_blank">AAIP 2011 Homepage</a>.</p>
+    </div>
+    <div class="news_link">
+      <a href="/news.html#news12-01-11">[more]</a>
+    </div>
+    <div class="news_date">12.01.2011</div>
+  </div>
+		  </div>						
+		</div>
+	      </div>
+<!-- end: #col2 -->
+
+<!-- begin: #col3 static column -->
+	      <div id="col3">
+		<div id="col3_content" class="clearfix"> 
+		  <a id="content" name="content"></a>
+		  
+		  <a name="top" id="top"></a><h2>Systems</h2>
+		  
+		  <div id="quicklink">
+		    <ul class="inline">
+		      <li><a href="#adate">ADATE</a></li>
+		      <li><a href="#atre">ATRE</a></li>
+		      <li><a href="#De-Typechecker">De-Typechecker</a></li>
+		      <li><a href="#dialogs">Dialogs</a></li>
+		      <li><a href="#Djinn">Djinn</a></li>
+<!--
+		      <li><a href="#etis">ETIS</a></li>
+-->
+		      <li><a href="#flip">FLIP</a></li>
+		      <li><a href="#foil">Foil&#47;FFoil</a></li>
+		      <li><a href="#golem">Golem</a></li>
+		      <li><a href="#igor1">IgorI</a></li>
+		      <li><a href="#igor2">IgorII</a></li>
+		      <li><a href="#ITTPICL">Inverse typechecking</a></li>
+		      <li><a href="#magichaskeller">Magic Haskeller</a></li>    
+		      <li><a href="#progol">Progol</a></li>
+		      <li><a href="#synapse">Synapse</a></li>
+		    </ul>
+		  </div>			
+		  
+		  
+		  <a name="adate" id="adate"></a>
+		  <h3>ADATE</h3>
+		  
+		  <div>
+		    (<b>A</b>utomatic <b>D</b>esign of <b>A</b>lgorithms
+		    <b>T</b>hrough <b>E</b>volution) 
+		  </div>
+		  
+		  <ul>
+		    <li>Roland Olsson's ADATE <a
+			href="http://www-ia.hiof.no/~rolando/"
+			target="systems">homepage</a></li> 
+		  </ul>
+		  
+		  <p>Language: ADATE ML</p>
+		  <p>Year: 1994</p>
+		  <p>Category: Genetic Programming</p>
+		  
+		  <h4 onclick="toggle('adate_short');">Short Description
+		    <span id="adate_short_desc" style="display:inline;">
+		      &laquo;expand&raquo;
+		    </span></h4>
+
+		  <div id="adate_short" class="shortdescription"> 
+		    <p>
+		      Automatic Design of Algorithms Through Evolution
+		      (ADATE) is an automatic programming system that
+		      synthesizes function definitions in a subset of
+		      the programming language Standard ML.  ADATE is
+		      primarily intended as a system that
+		      automatically improves a part of an existing
+		      program, but is also useful for generating
+		      programs from scratch provided that they are
+		      fairly small.
+		    </p>
+		    <p>
+		      The evolution of programs is guided by an
+		      evaluation function that tests a given program
+		      and says how good it is. Note that
+		      the function generated by ADATE might be only a
+		      small part of this given program. Thus, ADATE is
+		      especially suitable for so-called reinforcement
+		      learning, but also useful in
+		      more traditional machine learning
+		      where input-output pairs are employed to define
+		      the evaluation function.
+		    </p>
+		    <p>
+		      For example, one possible application of ADATE
+		      is to automatically improve image processing
+		      algorithms. One may then start with a possibly
+		      advanced and complex algorithm, select a part of
+		      it to be improved and then define an evaluation
+		      function that measures the performance of the
+		      new versions of the original algorithm that
+		      result from plugging in ADATE generated
+		      functions instead of the selected part. ADATE
+		      has been used in this way to improve one of the
+		      best known image segmentation algorithms.
+		    </p>
+		    <p>
+		      Automatic algorithm improvement as outlined
+		      above appears to be practically useful in
+		      applications where programs written by human
+		      beings contain subroutines or functions that are
+		      designed through experimental feedback rather
+		      than being optimally defined using purely
+		      theoretical considerations.
+		    </p>
+		    <p>
+		      Depending on the final size of the function to
+		      be improved and its algorithmic complexity,
+		      ADATE may need to test millions or even billions
+		      of candidates. However, we have found
+		      experimentally that the number of evaluations
+		      needed typically is determined by a low degree
+		      polynomial in program size provided that the
+		      training inputs and the evaluation function are
+		      well defined.  The overall run time of ADATE
+		      approximately equals the number of evaluations
+		      multiplied with the time required to run a
+		      program on all the training inputs.
+		    </p>
+		    <p>
+		      Therefore, ADATE is most easily used in
+		      applications where the overall program has a
+		      short run time and where the part of it selected
+		      for improvement is reasonably small, say smaller
+		      than 100 lines of Standard ML code.
+		    </p>
+		    <p> 
+		      ADATE can automatically generate non-trivial and
+		      novel algorithms that contain one or more help
+		      functions that are created by ADATE when and
+		      where needed. For example, ADATE can easily
+		      synthesize a functional program that generates a
+		      list of lists containing all permutations of a
+		      given input list even if it is not given any
+		      help functions to start with except the
+		      necessary data type constructors. In this case,
+		      the best synthesized program contains two
+		      invented auxiliary functions that perform
+		      combinations of list rotations and
+		      concatenations in non-trivial ways.
+		    </p>
+		    <p>
+		      ADATE uses large scale combinatorial search that
+		      employs sophisticated program transformations.
+		      Examples of transformations includes expression
+		      synthesis of terms that do not make a program
+		      worse and adding extra parameters to local help
+		      functions in order to make them more
+		      general.
+		    </p>
+		    <p> 
+		      The system currently runs on Linux clusters with
+		      MPI and can effectively utilize a few hundred
+		      CPU cores but a rewrite to obtain practically
+		      unlimited scalability with an increasing number
+		      of cores per CPU and number of CPUs is being
+		      planned.
+		    </p> 
+		    <p><i>(Roland Olsson)</i></p>
+		  </div>
+		  <div class="toplink"><a href="#top">top</a></div>
+							
+							
+		  <a name="aleph" id="aleph"></a>
+		  <h3>ALEPH</h3>
+
+		  <div>
+		    (<b>A</b> <b>L</b>earning <b>E</b>ngine for
+		    <b>P</b>roposing <b>H</b>ypotheses)
+		  </div>						
+
+		  <ul>
+		    <li>Ashwin Srinivasan's Aleph <a
+			href="http://www.comlab.ox.ac.uk/activities/machinelearning/Aleph/aleph_toc.html"
+			target="systems">homepage</a></li> 
+		  </ul>
+		  
+		  <p>Language: PROLOG</p>
+		  <p>Year: 2007</p>
+		  <p>Category: Inductive Logic Programming</p>
+		  
+		  <h4 onclick="toggle('aleph_short');">Short
+		    Description 
+		    <span id="aleph_short_desc"
+		      style="display:inline;">&laquo;expand&raquo;</span></h4> 
+		  
+		  <div id="aleph_short" class="shortdescription"> 
+		    <p>Aleph is intended to be a prototype for
+		      exploring ideas. Earlier incarnations (under the
+		      name P-Progol) originated in 1993 as part of a
+		      fun project undertaken by Ashwin Srinivasan and
+		      Rui Camacho at Oxford University. The main
+		      purpose was to understand ideas of inverse
+		      entailment which eventually appeared in Stephen
+		      Muggleton's 1995 paper: <EM>Inverse Entailment
+		      and Progol</EM>, New Gen. Comput., 13:245-286,
+		      available
+		      at <A HREF="ftp://ftp.cs.york.ac.uk/pub/ML_GROUP/Papers/InvEnt.ps.gz">ftp://ftp.cs.york.ac.uk/pub/ML_GROUP/Papers/InvEnt.ps.gz</A>. Since
+		      then, the implementation has evolved to emulate
+		      some of the functionality of several other ILP
+		      systems. Some of these of relevance to Aleph
+		      are: CProgol, FOIL, FORS, Indlog, MIDOS, SRT,
+		      Tilde, and WARMR.
+		    </p>
+		    <p>During routine use, Aleph follows a very simple
+procedure that can be described in 4 steps:
+		      <OL>			
+			<LI><STRONG>Select example.</STRONG> Select an
+			example to be generalised. If none exist,
+			stop,otherwise proceed to the next step.
+			</LI>
+			<LI>
+			  <STRONG>Build most-specific-clause.</STRONG>
+			  Construct the most   specific clause that
+			  entails the example selected, and is within
+			  language restrictions provided. This is
+			  usually a definite clause   with many
+			  literals, and is called the "bottom clause."
+			  This step is   sometimes called the
+			  "saturation" step. Details of constructing
+			  the   bottom clause can be found in Stephen
+			  Muggleton's 1995   paper: <EM>Inverse
+			  Entailment and Progol</EM>, New
+			  Gen. Comput.,   13:245-286, available
+			  at <A HREF="ftp://ftp.cs.york.ac.uk/pub/ML_GROUP/Papers/InvEnt.ps.gz">ftp://ftp.cs.york.ac.uk/pub/ML_GROUP/Papers/InvEnt.ps.gz</A>. 
+			</LI>
+			<LI>
+			  <STRONG>Search.</STRONG> Find a clause more
+			  general than the bottom clause. This is done
+			  by searching for some subset of the literals
+			  in the bottom clause that has the "best"
+			  score. Two points should be noted. First,
+			  confining the search to subsets of the
+			  bottom clause does not produce all the
+			  clauses more general than it, but is good
+			  enough for this thumbnail sketch. Second,
+			  the exact nature of the score of a clause is
+			  not really important here. This step is
+			  sometimes called the "reduction" step. 
+			</LI>
+			<LI>
+			  <STRONG>Remove redundant.</STRONG>  The
+			  clause with the best score is added to the
+			  current theory, and all examples made
+			  redundant are removed. This step is
+			  sometimes called the "cover removal"
+			  step. Note here that the best clause may
+			  make clauses other than the examples
+			  redundant. Again, this is ignored
+			  here. Return to Step 1.
+			</LI>
+		      </OL>
+		    </p>
+		    <p><i>(from the <a href="http://www.comlab.ox.ac.uk/activities/machinelearning/Aleph/aleph.html">Aleph Manual</a>)</i></p>
+		  </div>
+		  <div class="toplink"><a href="#top">top</a></div>
+		  
+
+		  <a name="atre" id="atre"></a>
+		  <h3>ATRE</h3>
+		  
+		  <div>
+		    (<b>A</b>pprendimento di <b>T</b>eorie of
+		    <b>R</b>corsive da <b>E</b>sempi)
+		  </div>
+							
+		  <ul>
+		    <li>ATRE <a
+			href="http://www.di.uniba.it/~malerba/software/atre/"
+			target="systems">homepage</a></li> 
+		  </ul>
+			
+		  <p>Language: </p>
+		  <p>Year: 1998</p>
+		  <p>Category: Inductive Logic Programming</p>
+
+		  <h4 onclick="toggle('atre_short');">Short Description 
+		    <span id="artre_short_desc" 
+		      style="display:inline;">&laquo;expand&raquo;</span></h4>
+
+		  <div id="atre_short" class="shortdescription">
+		    <p>coming soon...</p>			
+		  </div>
+		  <div class="toplink"><a href="#top">top</a></div>
+		  
+		 
+ 
+		  <a name="De-Typechecker" id="De-Typechecker"></a>
+		  <h3>De-Typechecker</h3>
+		  
+		  <ul>
+		    <li>Oleg Kiselyov's <a
+			href="http://okmij.org/ftp/Haskell/types.html#de-typechecker"
+			target="systems">homepage</a></li> 
+		  </ul>
+		  
+		  <p>Language: Haskell</p>
+		  <p>Year: 2005</p>
+		  <p>Category: Typechecking and theorem proving</p>
+		  
+		  <h4 onclick="toggle('etis_short');">Short Description 
+		    <span id="etis_short_desc"
+		      style="display:inline;">&laquo;expand&raquo;</span></h4>
+		  
+		  <div id="etis_short" class="shortdescription">
+		    <p>
+		      Unlike Djinn, which is a separate, standalone
+		      system, de-typechecker uses the Haskell own
+		      type-checker to create terms from types; the
+		      terms can be then be evaluated by the same
+		      Haskell system.
+		    </p>
+		    <p>
+		      (Oleg Kiselyov)
+		    </p>						
+		  </div>
+		  <div class="toplink"><a href="#top">top</a></div>
+		
+		
+		
+		  <a name="dialogs" id="dialogs"></a>
+		  <h3>DIALOGS</h3>
+		  
+		  <div>
+		    (<b>D</b>ialogue-based <b>I</b>nductive and
+		    <b>A</b>bductive <b>LOG</b>ic program
+		    <b>S</b>ynthesiser)
+		  </div>
+		  
+		<ul>
+		    <li>Pierre Flener's <a
+			href="http://user.it.uu.se/~pierref/"
+			target="systems">homepage</a></li>  
+		    <li><a
+			href="http://user.it.uu.se/~pierref/pub/dialogs.tar.gz"
+			target="systems">DIALOGS </a></li> 
+		    <li><a
+			href="http://user.it.uu.se/~pierref/pub/dialogs2.tar.gz"
+			target="systems">DIALOGS II </a></li> 
+		  </ul>
+		  
+		  <p>Language: PROLOG</p>
+		  <p>Year: 1997</p>
+		  <p>Category: Inductive Logic Programming</p>
+		  
+		  <h4 onclick="toggle('dialogs_short');">Short
+		    Description 
+		    <span id="dialogs_short_desc"
+		      style="display:inline;">&laquo;expand&raquo;</span></h4>
+		  
+		  <div id="dialogs_short" class="shortdescription">
+		    <p>
+		      The DIALOGS (Dialogue-based
+		      Inductive&#47;Abductive LOGic program
+		      Synthesiser) technique resulted from an effort
+		      at building a fully interactive version of
+		      SYNAPSE, and at extending its power while at the
+		      same time simplifying its
+		      machinery.
+		    </p>
+		    <p>
+		      The main objective was to take all burden from
+		      the specifier by having the technique ask for
+		      exactly and only the information it needs.  As a
+		      result, no evidence needs to be prepared in
+		      advance, since the technique invents its own
+		      evidence and queries an oracle (usually a human
+		      specifier) about it.
+		    </p>
+		    <p>
+		      This is suitable for all levels of expertise of
+		      human users, as the queries are formulated in
+		      the specifier's (initially unknown) conceptual
+		      language, in a program-independent way, and such
+		      that the specifier must know the answers if
+		      s&#47;he really feels the need for the
+		      program. For instance, the query &quot;When does
+		      <i>sort([X,Y],R)</i> hold?&quot; can be answered
+		      by
+		    </p>
+		    <center>
+		      <i>(R=[X,Y] &and; X &le; Y) &or; (R=[Y,X] &and; X &gt; Y)</i>						
+		    </center>
+		    <p>
+		      thereby expanding the perceived subset of the
+		      conceptual language of the specifier, and giving
+		      the same information as in a <i>property</i>
+		      provided to SYNAPSE. The evidence language
+		      implicitly amounts to (non-recursive) normal
+		      logic programs. Type declarations are provided
+		      as language bias. Mode and determinism
+		      information are not required, because the focus
+		      is on synthesising the logic component of logic
+		      programs. The technique is schema-guided, and
+		      currently has two schemas
+		      (<i>divide-and-conquer</i> and
+		      <i>accumulate</i>) where multiple base clauses
+		      and multiple recursive clauses are possible. The
+		      hypothesis language is normal logic programs,
+		      where negation is restricted to the case
+		      discriminants and appears there by extraction
+		      from the query answers (i.e., it can only be
+		      applied to primitive predicates and could thus
+		      be avoided by using the complementary primitives
+		      in the query answers, as we did above by writing
+		      <i>X &gt; Y</i> instead of <i>&not; X &le;
+			Y</i>).
+		    </p>
+		    <p><i>(Pierre Flener)</i></p>
+		  </div>
+		  <div class="toplink"><a href="#top">top</a></div>
+		  
+		  
+
+		  <a name="Djinn" id="Djinn"></a>
+		  <h3>Djinn</h3>
+		  
+		  <ul>
+		    <li><a
+			href="http://www.haskell.org/pipermail/haskell/2005-December/017055.html"
+			target="systems">homepage</a></li> 
+		  </ul>
+		  
+		  <p>Language: Haskell</p>
+		  <p>Year: 2005</p>
+		  <p>Category: Typechecking and theorem proving</p>
+		  
+		  <h4 onclick="toggle('djinn_short');">Short Description 
+		    <span id="etis_short_desc"
+		      style="display:inline;">&laquo;expand&raquo;</span></h4>
+		  
+		  <div id="djinn_short" class="shortdescription">
+		    <p>
+		      Djinn takes a (Haskell) type and gives back a
+		      function of that type if one exists. The system
+		      uses a decision procedure for intuitionistic
+		      propositional calculus due to Roy Dyckhoff.
+		      It's a variation of Gentzen's LJ system.  This
+		      means that (in theory) Djinn will always find a
+		      function if one exists, and if one doesn't exist
+		      Djinn will terminate telling you so.
+		    </p>
+		    <p><i>(Lennart Augustsson)</i> </p>
+		  </div>
+		  <div class="toplink"><a href="#top">top</a></div>
+		
+
+		  <a name="flip" id="flip"></a>
+		  <h3>FLIP</h3>
+		  
+<!--		  
+		  <div></div>
+-->				
+		  <ul>
+		    <li>The <a
+			href="http://www.dsic.upv.es/~flip/flip/"
+			target="systems">homepage</a> of the MIP
+		      Group</li> 
+		  </ul>
+		  
+		  <p>Language: C++</p>
+		  <p>Year: 1999</p>
+		  <p>Category: Induction of Functional Logic Programs</p>
+		  
+		  <h4 onclick="toggle('flip_short');">Short
+		    Description 
+		    <span id="flip_short_desc"
+		      style="display:inline;">&laquo;expand&raquo;</span></h4>
+		  
+		  
+		  <div id="flip_short" class="shortdescription">
+		    <p>
+		      FLIP implements a framework for the Induction of
+		      Functional Logic Programs (IFLP) from
+		      facts. This can be seen as an extension to the
+		      now consolidated field of Inductive Logic
+		      Programming (ILP). Inspired in the inverse
+		      resolution operator of ILP, the system is based
+		      on the reversal of narrowing, the more usual
+		      operational mechanism for Functional Logic
+		      Programming. The main advantages of the FLIP
+		      system over the most used ILP systems are a
+		      natural handling of functions, without the use
+		      of mode or determinism declarations, and its
+		      power for inducing short recursive programs. Its
+		      applications are mainly program synthesis,
+		      program debugging and data mining of small
+		      highly structured documents.
+		    </p>
+		    <p>
+		      The FLIP system accepts both positive and
+		      negative examples. Examples consist of sets of
+		      equations, with its rhs. normalised wrt. the
+		      program to be induced.
+		    </p>
+		    <p>
+		      Background knowledge can also be used as a
+		      conditional functional logic program. Note that
+		      any logic program can be expressed as a
+		      conditional functional logic program. Therefore,
+		      virtually any logic program can be used as
+		      background knowledge as well as functional
+		      definitions. FLIP must be given the function
+		      symbols from the background knowledge that
+		      should be used in the definition of the function
+		      to be learned.
+		    </p>
+		    <p>
+		      The FLIP system can induce 'correct' programs
+		      from very few examples. There is no need for
+		      good examples (in the sense of Ling), nor Basic
+		      Representative Sets (BRS) such as FOIL, GOLEM,
+		      Progol, amongst others, require.
+		    </p>
+		    <p>
+		      <i>(C&egrave;sar Ferri)</i>
+		    </p>
+		  </div>
+		  <div class="toplink"><a href="#top">top</a></div>
+		
+		
+		  <a name="foil" id="foil"></a>
+		  <h3>FOIL&#47;FFOIL</h3>
+<!--
+		  <div></div>
+-->							
+		  <ul>
+		    <li>Ross Quinlan's personal <a
+			href="http://www.rulequest.com/Personal/"
+			target="systems">homepage</a></li> 
+		  </ul>
+			
+		  <p>Language: C</p>
+		  <p>Year: 1996</p>
+		  <p>Category: Inductive Logic Programming</p>
+		  
+		  <h4 onclick="toggle('foil_short');">Short
+		    Description 
+		    <span id ="foil_short_desc"
+		      style="display:inline;">&laquo;expand&raquo;</span></h4>
+		  
+		  <div id="foil_short" class="shortdescription">
+		    <p>
+		      coming soon...
+		    </p>			
+		  </div>
+		  <div class="toplink"><a href="#top">top</a></div>
+							
+		  
+		  <a name="golem" id="golem"></a><h3>GOLEM</h3>
+<!--
+		  <div></div>
+-->							
+		  <ul>
+		    <li>Stephen Muggleton's personal <a
+			href="http://www.doc.ic.ac.uk/~shm/"
+			target="systems">homepage</a></li> 
+		  </ul>
+			
+		  <p>Language: PROLOG</p>
+		  <p>Year: 1992</p>
+		  <p>Category: Inductive Logic Programming</p>
+		  
+		  <h4 onclick="toggle('golem_short');">Short Description 
+		    <span id="golem_short_desc"
+		      style="display:inline;">&laquo;expand&raquo;</span></h4>
+		  
+		  <div id="golem_short" class="shortdescription">
+		    <p>
+		      Golem (Muggleton and Feng, 1990) is an ILP
+		      system, written in C, which iteratively
+		      constructs a set of definite clauses from groups
+		      of atomic examples based on Plotkin's Relative
+		      Least General Generalisation (RLGG).  Plotkin's
+		      approach provides a method of constructing a
+		      unique clause which covers a set of examples
+		      relative to given background knowledge. However,
+		      such a clause can in the worst case contain
+		      infinitely many literals, or at best grow
+		      exponentially with the number of examples
+		      involved. By bounding the depth of variables and
+		      imposing a deterimanacy constraint the Golem
+		      system was guaranteed to build clauses whose
+		      length was bounded by a polynomial function of
+		      various features of the background
+		      knowledge.
+		    </p>					
+		    <p>
+		      Golem is given positive and negative examples
+		      together with extensional background
+		      knowledge. It starts by randomly choosing pairs
+		      of positive examples. For each pair the
+		      ij-determinate RLGG is constructed and then
+		      maximally generalised by dropping body atoms
+		      while maintaining consistency with respect to
+		      the negative examples. All reduced
+		      clauses are evaluated with respect to the degree
+		      to which they compress the information in the
+		      examples.  The pair of examples leading to the
+		      most compressive clause is then extended by
+		      randomly adding examples to produce triples and
+		      later n-tuples, for which further RLGG clauses
+		      are constructed and reduced in a similar
+		      fashion. The single clause construction
+		      terminates once further extenions of the RLGG no
+		      longer lead to improved
+		      compression. Once a single clause has
+		      been asserted, all covered examples are removed
+		      and the clause construction process continues on
+		      all remaining examples. The process
+		      terminates when no remaining pair of examples
+		      has a consistent RLGG.
+		    </p>					
+		    <p>
+		      Golem was applied to a variety of relational
+		      learning problems including the learning of
+		      simple Prolog programs as well as real-world
+		      applications involving protein-fold prediction,
+		      drug-activity prediction, learning of
+		      computer-aided design rules and various chess
+		      problems.
+		    </p>					
+		    <p>
+		      The use of inverse tabling methods allowed the
+		      efficiency of Golem to be comparable to the
+		      contemporary ILP system FOIL. FOIL greedily
+		      searches the space guided by an information
+		      measure similar to that used in ID3. This
+		      measure supports the addition of a literal in
+		      the body of a clause on the basis of its ability
+		      to discriminate between positive and negative
+		      examples.  This gains efficiency at the expense
+		      of completeness. For instance the
+		      literal
+		    </p>
+		    <center>						
+		      <i>partition(Head,Tail,List1,List2)</i>
+		    </center>
+		    <p>
+		      in the recursive quick-sort clause does not
+		      produce any discrimination between positive and
+		      negative examples. As a result quick-sort cannot
+		      be learned by FOIL. The problem recurs
+		      throughout a large class of predicates in which
+		      new variables in the body are functionally
+		      derived from terms in the head of the
+		      clause. Such predicates include arithmetic
+		      multiply, list reverse and various real-world
+		      domains.
+		    </p>					
+		    <p>
+		      Golem's key weaknesses with respect to the
+		      later-developed Progol system were associated
+		      with the required use of ground unit clause
+		      background knowledge and its limitation to the
+		      construction of determinate clauses.  The
+		      determinacy constraint was particularly awkward
+		      for applications involving learning the
+		      properties of chemical compounds described in
+		      the form of atom and bond relationships.  
+		    </p>
+		    <p>
+		      <i>(S.H. Muggleton)</i>
+		    </p>
+		  </div>
+		  <div class="toplink"><a href="#top">top</a></div>
+							
+		  
+		  <a name="igor1" id="igor1"></a>
+		  <h3>IGOR I</h3>
+<!--
+		  <div></div>
+-->							
+		  <ul>
+		    <li>Project <a
+			href="http://www.cogsys.wiai.uni-bamberg.de/effalip/" target="systems">homepage</a></li> 
+		    <li><a href="" target="systems">IGOR I</a></li>
+		  </ul>
+			
+		  <p>Language: LISP</p>
+		  <p>Year: 2006</p>
+		  <p>Category: Analytical Inductive Functional Programming</p>
+		  
+		  <h4 onclick="toggle('igor1_short');">Short Description 
+		    <span id="igor1_short_desc"
+		      style="display:inline;">&laquo;expand&raquo;</span></h4>
+		  
+		  <div id="igor1_short" class="shortdescription">
+		    <p>
+		      IGOR I is a modern extension of Summer's seminal
+		      THESYS system. The underlying program
+		      template describes the set of all functional
+		      programs with the following restrictions:
+		      built-in functions can only be first-order, and
+		      no nested or mutual recursion is allowed. IGOR I
+		      adopts the two-step approach of
+		      THESYS. Synthesis is still restricted to
+		      structural problems, where only the structure of
+		      the arguments matters, but not their contents,
+		      such as in list
+		      reversing. Nevertheless, the scope of
+		      synthesisable programs is considerably
+		      larger. For instance, tree-recursive functions
+		      and functions with hidden parameters can be
+		      induced. Most notably, programs
+		      consisting of a calling function and an
+		      arbitrary set of further recursive functions can
+		      be induced. The first step of
+		      synthesis (trace construction) is therefore
+		      expanded such that traces can contain nestings
+		      of conditions. The second step is
+		      expanded such that the synthesis of a function
+		      can rely on the invention and synthesis of other
+		      functions (that is, IGOR I uses a technique of
+		      function invention in correspondence to the
+		      concept of predicate invention).
+		    </p> 
+		    <p>
+		      <i>(Ute Schmid)</i>
+		    </p>
+		  </div>
+		  <div class="toplink"><a href="#top">top</a></div>
+							
+			
+		  <a name="igor2" id="igor2"></a>
+		  <h3>IGOR II</h3>
+<!--			
+		  <div></div>
+-->							
+		  <ul>
+		    <li>Project <a
+			href="http://www.cogsys.wiai.uni-bamberg.de/effalip/" target="systems">homepage</a></li> 
+		    <li><a
+			href="http://www.cogsys.wiai.uni-bamberg.de/effalip/data/programs/IgorII/Igor2.2.tar.gz"
+			target="systems">IGOR II</a></li> 
+		  </ul>
+			
+		  <p>Language: MAUDE</p>
+		  <p>Year: 2008</p>
+		  <p>Category: Analytical Inductive Functional Programming</p>
+		  
+		  <h4 onclick="toggle('igor2_short');">Short Description 
+		    <span id="igor2_short_desc"
+		      style="display:inline;">&laquo;expand&raquo;</span></h4>
+		  
+		  <div id="igor2_short" class="shortdescription">
+		    <p>
+		      IGOR II relies on constructor-term rewriting
+		      techniques. Thereby characteristics of modern
+		      functional programming languages are covered:
+		      Functions are defined with respect to algebraic
+		      datatypes and control flow is guided by pattern
+		      matching.  Specifications are presented as sets
+		      of example equations. Several dependent
+		      functions, e.g., the mutual recursive solution
+		      for <i>even</i> and <i>odd</i>, can be specified
+		      and learned simultaneously. The example
+		      equations can contain variables, which is
+		      especially convenient for specifying more
+		      complex problems where large sets of ground
+		      examples would be necessary to cover all
+		      possible cases of the desired behaviour of the
+		      program to be learned.
+		    </p>
+		    <p> 
+		      IGOR II performs synthesis in one step from a
+		      given set of example equations together with the
+		      algebraic datatype. Background knowledge can be
+		      provided in form of additional example
+		      equations. Due to the generality of user-defined
+		      datatypes, list problems as well as problems on
+		      natural numbers or trees or any other algebraic
+		      type can be solved. Since also the Boolean
+		      values can be defined as algebraic type,
+		      functions yielding trees, lists, numbers, etc,
+		      as well as predicates, e.g., equality and order
+		      relations, can be induced.
+		    </p>
+		    <p>
+		      The patterns are assured to be non-unifying such
+		      that the equations constituting the induced
+		      program can be regarded as a \emph{set} of
+		      equations, where order does not matter. As a
+		      consequence, e.g., <i>member</i> cannot be
+		      defined based on the patterns <i>(X,[])</i>,
+		      <i>(X,[X|Xs])</i> and <i>(X,[Y|Xs])</i> since
+		      these patterns unify and hence cannot be
+		      considered in an arbitrary order.  Thus, for
+		      solving problems where pattern variables need to
+		      be compared regarding equality or any other
+		      predicate, patterns alone do not suffice and
+		      <i>if-then-else</i> conditionals are
+		      needed. Currently, IGOR II can introduce such
+		      conditionals if needed when the condition is an
+		      equality or order test on the pattern variables
+		      such that, e.g., <i>member</i> or inserting a
+		      number at the right place into an ordered list
+		      can be induced. When providing background
+		      knowledge, a broader class of semantic problems
+		      becomes feasible. For example, <i>insertion
+		      sort</i> can be synthesised providing
+		      <i>insert</i> as background knowledge; <i>quick
+		      sort</i> can be synthesised providing
+		      <i>append</i> and <i>partition</i>.
+		    </p>					
+		    <p>
+		      Induction in IGOR II relies on calculating least
+		      general generalisations (lggs) over the example
+		      equations and refining these lggs using the
+		      following three techniques: splitting rules by
+		      pattern refinement, introducing function calls,
+		      and function invention.
+		    </p> 
+		    <p>
+		      <i>(Ute Schmid)</i>
+		    </p>					
+		  </div>
+		  <div class="toplink"><a href="#top">top</a></div>
+							
+							
+		  <a name="ITTPICL" id="ITTPICL"></a>
+		  <h3>Inverse typechecking and theorem proving in
+		    intuitionistic and classical 
+		    logics</h3>
+<!--
+		  <div></div>
+-->	
+		  <ul>
+		    <li>Oleg Kiselyov's <a
+			href="http://okmij.org/ftp/Computation/Computation.html#typechecker-CH"
+			target="systems">homepage</a></li> 
+		  </ul>
+		  
+		  <p>Language:
+		    <a href="http://kanren.sourceforge.net/">Kanren Project</a></p>
+		  <p>Year: 2006</p>
+		  <p>Category: Typechecking and theorem proving</p>
+
+		  <h4 onclick="toggle('ITTPICL_short');">Short Description 
+		    <span id="ITTPICL_short_desc"
+		    style="display:inline;">&laquo;expand&raquo;</span></h4>
+		    
+
+		  <div id="ITTPICL_short" class="shortdescription">
+		    <p>
+		      This program enumerates terms given a particular
+		      type. It uses a search strategy that seems
+		      better than BFS and certainly DFS: it seems
+		      complete (like BFS), that is, if a term with a
+		      given type exists, it will be found. On the
+		      other hand, it takes much less resources than
+		      breadth-first search. The advantage of using
+		      logic-programming system is that we can give the
+		      system the overall shape of expected terms -- a
+		      term with `blanks'. The system will fill in the
+		      blanks. We can also restrict the set of
+		      generated terms to normal terms.
+		    </p>
+		    <p><i>(Oleg Kiselyov)</i></p>
+		  </div>
+		  <div class="toplink"><a href="#top">top</a></div>
+
+		  
+		  <a name="magichaskeller"  id="magichaskeller"></a>
+		  <h3>Magic Haskeller</h3>
+<!--
+		  <div></div>
+-->							
+		  <ul>
+		    <li>Susumu Katayama's Magic Haskeller <a
+			href="http://nautilus.cs.miyazaki-u.ac.jp/~skata/MagicHaskeller.html"
+			target="systems">homepage</a></li> 
+		  </ul>
+			
+		  <p>Language: Haskell</p>
+		  <p>Year: 2006</p>
+		  <p>Category: Exhaustive Search-based Inductive Programming</p>
+		  
+		  <h4 onclick="toggle('mhask_short');">Short Description 
+		    <span id="mhask_short_desc"
+		      style="display:inline;">&laquo;expand&raquo;</span></h4>
+		  
+		  <div id="mhask_short" class="shortdescription">
+		    <p>
+		      coming soon...
+		    </p>					
+		  </div>
+		  <div class="toplink"><a href="#top">top</a></div>
+							
+			
+							
+							
+		  <a name="progol" id="progol"></a>
+		  <h3>PROGOL</h3>
+<!--
+		  <div></div>
+-->							
+		  <ul>
+		    <li>Stephen Muggleton's personal <a
+			href="http://www.doc.ic.ac.uk/~shm/"
+			target="systems">homepage</a></li> 
+		  </ul>
+			
+		  <p>Language: PROLOG</p>
+		  <p>Year: 1999</p>
+		  <p>Category: Inductive Logic Programming</p>
+		  
+		  <h4 onclick="toggle('progol_short');">Short Description 
+		    <span id="progol_short_desc"
+		    style="display:inline;">&laquo;expand&raquo;</span></h4>
+		    
+		  <div id="progol_short" class="shortdescription">
+		    <p>
+		      coming soon...
+		    </p>					
+		  </div>
+		  <div class="toplink"><a href="#top">top</a></div>
+
+		  <a name="synapse" id="synapse"></a>
+		  <h3>SYNAPSE</h3>
+			
+		  <div>
+		    (<b>SYN</b>thesis of <b>A</b>lgorithms from
+		    <b>P</b>ropertie<b>S</b> and <b>E</b>xamples)
+		  </div>
+		  
+		  <ul>
+		    <li>Download at Pierre Flener's <a
+			href="http://user.it.uu.se/~pierref/pub/synapse.tar.gz"
+		    target="systems">homepage</a></li> 
+		  </ul>
+			
+		  <p>Language: PROLOG</p>
+		  <p>Year: 1992</p>
+		  <p>Category: Inductive Logic Programming</p>
+		  
+		  <h4 onclick="toggle('synapse_short');">Short Description 
+		    <span id="synapse_short_desc"
+		    style="display:inline;">&laquo;expand&raquo;</span></h4>
+		    
+		  <div id="synapse_short" class="shortdescription">
+		    <p>
+		      The SYNAPSE (SYNthesis of Algorithms from
+		      PropertieS and Examples) technique takes as
+		      evidence a set of (non-recursive) Horn clauses
+		      describing a single intended relation. Ground
+		      unit clauses are called (positive)
+		      <i>examples</i> and data-drive the synthesis;
+		      all other clauses are called <i>properties</i>
+		      and are used to find instances of the
+		      place-holders of the schema. For instance, the
+		      clauses
+		    </p>					
+		    <center>
+		      <i>sort([X,Y],[X,Y]) &larr; X &le; Y</i>
+		    </center>
+		    and
+		    <center>
+		      <i>sort([X,Y],[Y,X]) &larr; X &gt; Y</i>
+		    </center>
+		    <p>
+		      are properties. No other bias is given, though
+		      types are inferred from the examples.  Mode and
+		      determinism information are not required,
+		      because the focus is on synthesising the logic
+		      component of logic programs. Synthesis is
+		      passive, although there is an <i>expert</i> mode
+		      where the technique asks for a preference among
+		      the possible instances of some place-holders,
+		      rather than non-deterministically choosing each
+		      from a repository. These problem-independent
+		      repositories form the (partitioned) background
+		      knowledge. The technique is based on a
+		      divide-and-conquer schema where multiple base
+		      clauses and multiple recursive clauses are
+		      possible. The hypothesis language is normal
+		      logic programs, where negation is restricted to
+		      the case discriminants and appears there by
+		      extraction from the properties (i.e., it can
+		      only be applied to primitive predicates and
+		      could thus be avoided by using the complementary
+		      primitives in the properties) 
+		    </p>
+		    <p>
+		      <i>(Pierre Flener)</i>
+		    </p>					
+		  </div>
+		  <div class="toplink"><a href="#top">top</a></div>
+
+							
+<!--
+		  <a name="etis" id="etis"></a>
+		  <h3>Equational Theory Induction Systems</h3>
+		  <div></div>			
+		  
+		  <ul>
+		    <li> <a
+			href=""
+			target="systems">homepage</a></li> 
+		  </ul>
+		  <p>Language:</p>
+		  <p>Year: </p>
+		  <p>Category: </p>
+		  
+		  <h4 onclick="toggle('etis_short');">Short Description 
+		  <span id="etis_short_desc"
+		  style="display:inline;">&laquo;expand&raquo;</span></h4>
+		  
+		  <div id="etis_short" class="shortdescription">
+		  <p>
+		  coming soon...
+		</p>						
+		</div>
+		  <div class="toplink"><a href="#top">top</a></div>
+		</div>
+-->						
+<!-- IE column clearing -->
+		  <div id="ie_clearing">&nbsp;</div>
+		</div>
+	      </div>
+<!-- end: #col3 -->
+	    </div>
+<!-- end: #main -->
+	    <div class="lastmod">
+	      <p>
+		
+		This file was last modified on 
+		Thursday July 08, 2010
+	      </p>
+	    </div>
+	  
+<!-- begin: #footer -->
+	  <div id="footer">
+	<div style="float:right;">
+		<p>
+			<a href="http://validator.w3.org/check?uri=referer">
+				<img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88"/>
+			</a>
+		</p>
+	</div>
+	&copy; 2014 - 2015 by Michael S&uuml;nkel<br/>
+	&copy; 2007 - 2009 by Martin Hofmann<br/>
+	<a href="http://www.cogsys.wiai.uni-bamberg.de" target="_blank">Cognitive Systems Group</a>, 
+	Faculty Information Systems and Applied Computer Sciences(WIAI)<br/> University of Bamberg
+
+	<div>
+		Layout based on <a href="http://www.yaml.de/" target="_blank">YAML</a>
+	</div>
+
+	<!-- 4stats Tracker Code // begin -->
+		<script type="text/javascript" src="https://ssl4stats.de/de/counter?id=28248&amp;cntr=1"></script>
+			<noscript>
+				<a href="http://www.4stats.de/" target="_blank">
+					<img src="https://ssl4stats.de/de/stats?id=28248&amp;cntr=1" border="0" alt="4stats Webseiten Statistik + Counter"/>
+				</a>
+			</noscript>
+	<!-- 4stats Tracker Code // end -->
+</div>
+<!-- end: #footer -->
+	  </div>
+	</div>
+      </body>
+</html>

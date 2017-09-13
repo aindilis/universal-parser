@@ -1,0 +1,207 @@
+<HTML>
+<HEAD>
+<TITLE>Parsing in Prolog</TITLE>
+<STYLE type="text/css">
+     BODY { background: white; }
+     H1.doctitle {text-align:center;}
+     H4.dochead {text-align:right;}
+</STYLE>
+</HEAD>
+<BODY>
+<H1 class="doctitle">Parsing in Prolog</H1>
+<H4 class="dochead">CMPT 384 Lecture Notes<BR>
+Robert D. Cameron<BR>
+March 27, 2002</H4>
+<BODY>
+<H2>The Logic of Context-Free Grammars: Parsing</H2>
+<P>
+Given a context-free grammar, it is possible to define a
+a set of predicates that encode the logic of the grammar.
+
+<P>
+Consider the following simple grammar of constant expressions.
+<CENTER>
+<TABLE>
+<TR><TD>&lt;expr&gt; </TD><TD> ::=</TD><TD>
+ &lt;num&gt;&nbsp;|  
+ &lt;num&gt; + &lt;expr&gt;&nbsp;|
+ &lt;num&gt; - &lt;expr&gt;</TD></TR>
+</TABLE>
+</CENTER>
+<P>
+As a first step in considering how the logic of such a grammar
+may be encoded in Prolog, let us assume that input to be parsed
+will be represented as lists of numerals and symbols.
+For example:
+<UL>
+<LI><code>[11, +, 2, -, 7]</code> is a valid &lt;expr&gt;, and
+<LI><code>[11, +, 2, -]</code> is not a valid &lt;expr&gt;.
+</UL>
+
+<H4>Parsing By List Partitioning</H4>
+<P>
+Parsing may be implemented in a straightforward manner by
+creating one predicate for each non-terminal in the grammar.
+These predicates will take as an argument a list of items
+representing a possible instance of the non-terminal, having
+the value true if a given phrase is such an instance, false otherwise.
+Each predicates is programmed using one clause
+for each alternative form of the corresponding non-terminal.
+<PRE>
+expr(L) :- num(L).
+expr(L) :- append(L1, [+|L2], L), num(L1), expr(L2).
+expr(L) :- append(L1, [-|L2], L), num(L1), expr(L2).
+num([D]) :- number(D).
+</PRE>
+<P>
+The <code>append</code> predicate can generate all possible
+partitions of the input, parsing succeeds if a particular
+partition corresponds to the grammatical structure of a phrase.
+<P>
+Given these definitions, we can easily check to see if
+particular lists parse as expressions.
+<PRE>
+| ?- expr([11, +, 2, -, 7]).
+
+yes
+| ?- expr([11, +, 2, -]).
+
+no
+| ?- expr([11, +, 2]).
+
+yes
+</PRE>
+<P>
+Unfortunately, the general strategy of parsing by partitioning is
+quite inefficient.  In the given examples, the partitions 
+are easily checked at the top level by virtue of the infix operator
+<code>+</code> or <code>-</code>.   In other cases, there
+is no easy way to check if a top-level partition is the right one to try.
+This may mean that a lot of work is done before a particular partitioning
+is found to be incorrect; much of this work must be repeated for 
+the next attempt at partitioning (and the next, and so on, if they also
+are incorrect).
+
+<H4>Parsing By Consumption</H4>
+<P>
+A much more efficient approach to parsing is to have predicates
+that consume as many elements of the input list as they need
+to match a particular nonterminal, and then return the rest of the
+list for subsequent processing.   
+In this case, parsing predicates have two arguments, the first
+being the list representation of the input stream, and the second
+being instantiated to the list of input elements that remain after
+a complete syntactic structure has been found.
+<P>
+For example, let <code>expr(L, Remain)</code> be true if 
+a prefix of <code>L</code> matches the production &lt;expr&gt; and
+<code>Remain</code> is the list of input remaining after this
+initial prefix.  Using this convention, the parser for our grammar
+may be recast as follows.
+<PRE>
+expr(L, Remain) :- num(L, Remain).
+expr(L, Remain) :- num(L, L1), 'C'(L1, +, L2), expr(L2, Remain).
+expr(L, Remain) :- num(L, L1), 'C'(L1, -, L2), expr(L2, Remain).
+num([D|Remain], Remain) :- number(D).
+
+'C'([X|L], X, L).
+</PRE>
+Here, the Prolog's DCG (definite clause grammar) 
+predicate <code>'C'(L1, X, L2)</code> is introduced 
+to say that <code>L1</code> begins with terminal symbol
+</code>X</code> after which L2 remains to be parsed.
+<P>
+The following examples illustrate that parsing an expression
+as the initial prefix of an input list may indeed have several
+correct answers.
+<PRE>
+| ?- expr([1, +, 2, -, 3], A).
+
+A = [+,2,-,3] ? ;
+
+A = [-,3] ? ;
+
+A = [] ? ;
+
+no
+</PRE>
+<P>
+To ensure that all of an input list is parsed, we can define
+a top-level predicate that requires the list of remaining elements
+after parsing to be empty.
+<PRE>
+expr-complete(L) :- expr(L, []).
+
+| ?- expr-complete([11, +, 2, -, 7]).
+
+yes
+| ?- expr-complete([11, +, 2, -]).
+
+no
+</PRE>
+
+<H4>Definite Clause Syntax</H4>
+<P>
+Given a context-free grammar, it is a relatively mechanical job
+to construct the parsing predicates shown above.
+Because this is such a frequent task in Prolog-based symbolic
+computing applications, a special syntax exists to let Prolog
+take care of the mechanical work!
+In short, the <code>--&gt;</code> predicate 
+introduces a definite clause that allows BNF-like
+specification of syntax.
+<PRE>
+expr --> num.
+expr --> num, [+], expr.
+expr --> num, [-], expr.
+num --> [D], {number(D)}.
+
+expr-complete(L) :- expr(L, []).
+</PRE>
+On the right hand side of any definite clause, non-terminals
+may be simply given as symbolic atoms, while terminal symbols
+must be embedded in lists.  In addition, arbitrary prolog
+predicates may be enclosed in braces.
+<P>
+Whenever Prolog reads in a definite clause grammar, it in fact
+performs the transformation to generate predicates equivalent
+to those shown previously!
+<H4>Adding Parameters to Non-Terminals</H4>
+<P>
+To go beyond mere yes or no answers to parsing operations,
+the DCG syntax allows non-terminals to be parameterized.
+For example, to parse a numeric expression and compute its
+value, we can add a parameter to represent the computed
+value to each non-terminal.
+<PRE>
+expr(Z) --> num(Z).
+expr(Z) --> num(X), [+], expr(Y), {Z is X+Y}.
+expr(Z) --> num(X), [-], expr(Y), {Z is X-Y}.
+num(D) --> [D], {number(D)}.
+
+expr_value(L, V) :- expr(V, L, []).
+</PRE>
+<P>
+In transforming these DCG rules to the corresponding parsing
+predicates, the predicates <code>expr</code> and <code>num</code>
+each get an extra parameter.
+This implements the semantics of numeric expression
+evaluation as illustrated below.
+<PRE>
+| ?- expr_value([11, +, 2, -, 7], V).
+
+V = 6 ? 
+
+| ?- expr_value([8, -, 6, -, 2], V).
+
+V = 4 ? 
+</PRE>
+<p>
+The astute reader will note that the final example shows an
+unusual feature of the defined expression grammar: right associativity.
+Left associativity requires left-recursive grammar rules, which
+in turn require slightly more complicated handling with DCGs.
+
+</p>
+</BODY>
+</HTML>

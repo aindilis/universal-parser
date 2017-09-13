@@ -1,0 +1,2120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>Comparison of parser generators - Wikipedia, the free encyclopedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Comparison_of_parser_generators","wgTitle":"Comparison of parser generators","wgCurRevisionId":723172017,"wgRevisionId":723172017,"wgArticleId":3959734,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Wikipedia articles needing clarification from March 2014","All Wikipedia articles needing clarification","Parser generators","Parsing algorithms","Software comparisons"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Comparison_of_parser_generators","wgRelevantArticleId":3959734,"wgRequestId":"V1ph6QpAIC0AAG@IAdYAAABO","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":true},"wgPreferredVariant":"en","wgRelatedArticles":null,"wgRelatedArticlesUseCirrusSearch":true,"wgRelatedArticlesOnlyUseCirrusSearch":false,"wgULSAcceptLanguageList":[],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgCentralNoticeCategoriesUsingLegacy":["Fundraising","fundraising"],"wgWikibaseItemId":"Q5155950","wgCentralAuthMobileDomain":false,"wgVisualEditorToolbarScrollOffset":0});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","ext.centralauth.centralautologin","mmv.head","ext.visualEditor.desktopArticleTarget.init","ext.uls.init","ext.uls.interface","ext.quicksurveys.init","mw.MediaWikiPlayer.loader","mw.PopUpMediaTransform","ext.centralNotice.bannerController","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cswitcher%2Cteahouse%7Cext.tmh.thumbnail.styles%7Cext.uls.nojs%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediaBadges%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.raggett%2CsectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/w/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.28.0-wmf.5"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Comparison_of_parser_generators"/>
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Comparison_of_parser_generators&amp;action=edit"/>
+<link rel="edit" title="Edit this page" href="/w/index.php?title=Comparison_of_parser_generators&amp;action=edit"/>
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png"/>
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd"/>
+<link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Comparison_of_parser_generators"/>
+<link rel="dns-prefetch" href="//login.wikimedia.org"/>
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Comparison_of_parser_generators rootpage-Comparison_of_parser_generators skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Comparison of parser generators</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table class="metadata plainlinks ambox ambox-style ambox-confusing" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px"><img alt="" src="//upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/40px-Edit-clear.svg.png" width="40" height="40" srcset="//upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/60px-Edit-clear.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/f/f2/Edit-clear.svg/80px-Edit-clear.svg.png 2x" data-file-width="48" data-file-height="48" /></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article <b>may be <a href="/wiki/Wikipedia:Vagueness" title="Wikipedia:Vagueness">confusing or unclear</a> to readers</b>. <span class="hide-when-compact">Please help us <a href="/wiki/Wikipedia:Please_clarify" title="Wikipedia:Please clarify">clarify the article</a>; suggestions may be found on the <a href="/wiki/Talk:Comparison_of_parser_generators" title="Talk:Comparison of parser generators">talk page</a>.</span> <small><i>(March 2014)</i></small></span></td>
+</tr>
+</table>
+<p>This is a list of notable <a href="/wiki/Lexer_generator" class="mw-redirect" title="Lexer generator">lexer generators</a> and <a href="/wiki/Parser_generator" class="mw-redirect" title="Parser generator">parser generators</a> for various language classes.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Regular_languages"><span class="tocnumber">1</span> <span class="toctext">Regular languages</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Deterministic_context-free_languages"><span class="tocnumber">2</span> <span class="toctext">Deterministic context-free languages</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Parsing_expression_grammars.2C_deterministic_boolean_grammars"><span class="tocnumber">3</span> <span class="toctext">Parsing expression grammars, deterministic boolean grammars</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#General_context-free.2C_conjunctive_or_boolean_languages"><span class="tocnumber">4</span> <span class="toctext">General context-free, conjunctive or boolean languages</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Context-sensitive"><span class="tocnumber">5</span> <span class="toctext">Context-sensitive</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Notes"><span class="tocnumber">8</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#External_links"><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Regular_languages">Regular languages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Comparison_of_parser_generators&amp;action=edit&amp;section=1" title="Edit section: Regular languages">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div role="note" class="hatnote">See also: <a href="/wiki/List_of_lexer_generators" class="mw-redirect" title="List of lexer generators">List of lexer generators</a></div>
+<table class="wikitable sortable" style="text-align: center; font-size: 85%; width: auto;">
+<tr>
+<th>Name</th>
+<th>Lexer algorithm</th>
+<th><a href="/wiki/Programming_language" title="Programming language">Output languages</a></th>
+<th>Grammar, code</th>
+<th>Development platform</th>
+<th><a href="/wiki/Software_license" title="Software license">License</a></th>
+</tr>
+<tr>
+<td>Alex</td>
+<td><a href="/wiki/Deterministic_finite_automaton" title="Deterministic finite automaton">DFA</a></td>
+<td><a href="/wiki/Haskell_(programming_language)" title="Haskell (programming language)">Haskell</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>AustenX</td>
+<td><a href="/wiki/Deterministic_finite_automaton" title="Deterministic finite automaton">DFA</a></td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>separate</td>
+<td>all</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>C# Flex</td>
+<td><a href="/wiki/Deterministic_finite_automaton" title="Deterministic finite automaton">DFA</a></td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a></td>
+<td>mixed</td>
+<td><a href="/wiki/Common_Language_Runtime" title="Common Language Runtime">.NET CLR</a></td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>C# Lex</td>
+<td><a href="/wiki/Deterministic_finite_automaton" title="Deterministic finite automaton">DFA</a></td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a></td>
+<td>mixed</td>
+<td><a href="/wiki/Common_Language_Runtime" title="Common Language Runtime">.NET CLR</a></td>
+<td>&#160;?</td>
+</tr>
+<tr>
+<td>CookCC</td>
+<td><a href="/wiki/Deterministic_finite_automaton" title="Deterministic finite automaton">DFA</a></td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>mixed</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>DFAlex</td>
+<td><a href="/wiki/Deterministic_finite_automaton" title="Deterministic finite automaton">DFA</a></td>
+<td>no code generation required</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td><a href="/wiki/Apache_License" title="Apache License">Apache License 2.0</a></td>
+</tr>
+<tr>
+<td>Dolphin</td>
+<td><a href="/wiki/Deterministic_finite_automaton" title="Deterministic finite automaton">DFA</a></td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>separate</td>
+<td>all</td>
+<td><a href="/wiki/Proprietary_software" title="Proprietary software">Proprietary</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Flex_lexical_analyzer" class="mw-redirect" title="Flex lexical analyzer">flex</a></td>
+<td><a href="/wiki/Deterministic_finite_automaton" title="Deterministic finite automaton">DFA table driven</a></td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>gelex</td>
+<td><a href="/wiki/Deterministic_finite_automaton" title="Deterministic finite automaton">DFA</a></td>
+<td><a href="/wiki/Eiffel_(programming_language)" title="Eiffel (programming language)">Eiffel</a></td>
+<td>mixed</td>
+<td><a href="/wiki/Eiffel_(programming_language)" title="Eiffel (programming language)">Eiffel</a></td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>golex</td>
+<td><a href="/wiki/Deterministic_finite_automaton" title="Deterministic finite automaton">DFA</a></td>
+<td><a href="/wiki/Go_(programming_language)" title="Go (programming language)">Go</a></td>
+<td>mixed</td>
+<td><a href="/wiki/Go_(programming_language)" title="Go (programming language)">Go</a></td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a>-style</td>
+</tr>
+<tr>
+<td>gplex</td>
+<td><a href="/wiki/Deterministic_finite_automaton" title="Deterministic finite automaton">DFA</a></td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a></td>
+<td>mixed</td>
+<td><a href="/wiki/Common_Language_Runtime" title="Common Language Runtime">.NET CLR</a></td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a>-like</td>
+</tr>
+<tr>
+<td>JFlex</td>
+<td><a href="/wiki/Deterministic_finite_automaton" title="Deterministic finite automaton">DFA</a></td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>mixed</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>JLex</td>
+<td><a href="/wiki/Deterministic_finite_automaton" title="Deterministic finite automaton">DFA</a></td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>mixed</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a>-like</td>
+</tr>
+<tr>
+<td><a href="/wiki/Lex_programming_tool" class="mw-redirect" title="Lex programming tool">lex</a></td>
+<td><a href="/wiki/Deterministic_finite_automaton" title="Deterministic finite automaton">DFA</a></td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a></td>
+<td>mixed</td>
+<td><a href="/wiki/POSIX" title="POSIX">POSIX</a></td>
+<td><a href="/wiki/Proprietary_software" title="Proprietary software">Proprietary</a>, <a href="/wiki/CDDL" class="mw-redirect" title="CDDL">CDDL</a></td>
+</tr>
+<tr>
+<td>lexertl</td>
+<td><a href="/wiki/Deterministic_finite_automaton" title="Deterministic finite automaton">DFA</a></td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td></td>
+<td>all</td>
+<td><a href="/wiki/GNU_Lesser_General_Public_License" title="GNU Lesser General Public License">GNU LGPL</a></td>
+</tr>
+<tr>
+<td><a href="/w/index.php?title=Quex&amp;action=edit&amp;redlink=1" class="new" title="Quex (page does not exist)">Quex</a></td>
+<td><a href="/wiki/Deterministic_finite_automaton" title="Deterministic finite automaton">DFA direct code</a></td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/GNU_Lesser_General_Public_License" title="GNU Lesser General Public License">GNU LGPL</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Ragel" title="Ragel">Ragel</a></td>
+<td><a href="/wiki/Deterministic_finite_automaton" title="Deterministic finite automaton">DFA</a></td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a>, <a href="/wiki/D_(programming_language)" title="D (programming language)">D</a>, <a href="/wiki/Go_(programming_language)" title="Go (programming language)">Go</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>, <a href="/wiki/Objective-C" title="Objective-C">Objective-C</a>, <a href="/wiki/Ruby_(programming_language)" title="Ruby (programming language)">Ruby</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>re2c</td>
+<td><a href="/wiki/Deterministic_finite_automaton" title="Deterministic finite automaton">DFA direct code</a></td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/Public_domain" title="Public domain">Public domain</a></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Deterministic_context-free_languages">Deterministic context-free languages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Comparison_of_parser_generators&amp;action=edit&amp;section=2" title="Edit section: Deterministic context-free languages">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="wikitable sortable" style="text-align: center; font-size: 85%; width: auto;">
+<tr>
+<th>Name</th>
+<th><a href="/wiki/Parsing" title="Parsing">Parsing</a> algorithm</th>
+<th>Input grammar notation</th>
+<th><a href="/wiki/Programming_language" title="Programming language">Output languages</a></th>
+<th>Grammar, code</th>
+<th><a href="/wiki/Lexical_analyzer" class="mw-redirect" title="Lexical analyzer">Lexer</a></th>
+<th>Development platform</th>
+<th><a href="/wiki/Integrated_development_environment" title="Integrated development environment">IDE</a></th>
+<th><a href="/wiki/Software_license" title="Software license">License</a></th>
+</tr>
+<tr>
+<td><a href="/wiki/ANTLR" title="ANTLR">ANTLR4</a></td>
+<td><a href="/wiki/LL_parser" title="LL parser">ALL(*)</a><sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup></td>
+<td><a href="/wiki/EBNF" class="mw-redirect" title="EBNF">EBNF</a></td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>, <a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a>, <a href="/wiki/JavaScript" title="JavaScript">JavaScript</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Yes</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/ANTLR" title="ANTLR">ANTLR3</a></td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(*)</a></td>
+<td><a href="/wiki/EBNF" class="mw-redirect" title="EBNF">EBNF</a></td>
+<td><a href="/wiki/ActionScript" title="ActionScript">ActionScript</a>, <a href="/wiki/Ada_(programming_language)" title="Ada (programming language)">Ada95</a>, <a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a>, <a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>, <a href="/wiki/JavaScript" title="JavaScript">JavaScript</a>, <a href="/wiki/Objective-C" title="Objective-C">Objective-C</a>, <a href="/wiki/Perl" title="Perl">Perl</a>, <a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a>, <a href="/wiki/Ruby_(programming_language)" title="Ruby (programming language)">Ruby</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Yes</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>APG</td>
+<td><a href="/wiki/Recursive_descent" class="mw-redirect" title="Recursive descent">Recursive descent</a>, <a href="/wiki/Backtracking" title="Backtracking">Backtracking</a></td>
+<td><a href="/wiki/ABNF" class="mw-redirect" title="ABNF">ABNF</a></td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a>, <a href="/wiki/JavaScript" title="JavaScript">JavaScript</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>separate</td>
+<td>none</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>AXE</td>
+<td><a href="/wiki/Recursive_descent" class="mw-redirect" title="Recursive descent">Recursive descent</a></td>
+<td>AXE/C++</td>
+<td><a href="/wiki/C%2B%2B11" title="C++11">C++11</a></td>
+<td>mixed</td>
+<td>none</td>
+<td>any platform with standard C++11 compiler</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Boost_Software_License" class="mw-redirect" title="Boost Software License">Boost</a></td>
+</tr>
+<tr>
+<td>Beaver</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td><a href="/wiki/EBNF" class="mw-redirect" title="EBNF">EBNF</a></td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>mixed</td>
+<td>external</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/GNU_bison" title="GNU bison">Bison</a></td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a>, <a href="/wiki/Canonical_LR_parser" title="Canonical LR parser">LR(1)</a>, <a href="/w/index.php?title=IELR_parser&amp;action=edit&amp;redlink=1" class="new" title="IELR parser (page does not exist)">IELR(1)</a>, <a href="/wiki/GLR_parser" title="GLR parser">GLR</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>Bison++<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">[note 1]</a></sup></td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>external</td>
+<td><a href="/wiki/POSIX" title="POSIX">POSIX</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>Bisonc++</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>external</td>
+<td><a href="/wiki/POSIX" title="POSIX">POSIX</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td><a href="/w/index.php?title=BtYacc&amp;action=edit&amp;redlink=1" class="new" title="BtYacc (page does not exist)">BtYacc</a></td>
+<td><a href="/wiki/Backtracking" title="Backtracking">Backtracking</a> <a href="/wiki/Bottom-up_parsing" title="Bottom-up parsing">Bottom-up</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Public_domain" title="Public domain">Public domain</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Berkeley_Yacc" title="Berkeley Yacc">byacc</a></td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>YACC</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Public_domain" title="Public domain">Public domain</a></td>
+</tr>
+<tr>
+<td>BYACC/J</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Public_domain" title="Public domain">Public domain</a></td>
+</tr>
+<tr>
+<td>CL-Yacc</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>Lisp</td>
+<td><a href="/wiki/Common_Lisp" title="Common Lisp">Common Lisp</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Coco/R" title="Coco/R">Coco/R</a></td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(1)</a></td>
+<td><a href="/wiki/EBNF" class="mw-redirect" title="EBNF">EBNF</a></td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a>, <a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a>, <a href="/wiki/F_Sharp_(programming_language)" title="F Sharp (programming language)">F#</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>, <a href="/wiki/Ada_(programming_language)" title="Ada (programming language)">Ada</a>, <a href="/wiki/Pascal_(programming_language)" title="Pascal (programming language)">Pascal</a>, <a href="/wiki/Modula-2" title="Modula-2">Modula-2</a>, <a href="/wiki/Oberon_(programming_language)" title="Oberon (programming language)">Oberon</a>, <a href="/wiki/Ruby_(programming_language)" title="Ruby (programming language)">Ruby</a>, <a href="/wiki/Unicon_(programming_language)" title="Unicon (programming language)">Unicon</a>, <a href="/wiki/Visual_Basic_.NET" title="Visual Basic .NET">Visual Basic .NET</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a>, <a href="/wiki/.NET_Framework" title=".NET Framework">.NET Framework</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>CookCC</td>
+<td><a href="/wiki/Canonical_LR_parser" title="Canonical LR parser">LALR(1)</a></td>
+<td>Java annotations</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>CppCC</td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(k)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td><a href="/wiki/POSIX" title="POSIX">POSIX</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>CSP</td>
+<td><a href="/wiki/Canonical_LR_parser" title="Canonical LR parser">LR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>separate</td>
+<td>generated</td>
+<td><a href="/wiki/POSIX" title="POSIX">POSIX</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Apache_License" title="Apache License">Apache License 2.0</a></td>
+</tr>
+<tr>
+<td>CUP</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>mixed</td>
+<td>external</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>Dragon</td>
+<td><a href="/wiki/Canonical_LR_parser" title="Canonical LR parser">LR(1)</a>, <a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>separate</td>
+<td>generated</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>eli</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td><a href="/wiki/POSIX" title="POSIX">POSIX</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a>, <a href="/wiki/GNU_Lesser_General_Public_License" title="GNU Lesser General Public License">GNU LGPL</a></td>
+</tr>
+<tr>
+<td>Essence</td>
+<td><a href="/wiki/LR_parser" title="LR parser">LR(???)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Scheme_48" title="Scheme 48">Scheme 48</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>Eto.Parse</td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(k)</a></td>
+<td>BNF, EBNF or C#</td>
+<td>N/A (state machine is runtime generated)</td>
+<td>separate</td>
+<td>internal</td>
+<td><a href="/wiki/.NET_Framework" title=".NET Framework">.NET Framework</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>eyapp</td>
+<td><a href="/wiki/Canonical_LR_parser" title="Canonical LR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Perl" title="Perl">Perl</a></td>
+<td>mixed</td>
+<td>external or generated</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Perl" title="Perl">Perl</a></td>
+</tr>
+<tr>
+<td>Frown</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(k)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Haskell_(programming_language)" title="Haskell (programming language)">Haskell 98</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>geyacc</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Eiffel_(programming_language)" title="Eiffel (programming language)">Eiffel</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/GOLD_(parser)" title="GOLD (parser)">GOLD</a></td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>BNF</td>
+<td><a href="/wiki/X86_assembly_language" title="X86 assembly language">x86 assembly language</a>, <a href="/wiki/ANSI_C" title="ANSI C">ANSI C</a>, <a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a>, <a href="/wiki/D_(programming_language)" title="D (programming language)">D</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>, <a href="/wiki/Pascal_(programming_language)" title="Pascal (programming language)">Pascal</a>, <a href="/wiki/Object_Pascal" title="Object Pascal">Object Pascal</a>, <a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a>, <a href="/wiki/Visual_Basic" title="Visual Basic">Visual Basic</a> 6, <a href="/wiki/Visual_Basic_.NET" title="Visual Basic .NET">Visual Basic .NET</a>, <a href="/wiki/Visual_C%2B%2B" title="Visual C++">Visual C++</a></td>
+<td>separate</td>
+<td>generated</td>
+<td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Microsoft Windows</a></td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Yes</td>
+<td>Modified <a href="/wiki/Zlib_License" title="Zlib License">Zlib</a></td>
+</tr>
+<tr>
+<td>GPPG</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>YACC</td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a></td>
+<td>separate</td>
+<td>external</td>
+<td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Microsoft Windows</a></td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Yes</td>
+<td><a href="/wiki/BSD" class="mw-redirect" title="BSD">BSD</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Grammatica" title="Grammatica">Grammatica</a></td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(k)</a></td>
+<td>BNF dialect</td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>separate</td>
+<td>generated</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_Lesser_General_Public_License" title="GNU Lesser General Public License">GNU LGPL</a></td>
+</tr>
+<tr>
+<td>HiLexed</td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(*)</a></td>
+<td>EBNF or Java</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>separate</td>
+<td>internal</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_Lesser_General_Public_Licence" class="mw-redirect" title="GNU Lesser General Public Licence">GNU LGPL</a></td>
+</tr>
+<tr>
+<td>Hime Parser Generator</td>
+<td><a href="/wiki/Canonical_LR_parser" title="Canonical LR parser">LR(1), LALR(1), LR(0)</a></td>
+<td>BNF dialect</td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>separate</td>
+<td>generated</td>
+<td><a href="/wiki/.NET_Framework" title=".NET Framework">.NET Framework</a>, <a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_Lesser_General_Public_License" title="GNU Lesser General Public License">GNU LGPL</a></td>
+</tr>
+<tr>
+<td>Hyacc</td>
+<td><a href="/wiki/Canonical_LR_parser" title="Canonical LR parser">LR(1), LALR(1), LR(0)</a></td>
+<td>YACC</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Irony_(framework)" title="Irony (framework)">Irony</a></td>
+<td><a href="/wiki/Canonical_LR_parser" title="Canonical LR parser">LALR(1)</a></td>
+<td>C#</td>
+<td>N/A (state machine is runtime generated)</td>
+<td>separate</td>
+<td>internal</td>
+<td><a href="/wiki/.NET_Framework" title=".NET Framework">.NET Framework</a></td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Yes</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>iyacc</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>YACC</td>
+<td><a href="/wiki/Icon_programming_language" class="mw-redirect" title="Icon programming language">Icon</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_GPL" class="mw-redirect" title="GNU GPL">GNU GPL</a></td>
+</tr>
+<tr>
+<td>jacc</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>mixed</td>
+<td>external</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/JavaCC" title="JavaCC">JavaCC</a></td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(k)</a></td>
+<td><a href="/wiki/EBNF" class="mw-redirect" title="EBNF">EBNF</a></td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a>, <a href="/wiki/JavaScript" title="JavaScript">JavaScript</a> (via <a href="/wiki/Google_Web_Toolkit" title="Google Web Toolkit">GWT</a> compiler)<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">[2]</a></sup></td>
+<td>mixed</td>
+<td>generated</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Yes</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>jay</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>YACC</td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>mixed</td>
+<td>none</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/JFLAP" title="JFLAP">JFLAP</a></td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(1)</a>, <a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>&#160;?</td>
+<td>&#160;?</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Yes</td>
+<td>&#160;?</td>
+</tr>
+<tr>
+<td><a href="/wiki/JetPAG" title="JetPAG">JetPAG</a></td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(k)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>JS/CC</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td><a href="/wiki/EBNF" class="mw-redirect" title="EBNF">EBNF</a></td>
+<td><a href="/wiki/JavaScript" title="JavaScript">JavaScript</a>, <a href="/wiki/JScript" title="JScript">JScript</a>, <a href="/wiki/ECMAScript" title="ECMAScript">ECMAScript</a></td>
+<td>mixed</td>
+<td>internal</td>
+<td>all</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Yes</td>
+<td><a href="/wiki/Artistic_License" title="Artistic License">Artistic</a></td>
+</tr>
+<tr>
+<td>KDevelop-PG-Qt</td>
+<td><a href="/wiki/Recursive_descent_parser" title="Recursive descent parser">LL(1)</a>, <a href="/wiki/Backtracking" title="Backtracking">Backtracking</a>, <a href="/wiki/Shunting-yard_algorithm" title="Shunting-yard algorithm">Shunting yard</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>generated or external</td>
+<td>all, <a href="/wiki/KDE" title="KDE">KDE</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_Library_General_Public_License" class="mw-redirect" title="GNU Library General Public License">GNU LGPL</a></td>
+</tr>
+<tr>
+<td>Kelbt</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">Backtracking LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td><a href="/wiki/POSIX" title="POSIX">POSIX</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>kmyacc</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>, <a href="/wiki/Perl" title="Perl">Perl</a>, <a href="/wiki/JavaScript" title="JavaScript">JavaScript</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>Lapg</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a>, <a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>, <a href="/wiki/JavaScript" title="JavaScript">JavaScript</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Lemon_Parser_Generator" title="Lemon Parser Generator">Lemon</a></td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Public_domain" title="Public domain">Public domain</a></td>
+</tr>
+<tr>
+<td>LEPL</td>
+<td>Recursive descent</td>
+<td><a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a></td>
+<td><a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a> (no generation, library)</td>
+<td>separate</td>
+<td>none</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Mozilla_Public_License" title="Mozilla Public License">MPL</a>/<a href="/wiki/GNU_Lesser_General_Public_License" title="GNU Lesser General Public License">GNU LGPL</a></td>
+</tr>
+<tr>
+<td>Lime</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/PHP" title="PHP">PHP</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>LISA</td>
+<td><a href="/wiki/LR_parser" title="LR parser">LR(?)</a>, <a href="/wiki/LL_parser" title="LL parser">LL(?)</a>, <a href="/wiki/LALR_parser" title="LALR parser">LALR(?)</a>, <a href="/wiki/Simple_LR_parser" title="Simple LR parser">SLR(?)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Yes</td>
+<td><a href="/wiki/Public_domain" title="Public domain">Public domain</a></td>
+</tr>
+<tr>
+<td>LLgen</td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a></td>
+<td>mixed</td>
+<td>external</td>
+<td><a href="/wiki/POSIX" title="POSIX">POSIX</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/BSD" class="mw-redirect" title="BSD">BSD</a></td>
+</tr>
+<tr>
+<td>LLnextgen</td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>LLLPG</td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(k)</a> + <a href="/wiki/Syntactic_predicate" title="Syntactic predicate">syntactic</a> and semantic predicates</td>
+<td>ANTLR-like</td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a></td>
+<td>mixed</td>
+<td>generated (?)</td>
+<td><a href="/wiki/.NET_Framework" title=".NET Framework">.NET Framework</a>, <a href="/wiki/Mono_(software)" title="Mono (software)">Mono</a></td>
+<td><a href="/wiki/Microsoft_Visual_Studio" title="Microsoft Visual Studio">Visual Studio</a></td>
+<td><a href="/wiki/GNU_Lesser_General_Public_License" title="GNU Lesser General Public License">GNU LGPL</a></td>
+</tr>
+<tr>
+<td>LPG</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">Backtracking LALR(k)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Eclipse_Public_License" title="Eclipse Public License">EPL</a></td>
+</tr>
+<tr>
+<td>Menhir</td>
+<td><a href="/wiki/Canonical_LR_parser" title="Canonical LR parser">LR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/OCaml" title="OCaml">OCaml</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Q_Public_License" title="Q Public License">QPL</a></td>
+</tr>
+<tr>
+<td>ML-Yacc</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/ML_(programming_language)" title="ML (programming language)">ML</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td>&#160;?</td>
+</tr>
+<tr>
+<td>Monkey</td>
+<td><a href="/wiki/Canonical_LR_parser" title="Canonical LR parser">LR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>separate</td>
+<td>generated</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>Msta</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(k)</a>, <a href="/wiki/Canonical_LR_parser" title="Canonical LR parser">LR(k)</a></td>
+<td><a href="/wiki/YACC" class="mw-redirect" title="YACC">YACC</a>, <a href="/wiki/EBNF" class="mw-redirect" title="EBNF">EBNF</a></td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>external or generated</td>
+<td><a href="/wiki/POSIX" title="POSIX">POSIX</a>, <a href="/wiki/Cygwin" title="Cygwin">Cygwin</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>MTP (More Than Parsing)</td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>separate</td>
+<td>generated</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>MyParser</td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(*)</a></td>
+<td><a href="/wiki/Markdown" title="Markdown">Markdown</a></td>
+<td><a href="/wiki/C%2B%2B11" title="C++11">C++11</a></td>
+<td>separate</td>
+<td>internal</td>
+<td>any platform with standard C++11 compiler</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT License</a></td>
+</tr>
+<tr>
+<td>NLT</td>
+<td><a href="/wiki/GLR_parser" title="GLR parser">GLR</a></td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a>/<a href="/wiki/Backus%E2%80%93Naur_Form" title="Backus–Naur Form">BNF</a>-like</td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a></td>
+<td>mixed</td>
+<td>mixed</td>
+<td><a href="/wiki/.NET_Framework" title=".NET Framework">.NET Framework</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>ocamlyacc</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/OCaml" title="OCaml">OCaml</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Q_Public_License" title="Q Public License">QPL</a></td>
+</tr>
+<tr>
+<td>olex</td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>Parsec</td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL</a>, <a href="/wiki/Backtracking" title="Backtracking">Backtracking</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Haskell_(programming_language)" title="Haskell (programming language)">Haskell</a></td>
+<td>mixed</td>
+<td>none</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/BSD_licence" class="mw-redirect" title="BSD licence">BSD</a></td>
+</tr>
+<tr>
+<td>Parse::Yapp</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Perl" title="Perl">Perl</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>Parser Objects</td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(k)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>mixed</td>
+<td>&#160;?</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Zlib_license" class="mw-redirect" title="Zlib license">zlib</a></td>
+</tr>
+<tr>
+<td>PCCTS</td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>&#160;?</td>
+<td>&#160;?</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td>&#160;?</td>
+</tr>
+<tr>
+<td><a href="/w/index.php?title=Python_Lex-Yacc&amp;action=edit&amp;redlink=1" class="new" title="Python Lex-Yacc (page does not exist)">PLY</a></td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>BNF</td>
+<td><a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT License</a></td>
+</tr>
+<tr>
+<td>PlyPlus</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>EBNF</td>
+<td><a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a></td>
+<td>separate</td>
+<td>generated</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT License</a></td>
+</tr>
+<tr>
+<td>PRECC</td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(k)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a></td>
+<td>separate</td>
+<td>generated</td>
+<td><a href="/wiki/DOS" title="DOS">DOS</a>, <a href="/wiki/POSIX" title="POSIX">POSIX</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>QLALR</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>RPATK</td>
+<td><a href="/wiki/Recursive_descent" class="mw-redirect" title="Recursive descent">Recursive descent</a>, <a href="/wiki/Backtracking" title="Backtracking">Backtracking</a></td>
+<td>BNF</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a> (no generation, library)</td>
+<td>separate</td>
+<td>none</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/SableCC" title="SableCC">SableCC</a></td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a>, <a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>, <a href="/wiki/OCaml" title="OCaml">OCaml</a>, <a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a></td>
+<td>separate</td>
+<td>generated</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_Lesser_General_Public_License" title="GNU Lesser General Public License">GNU LGPL</a></td>
+</tr>
+<tr>
+<td>SLK</td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(k)</a> <a href="/wiki/LR_parser" title="LR parser">LR(k)</a> <a href="/w/index.php?title=LALR(k)&amp;action=edit&amp;redlink=1" class="new" title="LALR(k) (page does not exist)">LALR(k)</a></td>
+<td><a href="/wiki/EBNF" class="mw-redirect" title="EBNF">EBNF</a></td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a>, <a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>, <a href="/wiki/JavaScript" title="JavaScript">JavaScript</a></td>
+<td>separate</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Proprietary_software" title="Proprietary software">Proprietary</a></td>
+</tr>
+<tr>
+<td>SP (Simple Parser)</td>
+<td><a href="/wiki/Recursive_descent" class="mw-redirect" title="Recursive descent">Recursive descent</a></td>
+<td><a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a></td>
+<td><a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a></td>
+<td>separate</td>
+<td>generated</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_Lesser_General_Public_License" title="GNU Lesser General Public License">GNU LGPL</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Spirit_Parser_Framework" title="Spirit Parser Framework">Spirit</a></td>
+<td><a href="/wiki/Recursive_descent_parser" title="Recursive descent parser">Recursive descent</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>internal</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Boost_C%2B%2B_Libraries" class="mw-redirect" title="Boost C++ Libraries">Boost</a></td>
+</tr>
+<tr>
+<td>Sprache</td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL</a>, <a href="/wiki/Backtracking" title="Backtracking">Backtracking</a></td>
+<td>C#</td>
+<td>interpreted</td>
+<td>mixed</td>
+<td>internal</td>
+<td><a href="/wiki/.NET_Framework" title=".NET Framework">.NET Framework</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/MIT_licence" class="mw-redirect" title="MIT licence">MIT</a></td>
+</tr>
+<tr>
+<td>Styx</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>separate</td>
+<td>generated</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_Lesser_General_Public_License" title="GNU Lesser General Public License">GNU LGPL</a></td>
+</tr>
+<tr>
+<td>Sweet Parser</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>separate</td>
+<td>generated</td>
+<td>Microsoft Windows</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Zlib_license" class="mw-redirect" title="Zlib license">zlib</a></td>
+</tr>
+<tr>
+<td>Tap</td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>TextTransformer</td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(k)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Microsoft Windows</a></td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Yes</td>
+<td><a href="/wiki/Proprietary_software" title="Proprietary software">Proprietary</a></td>
+</tr>
+<tr>
+<td>TinyPG</td>
+<td><a href="/wiki/LL(1)" class="mw-redirect" title="LL(1)">LL(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a>, <a href="/wiki/Visual_Basic" title="Visual Basic">Visual Basic</a></td>
+<td>&#160;?</td>
+<td>&#160;?</td>
+<td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Microsoft Windows</a></td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Yes</td>
+<td>CPOL 1.0</td>
+</tr>
+<tr>
+<td><a href="/w/index.php?title=Toy_Parser_Generator&amp;action=edit&amp;redlink=1" class="new" title="Toy Parser Generator (page does not exist)">Toy Parser Generator</a></td>
+<td><a href="/wiki/Recursive_descent_parser" title="Recursive descent parser">Recursive descent</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_Lesser_General_Public_License" title="GNU Lesser General Public License">GNU LGPL</a></td>
+</tr>
+<tr>
+<td>TP Yacc</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Turbo_Pascal" title="Turbo Pascal">Turbo Pascal</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Yes</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>UniCC</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td><a href="/wiki/EBNF" class="mw-redirect" title="EBNF">EBNF</a></td>
+<td><a href="/wiki/C_programming_language" class="mw-redirect" title="C programming language">C</a>, target-language independent</td>
+<td>mixed</td>
+<td>generated</td>
+<td><a href="/wiki/POSIX" title="POSIX">POSIX</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Artistic_License_2.0" class="mw-redirect" title="Artistic License 2.0">Artistic 2.0</a></td>
+</tr>
+<tr>
+<td>Whale</td>
+<td><a href="/wiki/LR_parser" title="LR parser">LR(?)</a>, some conjunctive stuff, see Whale Calf</td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Proprietary_software" title="Proprietary software">Proprietary</a></td>
+</tr>
+<tr>
+<td>wisent</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Yacc" title="Yacc">Yacc</a> <a href="/wiki/AT%26T_Corporation" title="AT&amp;T Corporation">AT&amp;T</a>/<a href="/wiki/Sun_Microsystems" title="Sun Microsystems">Sun</a></td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>YACC</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a></td>
+<td>mixed</td>
+<td>external</td>
+<td><a href="/wiki/POSIX" title="POSIX">POSIX</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Common_Public_License" title="Common Public License">CPL</a> &amp; <a href="/wiki/CDDL" class="mw-redirect" title="CDDL">CDDL</a></td>
+</tr>
+<tr>
+<td>Yacc++</td>
+<td><a href="/wiki/LR_parser" title="LR parser">LR(1)</a>, <a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>YACC</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a>, <a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a></td>
+<td>mixed</td>
+<td>generated or external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Proprietary_software" title="Proprietary software">Proprietary</a></td>
+</tr>
+<tr>
+<td>Yapps</td>
+<td><a href="/wiki/LL_parser" title="LL parser">LL(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>yecc</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Erlang_(programming_language)" title="Erlang (programming language)">Erlang</a></td>
+<td>separate</td>
+<td>generated</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Erlang_(programming_language)" title="Erlang (programming language)">Erlang</a></td>
+</tr>
+<tr>
+<td><a href="/w/index.php?title=Visual_BNF&amp;action=edit&amp;redlink=1" class="new" title="Visual BNF (page does not exist)">Visual BNF</a></td>
+<td><a href="/wiki/Canonical_LR_parser" title="Canonical LR parser">LR(1)</a>, <a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a></td>
+<td>separate</td>
+<td>generated</td>
+<td><a href="/wiki/.NET_Framework" title=".NET Framework">.NET Framework</a></td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Yes</td>
+<td><a href="/wiki/Proprietary_software" title="Proprietary software">Proprietary</a></td>
+</tr>
+<tr>
+<td>YooParse</td>
+<td><a href="/wiki/Canonical_LR_parser" title="Canonical LR parser">LR(1)</a>, <a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>Parse</td>
+<td><a href="/wiki/Canonical_LR_parser" title="Canonical LR parser">LR(1)</a></td>
+<td>BNF in <a href="/wiki/C%2B%2B" title="C++">C++</a> types</td>
+<td>&#160;?</td>
+<td>&#160;?</td>
+<td>none</td>
+<td>C++11 compliant compiler</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr class="sortbottom">
+<th>Product</th>
+<th><a href="/wiki/Parsing" title="Parsing">Parsing</a> algorithm</th>
+<th>Input grammar notation</th>
+<th><a href="/wiki/Programming_language" title="Programming language">Output languages</a></th>
+<th>Grammar, code</th>
+<th><a href="/wiki/Lexical_analyzer" class="mw-redirect" title="Lexical analyzer">Lexer</a></th>
+<th>Development platform</th>
+<th><a href="/wiki/Integrated_development_environment" title="Integrated development environment">IDE</a></th>
+<th><a href="/wiki/Software_license" title="Software license">License</a></th>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Parsing_expression_grammars.2C_deterministic_boolean_grammars">Parsing expression grammars, deterministic boolean grammars</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Comparison_of_parser_generators&amp;action=edit&amp;section=3" title="Edit section: Parsing expression grammars, deterministic boolean grammars">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="wikitable sortable" style="text-align: center; font-size: 85%; width: auto;">
+<tr>
+<th>Name</th>
+<th><a href="/wiki/Parsing" title="Parsing">Parsing</a> algorithm</th>
+<th><a href="/wiki/Programming_language" title="Programming language">Output languages</a></th>
+<th>Grammar, code</th>
+<th>Development platform</th>
+<th><a href="/wiki/Software_license" title="Software license">License</a></th>
+</tr>
+<tr>
+<td>Arpeggio</td>
+<td>PEG parser interpreter, Packrat</td>
+<td><a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a> (no generation, interpreted)</td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>AustenX</td>
+<td>Packrat (modified)</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>separate</td>
+<td>all</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>Aurochs</td>
+<td>Packrat</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/OCaml" title="OCaml">OCaml</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>CL-peg</td>
+<td>Packrat</td>
+<td><a href="/wiki/Common_Lisp" title="Common Lisp">Common Lisp</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>Drat!</td>
+<td>Packrat</td>
+<td><a href="/wiki/D_(programming_language)" title="D (programming language)">D</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>Frisby</td>
+<td>Packrat</td>
+<td><a href="/wiki/Haskell_(programming_language)" title="Haskell (programming language)">Haskell</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Tcllib" title="Tcllib">grammar::peg</a></td>
+<td>Packrat</td>
+<td><a href="/wiki/Tcl" title="Tcl">Tcl</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>Grako</td>
+<td>Packrat + Cut + Left Recursion</td>
+<td><a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a> / <a href="/wiki/C%2B%2B" title="C++">C++</a> (beta)</td>
+<td>separate</td>
+<td>all</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>IronMeta</td>
+<td>Packrat</td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a></td>
+<td>mixed</td>
+<td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Microsoft Windows</a></td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>Katahdin</td>
+<td>Packrat (modified), mutating interpreter</td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/Public_domain" title="Public domain">Public domain</a></td>
+</tr>
+<tr>
+<td>Laja</td>
+<td>2-phase scannerless top-down backtracking + runtime support</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>separate</td>
+<td>all</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>lars::parser</td>
+<td>Packrat (modified to support left-recursion and resolve grammar ambiguity)</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>identical</td>
+<td>all</td>
+<td><a href="/wiki/GNU_GPL" class="mw-redirect" title="GNU GPL">GNU GPL</a>, commercial license available on request</td>
+</tr>
+<tr>
+<td>LPeg</td>
+<td>Parsing Machine</td>
+<td><a href="/wiki/Lua_(programming_language)" title="Lua (programming language)">Lua</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>Mouse</td>
+<td>Recursive descent</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>separate</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td><a href="/wiki/Apache_License" title="Apache License">Apache License 2.0</a></td>
+</tr>
+<tr>
+<td>Narwhal</td>
+<td>Packrat</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a></td>
+<td>mixed</td>
+<td><a href="/wiki/POSIX" title="POSIX">POSIX</a>, <a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Microsoft Windows</a></td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>Nemerle.Peg</td>
+<td>Recursive descent + Pratt</td>
+<td><a href="/wiki/Nemerle" title="Nemerle">Nemerle</a></td>
+<td>separate</td>
+<td>all</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>neotoma</td>
+<td>Packrat</td>
+<td><a href="/wiki/Erlang_(programming_language)" title="Erlang (programming language)">Erlang</a></td>
+<td>separate</td>
+<td>all</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>NPEG</td>
+<td>Recursive descent</td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>OMeta</td>
+<td>Packrat (modified, partial memoization)</td>
+<td><a href="/wiki/JavaScript" title="JavaScript">JavaScript</a>, <a href="/wiki/Squeak" title="Squeak">Squeak</a>, <a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>PackCC</td>
+<td>Packrat (modified)</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>Packrat</td>
+<td>Packrat</td>
+<td><a href="/wiki/Scheme_(programming_language)" title="Scheme (programming language)">Scheme</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Pappy" title="Pappy">Pappy</a></td>
+<td>Packrat</td>
+<td><a href="/wiki/Haskell_(programming_language)" title="Haskell (programming language)">Haskell</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/Proprietary_software" title="Proprietary software">Proprietary</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Parboiled_(Java)" title="Parboiled (Java)">parboiled</a></td>
+<td>Recursive descent</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>, <a href="/wiki/Scala_(programming_language)" title="Scala (programming language)">Scala</a></td>
+<td>mixed</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td><a href="/wiki/Apache_License" title="Apache License">Apache License 2.0</a></td>
+</tr>
+<tr>
+<td>Lambda PEG</td>
+<td>Recursive descent</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>mixed</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td><a href="/wiki/Apache_License" title="Apache License">Apache License 2.0</a></td>
+</tr>
+<tr>
+<td>parsepp</td>
+<td>Recursive descent</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/Public_domain" title="Public domain">Public domain</a></td>
+</tr>
+<tr>
+<td>Parsnip</td>
+<td>Packrat</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Microsoft Windows</a></td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>peg</td>
+<td>Recursive descent</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>PEG.js</td>
+<td>Packrat (partial memoization)</td>
+<td><a href="/wiki/JavaScript" title="JavaScript">JavaScript</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>peg-parser</td>
+<td>PEG parser interpreter</td>
+<td><a href="/wiki/Dylan_(programming_language)" title="Dylan (programming language)">Dylan</a></td>
+<td>separate</td>
+<td>all</td>
+<td></td>
+</tr>
+<tr>
+<td>Pegasus</td>
+<td>Recursive descent / Packrat (selectively)</td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a></td>
+<td>mixed</td>
+<td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Microsoft Windows</a></td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>pegc</td>
+<td>Recursive descent</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/Public_domain" title="Public domain">Public domain</a></td>
+</tr>
+<tr>
+<td>PetitParser</td>
+<td>Packrat</td>
+<td><a href="/wiki/Smalltalk" title="Smalltalk">Smalltalk</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>, <a href="/wiki/Dart_(programming_language)" title="Dart (programming language)">Dart</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>PEGTL</td>
+<td>Recursive descent</td>
+<td><a href="/wiki/C%2B%2B11" title="C++11">C++11</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Parser_Grammar_Engine" title="Parser Grammar Engine">PGE</a></td>
+<td>Hybrid recursive descent / operator precedence<sup id="cite_ref-4" class="reference"><a href="#cite_note-4">[3]</a></sup></td>
+<td><a href="/wiki/Parrot_virtual_machine" title="Parrot virtual machine">Parrot bytecode</a></td>
+<td>mixed</td>
+<td><a href="/wiki/Parrot_virtual_machine" title="Parrot virtual machine">Parrot virtual machine</a></td>
+<td>Artistic 2.0</td>
+</tr>
+<tr>
+<td><a href="/wiki/PyPy" title="PyPy">PyPy rlib</a></td>
+<td>Packrat</td>
+<td><a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>pyPEG</td>
+<td>PEG parser interpreter, Packrat</td>
+<td><a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td><a href="/w/index.php?title=Rats!&amp;action=edit&amp;redlink=1" class="new" title="Rats! (page does not exist)">Rats!</a></td>
+<td>Packrat</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>mixed</td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td><a href="/wiki/GNU_Lesser_General_Public_License" title="GNU Lesser General Public License">GNU LGPL</a></td>
+</tr>
+<tr>
+<td>Spirit2</td>
+<td>Recursive descent</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/Boost_C%2B%2B_Libraries" class="mw-redirect" title="Boost C++ Libraries">Boost</a></td>
+</tr>
+<tr>
+<td>textX</td>
+<td>PEG parser interpreter, Packrat</td>
+<td><a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a> (no generation, interpreted)</td>
+<td>separate</td>
+<td>all</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>Treetop</td>
+<td>Recursive descent</td>
+<td><a href="/wiki/Ruby_(programming_language)" title="Ruby (programming language)">Ruby</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>Yard</td>
+<td>Recursive descent</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a> or <a href="/wiki/Public_domain" title="Public domain">Public domain</a></td>
+</tr>
+<tr>
+<td>Waxeye</td>
+<td>Packrat</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>, <a href="/wiki/JavaScript" title="JavaScript">JavaScript</a>, <a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a>, <a href="/wiki/Ruby_(programming_language)" title="Ruby (programming language)">Ruby</a>, <a href="/wiki/Scheme_(programming_language)" title="Scheme (programming language)">Scheme</a></td>
+<td>separate</td>
+<td>all</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>PHP PEG</td>
+<td>&#160;? (PEG Parser?)</td>
+<td><a href="/wiki/PHP" title="PHP">PHP</a></td>
+<td>mixed</td>
+<td>all</td>
+<td><a href="/wiki/BSD" class="mw-redirect" title="BSD">BSD</a></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="General_context-free.2C_conjunctive_or_boolean_languages">General context-free, conjunctive or boolean languages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Comparison_of_parser_generators&amp;action=edit&amp;section=4" title="Edit section: General context-free, conjunctive or boolean languages">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="wikitable sortable" style="text-align: center; font-size: 85%; width: auto;">
+<tr>
+<th>Name</th>
+<th><a href="/wiki/Parsing" title="Parsing">Parsing</a> algorithm</th>
+<th>Input grammar notation</th>
+<th><a href="/wiki/Programming_language" title="Programming language">Output languages</a></th>
+<th>Grammar, code</th>
+<th><a href="/wiki/Lexical_analyzer" class="mw-redirect" title="Lexical analyzer">Lexer</a></th>
+<th>Development platform</th>
+<th><a href="/wiki/Integrated_development_environment" title="Integrated development environment">IDE</a></th>
+<th><a href="/wiki/Software_license" title="Software license">License</a></th>
+</tr>
+<tr>
+<td>ACCENT</td>
+<td><a href="/wiki/Earley_parser" title="Earley parser">Earley</a></td>
+<td>YACC variant</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>APaGeD</td>
+<td><a href="/wiki/GLR_parser" title="GLR parser">GLR</a>, <a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a>, <a href="/wiki/LL_parser" title="LL parser">LL(k)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/D_(programming_language)" title="D (programming language)">D</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Artistic_License" title="Artistic License">Artistic</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/GNU_bison" title="GNU bison">Bison</a></td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a>, <a href="/wiki/Canonical_LR_parser" title="Canonical LR parser">LR(1)</a>, <a href="/w/index.php?title=IELR_parser&amp;action=edit&amp;redlink=1" class="new" title="IELR parser (page does not exist)">IELR(1)</a>, <a href="/wiki/GLR_parser" title="GLR parser">GLR</a></td>
+<td>YACC</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/C%2B%2B" title="C++">C++</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>, <a href="/wiki/XML" title="XML">XML</a></td>
+<td>mixed (except XML)</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/DMS_Software_Reengineering_Toolkit" title="DMS Software Reengineering Toolkit">DMS Software Reengineering Toolkit</a></td>
+<td><a href="/wiki/GLR_parser" title="GLR parser">GLR</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Parlanse" class="mw-redirect" title="Parlanse">Parlanse</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Microsoft Windows</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Proprietary_software" title="Proprietary software">Proprietary</a></td>
+</tr>
+<tr>
+<td>DParser</td>
+<td><a href="/wiki/Scannerless_parsing" title="Scannerless parsing">Scannerless GLR</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a></td>
+<td>mixed</td>
+<td><a href="/wiki/Scannerless_parsing" title="Scannerless parsing">scannerless</a></td>
+<td><a href="/wiki/POSIX" title="POSIX">POSIX</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>Dypgen</td>
+<td><a href="/wiki/Adaptive_grammar" title="Adaptive grammar">runtime-extensible</a> <a href="/wiki/GLR_parser" title="GLR parser">GLR</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/OCaml" title="OCaml">OCaml</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/CeCILL" title="CeCILL">CeCILL-B</a></td>
+</tr>
+<tr>
+<td>E3</td>
+<td>Earley</td>
+<td>&#160;?</td>
+<td>OCaml</td>
+<td>mixed</td>
+<td>external, or scannerless</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td>&#160;?</td>
+</tr>
+<tr>
+<td>Elkhound</td>
+<td><a href="/wiki/GLR_parser" title="GLR parser">GLR</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a>, <a href="/wiki/OCaml" title="OCaml">OCaml</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>eu.h8me.Parsing</td>
+<td><a href="/wiki/GLR_parser" title="GLR parser">GLR</a></td>
+<td>&#160;?</td>
+<td>N/A (state machine is runtime generated)</td>
+<td>separate</td>
+<td>external</td>
+<td><a href="/wiki/.NET_Framework" title=".NET Framework">.NET Framework</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>GDK</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a>, <a href="/wiki/GLR_parser" title="GLR parser">GLR</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/Lex_programming_tool" class="mw-redirect" title="Lex programming tool">Lex</a>, <a href="/wiki/Haskell_(programming_language)" title="Haskell (programming language)">Haskell</a>, <a href="/wiki/HTML" title="HTML">HTML</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>, <a href="/wiki/Object_Pascal" title="Object Pascal">Object Pascal</a>, <a href="/wiki/Yacc" title="Yacc">Yacc</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td><a href="/wiki/POSIX" title="POSIX">POSIX</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>Happy</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR</a>, <a href="/wiki/GLR_parser" title="GLR parser">GLR</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Haskell_(programming_language)" title="Haskell (programming language)">Haskell</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>Hime Parser Generator</td>
+<td><a href="/wiki/GLR_parser" title="GLR parser">GLR</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>separate</td>
+<td>generated</td>
+<td><a href="/wiki/.NET_Framework" title=".NET Framework">.NET Framework</a>, <a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_Lesser_General_Public_License" title="GNU Lesser General Public License">GNU LGPL</a></td>
+</tr>
+<tr>
+<td>IronText Library</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a>, <a href="/wiki/GLR_parser" title="GLR parser">GLR</a></td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a></td>
+<td><a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a></td>
+<td>mixed</td>
+<td>generated or external</td>
+<td><a href="/wiki/.NET_Framework" title=".NET Framework">.NET Framework</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Apache_License" title="Apache License">Apache License 2.0</a></td>
+</tr>
+<tr>
+<td>Jison</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a>, <a href="/wiki/LR_parser" title="LR parser">LR(0)</a>, <a href="/wiki/SLR_parser" class="mw-redirect" title="SLR parser">SLR(1)</a></td>
+<td>YACC</td>
+<td><a href="/wiki/JavaScript" title="JavaScript">JavaScript</a>, <a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a>, <a href="/wiki/PHP" title="PHP">PHP</a></td>
+<td>mixed</td>
+<td>generated</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>Laja</td>
+<td>Scannerless, two phase</td>
+<td>Laja</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>separate</td>
+<td><a href="/wiki/Scannerless_parsing" title="Scannerless parsing">scannerless</a></td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/GNU_General_Public_License" title="GNU General Public License">GNU GPL</a></td>
+</tr>
+<tr>
+<td>ModelCC</td>
+<td><a href="/wiki/Earley_Parser" class="mw-redirect" title="Earley Parser">Earley</a></td>
+<td>Annotated class model</td>
+<td><a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>generated</td>
+<td>generated</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>P1</td>
+<td>Combinators</td>
+<td>BNF-like</td>
+<td>OCaml</td>
+<td>mixed</td>
+<td>external, or scannerless</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td>&#160;?</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>Earley/combinators</td>
+<td>BNF-like</td>
+<td>OCaml</td>
+<td>mixed</td>
+<td>external, or scannerless</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td>&#160;?</td>
+</tr>
+<tr>
+<td>P4</td>
+<td>Earley/combinators, infinitary CFGs</td>
+<td>BNF-like</td>
+<td>OCaml</td>
+<td>mixed</td>
+<td>external, or scannerless</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td>&#160;?</td>
+</tr>
+<tr>
+<td><a href="/wiki/Scannerless_Boolean_Parser" title="Scannerless Boolean Parser">Scannerless Boolean Parser</a></td>
+<td><a href="/wiki/Scannerless_parsing" title="Scannerless parsing">Scannerless GLR</a> (<a href="/wiki/Boolean_grammar" title="Boolean grammar">Boolean grammars</a>)</td>
+<td>&#160;?</td>
+<td><a href="/wiki/Haskell_(programming_language)" title="Haskell (programming language)">Haskell</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>separate</td>
+<td><a href="/wiki/Scannerless_parsing" title="Scannerless parsing">scannerless</a></td>
+<td><a href="/wiki/Java_Virtual_Machine" class="mw-redirect" title="Java Virtual Machine">Java Virtual Machine</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td><a href="/wiki/Syntax_Definition_Formalism" title="Syntax Definition Formalism">SDF</a>/SGLR</td>
+<td><a href="/wiki/Scannerless_parsing" title="Scannerless parsing">Scannerless GLR</a></td>
+<td><a href="/wiki/Syntax_Definition_Formalism" title="Syntax Definition Formalism">SDF</a></td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a></td>
+<td>separate</td>
+<td><a href="/wiki/Scannerless_parsing" title="Scannerless parsing">scannerless</a></td>
+<td>all</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Yes</td>
+<td><a href="/wiki/BSD_licenses" title="BSD licenses">BSD</a></td>
+</tr>
+<tr>
+<td>SmaCC</td>
+<td><a href="/wiki/GLR_parser" title="GLR parser">GLR(1)</a>, <a href="/wiki/LALR_parser" title="LALR parser">LALR(1)</a>, <a href="/wiki/Canonical_LR_parser" title="Canonical LR parser">LR(1)</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Smalltalk" title="Smalltalk">Smalltalk</a></td>
+<td>mixed</td>
+<td>internal</td>
+<td>all</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Yes</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>SPARK</td>
+<td><a href="/wiki/Earley_Parser" class="mw-redirect" title="Earley Parser">Earley</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a></td>
+<td>mixed</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>Tom</td>
+<td><a href="/wiki/GLR_parser" title="GLR parser">GLR</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a></td>
+<td>generated</td>
+<td>none</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td>"No licensing or copyright restrictions"</td>
+</tr>
+<tr>
+<td>UltraGram</td>
+<td><a href="/wiki/LALR_parser" title="LALR parser">LALR</a>, <a href="/wiki/LR_parser" title="LR parser">LR</a>, <a href="/wiki/GLR_parser" title="GLR parser">GLR</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a>, <a href="/wiki/C_Sharp_(programming_language)" title="C Sharp (programming language)">C#</a>, <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java</a>, <a href="/wiki/Visual_Basic_.NET" title="Visual Basic .NET">Visual Basic .NET</a></td>
+<td>separate</td>
+<td>generated</td>
+<td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Microsoft Windows</a></td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Yes</td>
+<td><a href="/wiki/Proprietary_software" title="Proprietary software">Proprietary</a></td>
+</tr>
+<tr>
+<td>Wormhole</td>
+<td><a href="/wiki/Pruning_(algorithm)" class="mw-redirect" title="Pruning (algorithm)">Pruning</a>, <a href="/wiki/LR_parser" title="LR parser">LR</a>, <a href="/wiki/GLR_parser" title="GLR parser">GLR</a>, <a href="/wiki/Scannerless_parsing" title="Scannerless parsing">Scannerless GLR</a></td>
+<td>&#160;?</td>
+<td><a href="/wiki/C_(programming_language)" title="C (programming language)">C</a>, <a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a></td>
+<td>mixed</td>
+<td><a href="/wiki/Scannerless_parsing" title="Scannerless parsing">scannerless</a></td>
+<td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Microsoft Windows</a></td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/MIT_License" title="MIT License">MIT</a></td>
+</tr>
+<tr>
+<td>Whale Calf</td>
+<td>General tabular, <a href="/wiki/LL_parser" title="LL parser">SLL(k)</a>, Linear normal form (<a href="/wiki/Conjunctive_grammar" title="Conjunctive grammar">Conjunctive grammars</a>), <a href="/wiki/LR_parser" title="LR parser">LR</a>, Binary normal form (<a href="/wiki/Boolean_grammar" title="Boolean grammar">Boolean grammars</a>)</td>
+<td>&#160;?</td>
+<td><a href="/wiki/C%2B%2B" title="C++">C++</a></td>
+<td>separate</td>
+<td>external</td>
+<td>all</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">No</td>
+<td><a href="/wiki/Proprietary_software" title="Proprietary software">Proprietary</a></td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="Context-sensitive">Context-sensitive</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Comparison_of_parser_generators&amp;action=edit&amp;section=5" title="Edit section: Context-sensitive">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="wikitable sortable">
+<tr>
+<th>Name</th>
+<th>Parsing algortihm</th>
+<th>Input grammar notation</th>
+<th>Boolean grammar capabilities</th>
+<th>Development platform</th>
+<th>License</th>
+</tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="http://qyxz.netau.net">LuZ</a></td>
+<td>delta chain</td>
+<td>modular</td>
+<td>Conjunctive, not complimentary</td>
+<td>all</td>
+<td>proprietary</td>
+</tr>
+<tr>
+<td><a rel="nofollow" class="external text" href="http://sourceforge.net/p/bnf2xml/">bnf2xml</a></td>
+<td>recursive descent (is a text filter output is xml)</td>
+<td>simple bnf grammar (input matching), output is xml</td>
+<td>?</td>
+<td>beta, and not a full-fledged EBNF parser</td>
+<td>GNU GPLv2</td>
+</tr>
+</table>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Comparison_of_parser_generators&amp;action=edit&amp;section=6" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="/wiki/Compiler-compiler" title="Compiler-compiler">Compiler-compiler</a></li>
+<li><a href="/wiki/List_of_lexer_generators" class="mw-redirect" title="List of lexer generators">List of lexer generators</a></li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Comparison_of_parser_generators&amp;action=edit&amp;section=7" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://www.antlr.org/papers/allstar-techreport.pdf">"Adaptive LL(*) Parsing: The Power of Dynamic Analysis"</a> <span style="font-size:85%;">(PDF)</span>. Terence Parr<span class="reference-accessdate">. Retrieved <span class="nowrap">2016-04-03</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AComparison+of+parser+generators&amp;rft.btitle=Adaptive+LL%28%2A%29+Parsing%3A+The+Power+of+Dynamic+Analysis&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fwww.antlr.org%2Fpapers%2Fallstar-techreport.pdf&amp;rft.pub=Terence+Parr&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://consoliii.blogspot.co.uk/2014/04/creating-gwt-compatible-parser-using.html">"Building parsers for the web with JavaCC &amp; GWT (Part one)"</a>. Chris Ainsley<span class="reference-accessdate">. Retrieved <span class="nowrap">2014-05-04</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AComparison+of+parser+generators&amp;rft.btitle=Building+parsers+for+the+web+with+JavaCC+%26+GWT+%28Part+one%29&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fconsoliii.blogspot.co.uk%2F2014%2F04%2Fcreating-gwt-compatible-parser-using.html&amp;rft.pub=Chris+Ainsley&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text"><cite class="citation web"><a rel="nofollow" class="external text" href="http://parrot.github.com/html/docs/book/pct/ch04_pge.pod.html">"Parrot: Grammar Engine"</a>. The Parrot Foundation. 2011.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AComparison+of+parser+generators&amp;rft.btitle=Parrot%3A+Grammar+Engine&amp;rft.date=2011&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fparrot.github.com%2Fhtml%2Fdocs%2Fbook%2Fpct%2Fch04_pge.pod.html&amp;rft.pub=The+Parrot+Foundation&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span> "PGE rules provide the full power of recursive descent parsing and operator precedence parsing."</span></li>
+</ol>
+<h2><span class="mw-headline" id="Notes">Notes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Comparison_of_parser_generators&amp;action=edit&amp;section=8" title="Edit section: Notes">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ol class="references">
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text">Bison 1.19 fork</span></li>
+</ol>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Comparison_of_parser_generators&amp;action=edit&amp;section=9" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://catalog.compilertools.net/lexparse.html">The Catalog of Compiler Construction Tools</a></li>
+<li><a rel="nofollow" class="external text" href="http://java-source.net/open-source/parser-generators">Open Source Parser Generators in Java</a></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1022
+Cached time: 20160606190254
+Cache expiry: 2592000
+Dynamic content: false
+CPU time usage: 0.278 seconds
+Real time usage: 0.317 seconds
+Preprocessor visited node count: 2155/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 16664/2097152 bytes
+Template argument size: 10/2097152 bytes
+Highest expansion depth: 7/40
+Expensive parser function count: 1/500
+Lua time usage: 0.062/10.000 seconds
+Lua memory usage: 1.87 MB/50 MB
+Number of Wikibase entities loaded: 0-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  146.933      1 - -total
+ 40.84%   60.003      1 - Template:Confusing
+ 36.48%   53.597      3 - Template:Cite_web
+ 25.95%   38.136      1 - Template:Ambox
+  7.69%   11.301      1 - Template:See_also
+  2.77%    4.076    100 - Template:No
+  1.72%    2.528     16 - Template:Yes
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:3959734-0!*!0!!en!4!* and timestamp 20160606190253 and revision id 723172017
+ -->
+<noscript><img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Comparison_of_parser_generators&amp;oldid=723172017">https://en.wikipedia.org/w/index.php?title=Comparison_of_parser_generators&amp;oldid=723172017</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="/wiki/Category:Parser_generators" title="Category:Parser generators">Parser generators</a></li><li><a href="/wiki/Category:Parsing_algorithms" title="Category:Parsing algorithms">Parsing algorithms</a></li><li><a href="/wiki/Category:Software_comparisons" title="Category:Software comparisons">Software comparisons</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="/wiki/Category:Wikipedia_articles_needing_clarification_from_March_2014" title="Category:Wikipedia articles needing clarification from March 2014">Wikipedia articles needing clarification from March 2014</a></li><li><a href="/wiki/Category:All_Wikipedia_articles_needing_clarification" title="Category:All Wikipedia articles needing clarification">All Wikipedia articles needing clarification</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="/wiki/Special:MyTalk" title="Discussion about edits from this IP address [n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs"><a href="/wiki/Special:MyContributions" title="A list of edits made from this IP address [y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="/w/index.php?title=Special:CreateAccount&amp;returnto=Comparison+of+parser+generators" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Comparison+of+parser+generators" title="You're encouraged to log in; however, it's not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/Comparison_of_parser_generators"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="/wiki/Talk:Comparison_of_parser_generators"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/wiki/Comparison_of_parser_generators" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="/w/index.php?title=Comparison_of_parser_generators&amp;action=edit"  title="Edit this page [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=Comparison_of_parser_generators&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li><li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li><li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li><li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li><li id="n-shoplink"><a href="//shop.wikimedia.org" title="Visit the Wikipedia store">Wikipedia store</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Comparison_of_parser_generators" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Comparison_of_parser_generators" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="/w/index.php?title=Comparison_of_parser_generators&amp;oldid=723172017" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/w/index.php?title=Comparison_of_parser_generators&amp;action=info" title="More information about this page">Page information</a></li><li id="t-wikibase"><a href="https://www.wikidata.org/wiki/Q5155950" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li><li id="t-cite"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=Comparison_of_parser_generators&amp;id=723172017" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+						<li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Comparison+of+parser+generators">Create a book</a></li><li id="coll-download-as-rdf2latex"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Comparison+of+parser+generators&amp;returnto=Comparison+of+parser+generators&amp;oldid=723172017&amp;writer=rdf2latex">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Comparison_of_parser_generators&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+						<li class="uls-p-lang-dummy"><a href="#"></a></li>					</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-add wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Q5155950#sitelinks-wikipedia" title="Add interlanguage links" class="wbc-editpage">Add links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 1 June 2016, at 13:18.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="//wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="//wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="//www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="//wikimediafoundation.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-cookiestatement"><a href="//wikimediafoundation.org/wiki/Cookie_statement">Cookie statement</a></li>
+											<li id="footer-places-mobileview"><a href="//en.m.wikipedia.org/w/index.php?title=Comparison_of_parser_generators&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://wikimediafoundation.org/"><img src="/static/images/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="//www.mediawiki.org/"><img src="/w/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/w/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /w/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","user":"ready"});mw.loader.load(["ext.cite.a11y","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.eventLogging.subscriber","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.visualEditor.targetLoader","ext.wikimediaEvents","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":81,"wgHostname":"mw1175"});});</script>
+	</body>
+</html>

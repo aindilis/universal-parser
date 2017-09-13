@@ -1,0 +1,666 @@
+Complete BNF definition of MA-PDDL with privacy
+
+D. L. Kovacs
+
+Complete BNF definition of MA-PDDL with privacy
+
+Hereby a complete BNF syntax definition of MA-PDDL (Multi-Agent PDDL) extended with privacy is presented based on the complete
+and corrected BNF syntax definition of PDDL3.1 [1], the original definition of MA-PDDL [2] and privacy as defined in MA-STRIPS [3].
+The minimalistic additions to PDDL3.1 syntax are highlighted separately each time. The additions to PDDL3.1 enabling description of
+multiple agents are highlighted with yellow, while the additions enabling the description of privacy are highlighted with light blue.
+
+1. Domain description
+<domain>
+
+<require-def>
+<require-key>
+<types-def>
+<constants-def>
+<constants-def>
+<constants-def>
+<private-objects>
+<private-objects>
+<predicates-def>
+<predicates-def>
+<predicates-def>
+<private-predicates>
+<private-predicates>
+<atomic formula skeleton>
+<atomic formula skeleton>
+<predicate>
+<variable>
+<atomic function skeleton>
+<atomic function skeleton>
+<function-symbol>
+<functions-def>
+<functions-def>
+<functions-def>
+<private-functions>
+<private-functions>
+<function typed list (x)>
+<function typed list (x)>
+<function typed list (x)>
+<function type>
+<function type>
+<constraints>
+<structure-def>
+<structure-def>
+<structure-def>
+<typed list (x)>
+<typed list (x)>
+<primitive-type>
+<primitive-type>
+<type>
+<type>
+<emptyOr (x)>
+<emptyOr (x)>
+<action-def>
+
+<action-symbol>
+<agent-def>
+<agent-def>
+<agent-def>
+<agent-def>
+<action-def body>
+<pre-GD>
+<pre-GD>
+<pre-GD>
+<pref-GD>
+<pref-GD>
+<pref-name>
+<GD>
+<GD>
+<GD>
+
+::= (define (domain <name>)
+[<require-def>]
+[<types-def>]:typing
+[<constants-def>]
+[<predicates-def>]
+[<functions-def>]:fluents
+[<constraints>]
+<structure-def>*)
+::= (:requirements <require-key>+)
+::= See Section 7.2.3
+::= (:types <typed list (name)>)
+::= (:constants <typed list (name)>)
+::=:factored-privacy
+(:constants <typed list (name)> [<private-objects>])
+::=:multi-agent + :unfactored-privacy
+(:constants <typed list (name)> <private-objects>*)
+::=:factored-privacy
+(:private <typed list (name)>)
+::=:multi-agent + :unfactored-privacy
+(:private <agent-def> <typed list (name)>)
+::= (:predicates <atomic formula skeleton>+)
+::=:factored-privacy
+(:predicates <atomic formula skeleton>+ [<private-predicates>])
+::=:multi-agent + :unfactored-privacy
+(:predicates <atomic formula skeleton>+ <private-predicates>*)
+::=:factored-privacy
+(:private <atomic formula skeleton>+)
+::=:multi-agent + :unfactored-privacy
+(:private <agent-def> <atomic formula skeleton>+)
+::= (<predicate> <typed list (variable)>)
+::= :factored-privacy (<predicate> <typed list (term)>)
+::= <name>
+::= ?<name>
+::= (<function-symbol> <typed list (variable)>)
+::= :factored-privacy (<function-symbol> <typed list (term)>)
+::= <name>
+::=:fluents (:functions <function typed list (atomic function skeleton)>)
+::=:fluents + :factored-privacy
+(:functions <function typed list (atomic function skeleton)> [<private-functions>])
+::=:fluents + :multi-agent + :unfactored-privacy (:functions <function typed list (atomic function skeleton)> <private-functions>*)
+:fluents + :factored-privacy
+::=
+(:private <function typed list (atomic function skeleton)>)
+::=:fluents + :multi-agent + :unfactored-privacy (:private <agent-def> <function typed list (atomic function skeleton)>)
+::= x+ - <function type> <function typed list(x)>
+::=
+::=:numeric-fluents x+
+This is deprecated since PDDL3.1, where the default fluent type is number.
+::=:numeric-fluents number
+:typing + :object-fluents
+<type>
+::=
+::=:constraints (:constraints <con-GD>)
+::= <action-def>
+::=:durative−actions <durative-action-def>
+::=:derived−predicates <derived-def>
+::= x*
+::=:typing x+ - <type> <typed list(x)>
+::= <name>
+::= object
+::= (either <primitive-type>+)
+::= <primitive-type>
+::= ()
+::= x
+::= (:action <action-symbol>
+[:agent <agent-def>]:multi-agent
+[:parameters (<typed list (variable)>)]
+<action-def body>)
+::= <name>
+::= <name>
+::= <variable>
+::=:typing <type>
+::=:typing <variable> - <type>
+::= [:precondition <emptyOr (pre-GD)>]
+[:effect <emptyOr (effect)>]
+::= <pref-GD>
+::= (and <pre-GD>*)
+::=:universal−preconditions (forall (<typed list(variable)>) <pre-GD>)
+::=:preferences (preference [<pref-name>] <GD>)
+::= <GD>
+::= <name>
+::= <atomic formula(term)>
+::=:negative−preconditions <literal(term)>
+::=:multi-agent <action formula(term)>
+
+1
+
+Complete BNF definition of MA-PDDL with privacy
+
+<GD>
+<GD>
+<GD>
+<GD>
+<GD>
+<GD>
+<GD>
+<GD>
+<f-comp>
+<literal(t)>
+<literal(t)>
+<atomic formula(t)>
+<atomic formula(t)>
+<action formula(t)>
+<action formula(t)>
+<term>
+<term>
+<term>
+<function-term>
+<f-exp>
+<f-exp>
+<f-exp>
+<f-exp>
+::=:numeric-fluents
+<f-exp>
+<f-exp>
+<f-head>
+<f-head>
+<binary-op>
+<binary-op>
+<binary-op>
+<multi-op>
+<multi-op>
+<binary-comp>
+<binary-comp>
+<binary-comp>
+<binary-comp>
+<binary-comp>
+<name>
+<letter>
+<any char>
+<number>
+<digit>
+<decimal>
+<effect>
+<effect>
+<c-effect>
+<c-effect>
+<c-effect>
+<p-effect>
+<p-effect>
+<p-effect>
+<p-effect>
+<p-effect>
+<cond-effect>
+<cond-effect>
+<assign-op>
+<assign-op>
+<assign-op>
+<assign-op>
+<assign-op>
+<durative-action-def>
+
+<da-symbol>
+<da-def body>
+
+<da-GD>
+<da-GD>
+<da-GD>
+<pref-timed-GD>
+<pref-timed-GD>
+<timed-GD>
+<timed-GD>
+<time-specifier>
+<time-specifier>
+<interval>
+<duration-constraint>
+<duration-constraint>
+<duration-constraint>
+<simple-duration-constraint>
+<simple-duration-constraint>
+<d-op>
+<d-op>
+<d-op>
+<d-value>
+<d-value>
+
++
+
+D. L. Kovacs
+
+::=:multi-agent + :negative−preconditions (not <action formula(term)>)
+::= (and <GD>*)
+::=:disjunctive−preconditions (or <GD>*)
+::=:disjunctive−preconditions (not <GD>)
+::=:disjunctive−preconditions (imply <GD> <GD>)
+::=:existential−preconditions (exists (<typed list(variable)>) <GD> )
+::=:universal−preconditions (forall (<typed list(variable)>) <GD> )
+::=:numeric-fluents <f-comp>
+::= (<binary-comp> <f-exp> <f-exp>)
+::= <atomic formula(t)>
+::= (not <atomic formula(t)>)
+::= (<predicate> t*)
+::=:equality (= t t)
+::= (<action-symbol> t t*)
+::=:durative−actions (<da-symbol> t t*)
+::= <name>
+::= <variable>
+::=:object-fluents <function-term>
+::=:object-fluents (<function-symbol> <term>*)
+::=:numeric-fluents <number>
+::=:numeric-fluents (<binary-op> <f-exp> <f-exp>)
+::=:numeric-fluents (<multi-op> <f-exp> <f-exp>+)
+:multi-agent
+(num (<typed list (variable)>) <emptyOr (GD)> <action formula(term)>)
+::=:numeric-fluents (- <f-exp>)
+:numeric-fluents
+<f-head>
+::=
+::= (<function-symbol> <term>*)
+::= <function-symbol>
+::= <multi-op>
+::= −
+::= /
+::= *
+::= +
+::= >
+::= <
+::= =
+::= >=
+::= <=
+::= <letter> <any char>*
+::= a..z | A..Z
+::= <letter> | <digit> | - | _
+::= <digit>+ [<decimal>]
+::= 0..9
+::= .<digit>+
+::= (and <c-effect>*)
+::= <c-effect>
+::=:conditional−effects (forall (<typed list (variable)>) <effect>)
+::=:conditional−effects (when <GD> <cond-effect>)
+::= <p-effect>
+::= (not <atomic formula(term)>)
+::= <atomic formula(term)>
+::=:numeric-fluents (<assign-op> <f-head> <f-exp>)
+::=:object-fluents (assign <function-term> <term>)
+::=:object-fluents (assign <function-term> undefined)
+::= (and <p-effect>*)
+::= <p-effect>
+::= assign
+::= scale-up
+::= scale-down
+::= increase
+::= decrease
+::= (:durative-action <da-symbol>
+[:agent <agent-def>]:multi-agent
+[:parameters (<typed list (variable)>)]
+<da-def body>)
+::= <name>
+::= :duration <duration-constraint>
+:condition <emptyOr (da-GD)>
+:effect <emptyOr (da-effect)>
+::= <pref-timed-GD>
+::= (and <da-GD>*)
+::=:universal−preconditions (forall (<typed-list (variable)>) <da-GD>)
+::= <timed-GD>
+::=:preferences (preference [<pref-name>] <timed-GD>)
+::= (at <time-specifier> <GD>)
+::= (over <interval> <GD>)
+::= start
+::= end
+::= all
+::=:duration−inequalities (and <simple-duration-constraint>+)
+::= ()
+::= <simple-duration-constraint>
+::= (<d-op> ?duration <d-value>)
+::= (at <time-specifier> <simple-duration-constraint>)
+::=:duration−inequalities <=
+::=:duration−inequalities >=
+::= =
+::= <number>
+::=:numeric-fluents <f-exp>
+
+2
+
+Complete BNF definition of MA-PDDL with privacy
+
+<da-effect>
+<da-effect>
+<da-effect>
+<da-effect>
+<timed-effect>
+<timed-effect>
+<timed-effect>
+<f-assign-da>
+<f-exp-da>
+<f-exp-da>
+<f-exp-da>
+<f-exp-da>
+<f-exp-da>
+<assign-op-t>
+<assign-op-t>
+<f-exp-t>
+<f-exp-t>
+<f-exp-t>
+<derived-def>
+
+D. L. Kovacs
+
+::= (and <da-effect>*)
+::= <timed-effect>
+::=:conditional−effects (forall (<typed list (variable)>) <da-effect>)
+::=:conditional−effects (when <da-GD> <timed-effect>)
+::= (at <time-specifier> <cond-effect>)
+::=:numeric-fluents (at <time-specifier> <f-assign-da>)
+::=:continuous−effects + :numeric-fluents (<assign-op-t> <f-head> <f-exp-t>)
+::= (<assign-op> <f-head> <f-exp-da>)
+::= (<binary-op> <f-exp-da> <f-exp-da>)
+::= (<multi-op> <f-exp-da> <f-exp-da>+)
+::= (- <f-exp-da>)
+::=:duration−inequalities ?duration
+::= <f-exp>
+::= increase
+::= decrease
+::= (* <f-exp> #t)
+::= (* #t <f-exp>)
+::= #t
+::= (:derived <atomic formula skeleton> <GD>)
+
+2. Problem description
+<problem>
+
+<object declaration>
+<object declaration>
+<object declaration>
+
+<init>
+<init-el>
+<init-el>
+<init-el>
+<init-el>
+<basic-function-term>
+<basic-function-term>
+<goal>
+<goal>
+
+<constraints>
+<pref-con-GD>
+<pref-con-GD>
+<pref-con-GD>
+<pref-con-GD>
+<con-GD>
+<con-GD>
+<con-GD>
+<con-GD>
+<con-GD>
+<con-GD>
+<con-GD>
+<con-GD>
+<con-GD>
+<con-GD>
+<con-GD>
+<con-GD>
+<metric-spec>
+<metric-spec>
+
+<optimization>
+<optimization>
+<metric-f-exp>
+<metric-f-exp>
+<metric-f-exp>
+<metric-f-exp>
+<metric-f-exp>
+<metric-f-exp>
+<metric-f-exp>
+<metric-f-exp>
+<metric-f-exp>
+<length-spec>
+
+::= (define (problem <name>)
+(:domain <name>)
+[<require-def>]
+[<object declaration>]
+<init>
+<goal>+
+[<constraints>]:constraints
+<metric-spec>*:numeric-fluents
+[<length-spec>])
+::= (:objects <typed list (name)>)
+:factored-privacy
+::=
+(:objects <typed list (name)> [<private-objects>])
+::=:multi-agent + :unfactored-privacy
+(:objects <typed list (name)> <private-objects>*)
+::= (:init <init-el>*)
+::= <literal(name)>
+::=:timed−initial−literals (at <number> <literal(name)>)
+::=:numeric-fluents (= <basic-function-term> <number>)
+::=:object-fluents (= <basic-function-term> <name>)
+::= <function-symbol>
+::= (<function-symbol> <name>*)
+::= (:goal <pre-GD>)
+::=:multi-agent (:goal
+[:agent <agent-def>]
+:condition <emptyOr (pre-GD)>)
+:constraints
+::=
+(:constraints <pref-con-GD>)
+::= (and <pref-con-GD>*)
+:universal−preconditions
+(forall (<typed list (variable)>) <pref-con-GD>)
+::=
+::=:preferences (preference [<pref-name>] <con-GD>)
+::= <con-GD>
+::= (and <con-GD>*)
+::= (forall (<typed list (variable)>) <con-GD>)
+::= (at end <GD>)
+::= (always <GD>)
+::= (sometime <GD>)
+::= (within <number> <GD>)
+::= (at-most-once <GD>)
+::= (sometime-after <GD> <GD>)
+::= (sometime-before <GD> <GD>)
+::= (always-within <number> <GD> <GD>)
+::= (hold-during <number> <number> <GD>)
+::= (hold-after <number> <GD>)
+::=:numeric-fluents (:metric <optimization> <metric-f-exp>)
+::=:multi-agent + :numeric-fluents (:metric
+[:agent <agent-def>]
+:utility <optimization> <metric-f-exp>)
+::= minimize
+::= maximize
+::= (<binary-op> <metric-f-exp> <metric-f-exp>)
+::= (<multi-op> <metric-f-exp> <metric-f-exp>+)
+::= (- <metric-f-exp>)
+::= <number>
+::= (<function-symbol> <name>*)
+::=:multi-agent (<function-symbol> <term>*)
+::= <function-symbol>
+::= total-time
+::=:preferences (is-violated <pref-name>)
+::= (:length [(:serial <integer>)] [(:parallel <integer>)])
+The length-spec is deprecated since PDDL 2.1.
+
+3
+
+Complete BNF definition of MA-PDDL with privacy
+
+D. L. Kovacs
+
+2.1 Lifting restrictions (from constraint declaration)
+If we wish to embed modal operators into each other, then we should use these rules instead of those in Section 2 respectively.
+<con-GD>
+<con-GD>
+<con-GD>
+<con-GD>
+<con-GD>
+<con-GD>
+<con-GD>
+<con-GD>
+<con-GD>
+<con2-GD>
+<con2-GD>
+
+::=
+::=
+::=
+::=
+::=
+::=
+::=
+::=
+::=
+::=
+::=
+
+(always <con2-GD>)
+(sometime <con2-GD>)
+(within <number> <con2-GD>)
+(at-most-once <con2-GD>)
+(sometime-after <con2-GD> <con2-GD>)
+(sometime-before <con2-GD> <con2-GD>)
+(always-within <number> <con2-GD> <con2-GD>)
+(hold-during <number> <number> <con2-GD>)
+(hold-after <number> <con2-GD>)
+<con-GD>
+<GD>
+
+2.2 Requirements
+Here is a table of all requirements in MA-PDDL extended with privacy. Some requirements imply others; some are abbreviations for
+common sets of requirements. If a domain stipulates no requirements, it is assumed to declare :strips.
+:strips
+:typing
+:negative-preconditions
+:disjunctive-preconditions
+:equality
+:existential-preconditions
+:universal-preconditions
+:quantified-preconditions
+:conditional-effects
+:fluents
+:numeric-fluents
+:object-fluents
+:adl
+
+:durative-actions
+:duration-inequalities
+:continuous-effects
+:derived-predicates
+:timed-initial-literals
+:preferences
+:constraints
+:action-costs
+
+:multi-agent
+:unfactored-privacy
+
+:factored-privacy
+
+Basic STRIPS-style adds and deletes
+Allows type names in declarations of variables
+Allows not in goal descriptions
+Allows or in goal descriptions
+Support = as built-in predicate
+Allows exists in goal descriptions
+Allows forall in goal descriptions
+= :existential-preconditions
++ :universal-preconditions
+Allows when in action effects
+= :numeric-fluents
++ :object-fluents
+Allows numeric function definitions and use of effects using assignment operators and arithmetic preconditions.
+Allows object function definitions similarly to :numeric-fluents.
+= :strips + :typing
++ :negative-preconditions
++ :disjunctive-preconditions
++ :equality
++ :quantified-preconditions
++ :conditional-effects
+Allows durative actions. Note that this does not imply :numeric-fluents.
+Allows duration constraints in durative actions using inequalities.
+Allows durative actions to affect fluents continuously over the duration of the actions.
+Allows predicates whose truth value is defined by a formula
+Allows the initial state to specify literals that will become true at a specified time point. Implies :durative-actions
+Allows use of preferences in action preconditions and goals.
+Allows use of constraints fields in domain and problem files. These may contain modal operators supporting trajectory
+constraints.
+If this requirement is included in a PDDL specification, the use of numeric fluents is enabled (similar to the :numericfluents requirement). However, numeric fluents may only be used in certain very limited ways:
+1.
+Numeric fluents may not be used in any conditions (preconditions, goal conditions, conditions of conditional effects,
+etc.).
+2.
+A numeric fluent may only be used as the target of an effect if it is 0-ary and called total-cost. If such an effect
+is used, then the total-cost fluent must be explicitly initialized to 0 in the initial state.
+3.
+The only allowable use of numeric fluents in effects is in effects of the form (increase (total-cost)
+<numeric-term>), where the <numeric-term> is either a non-negative numeric constant or of the form
+(<function-symbol> <term>*). (The <term> here is interpreted as shown in the PDDL grammar, i.e. it is
+a variable symbol or an object constant. Note that this <term> cannot be a <function-term>, even if the
+object fluents requirement is used.)
+4.
+No numeric fluent may be initialized to a negative value.
+5.
+If the problem contains a :metric specification, the objective must be (minimize (total-cost)), or only if the :durative-actions requirement is also set - to minimize a linear combination of total-cost
+and total-time, with non-negative coefficients.
+Note that an action can have multiple effects that increase (total-cost), which is particularly useful in the context of
+conditional effects.
+Also note that these restrictions imply that (total-cost) never decreases throughout plan execution, i.e., action costs are
+never negative.
+Allows declaration of multi-agent planning domains and problems with different agents having possibly different actions, goals
+and metrics, where concurrent/joint actions may interact.
+Allows the declaration of private (or internal) propositions (or atoms, grounded predicates) along the lines of MA-STRIPS [3].
+The idea is to allow the declaration of private predicates/constants/objects on a per agent basis. So the :multi-agent
+requirement should also be declared for this requirement to have an effect. A non-private constant/object is public. A proposition
+(or atom) is public if and only if it refers to a non-private predicate and each argument of the proposition is public. Otherwise the
+proposition (or atom) is private. The arguments of a private proposition (or atom) of an agent can include only either public
+constants/objects or private constants/objects of the same agent. :unfactored-privacy is mutually exclusive with
+:factored-privacy.
+Allows the declaration of private (or internal) propositions (or atoms, grounded predicates) along the lines of MA-STRIPS [3]
+for MA-PDDL descriptions factored from unfactored MA-PDDL descriptions, on a per agent basis. Thus the difference
+compared to :unfactored-privacy is that in this case the MA-PDDL description does not contain the private
+predicates/constants/objects of other agents (it is assumed that they are not observable). A factored description is single-agent.
+Only the private predicates/constants/objects of the agent for which the MA-PDDL description was factored are indicated. A
+non-private constant/object is public. A proposition (or atom) is public if and only if it refers to a non-private predicate and each
+argument of the proposition is public, otherwise it is private. This requirement is exclusive with :unfactored-privacy.
+
+4
+
+Complete BNF definition of MA-PDDL with privacy
+
+D. L. Kovacs
+
+3. References
+[1] D. L. Kovacs (2011). BNF definition of PDDL3.1, unpublished manuscript from the IPC-2011 and IPC-2014 website,
+http://helios.hud.ac.uk/scommv/IPC-14/repository/kovacs-pddl-3.1-2011.pdf
+[2] D. L. Kovacs (2012). A Multi-Agent Extension of PDDL3.1. In Proc. of the 3rd Workshop on the International Planning Competition (IPC), ICAPS-2012, Atibaia, Sao Paulo,
+Brazil, pp. 19-27, http://home.mit.bme.hu/~dkovacs/pubs/d.l.kovacs_2012_ICAPS-WIPC.pdf
+[3] R. I. Brafman and C. Domshlak (2008). From One to Many: Planning for Loosely Coupled Multi-Agent Systems. In Proc. of ICAPS-08, AAAI Press, pp. 28-35.
+http://www.aaai.org/Papers/ICAPS/2008/ICAPS08-004.pdf
+
+5
+
+
